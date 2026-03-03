@@ -35,15 +35,12 @@ export const content = {
         <li>Building confidence in the product's quality.</li>
         <li>Causing failures to find hidden defects.</li>
           <li>Evaluating work products (requirements, designs, code).</li>
-          
           <li>Ensuring required coverage of a test object.</li>
           <li>Ensuring compliance with legal and regulatory standards.</li>
           <li>Reducing the risk of inadequate software quality.</li>
           <li>Providing information to stakeholders so they can make informed decisions.</li>
-          
           <li><strong>Verifying</strong> that requirements are fulfilled.</li>
-          <li><strong>Validating</strong> that the product works as expected by the stakeholders in its operational environment.</li>
-          
+          <li><strong>Validating</strong> that the product works as expected by the stakeholders in its operational environment.</li>  
         </ul>
         <p><em>*Objectives can change depending on the context (e.g., the level of risk, business goals, or time to market).</em></p>
       </div>
