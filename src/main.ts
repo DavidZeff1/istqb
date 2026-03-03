@@ -22,8 +22,9 @@ async function renderContent(chapterId: string, subChapterKey: string) {
   }
 
   try {
-    const module = await loader() as { content: SubChapterContent };
-    const { title, content } = module.content;
+    const module = await loader() as { content: SubChapterContent & { audioSrc?: string } };
+    const { title, content, audioSrc } = module.content;
+    console.log(`Loading chapter ${chapterId} section ${subChapterKey}:`, { title, audioSrc });
     const chapterTitle = chapterTitles[chapterId];
 
     // Add animation class
@@ -31,9 +32,23 @@ async function renderContent(chapterId: string, subChapterKey: string) {
     void container.offsetWidth; // Trigger reflow
     container.classList.add('fade-in');
 
+    let audioHtml = '';
+    if (audioSrc) {
+      audioHtml = `
+        <div class="audio-player-container">
+          <div class="audio-label">Listen to this section:</div>
+          <audio controls class="custom-audio-player">
+            <source src="${audioSrc}" type="audio/mp4">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      `;
+    }
+
     container.innerHTML = `
       <div class="chapter-info">Chapter ${chapterId} • ${chapterTitle}</div>
       <h2>${title}</h2>
+      ${audioHtml}
       <div class="content-text">${content}</div>
     `;
   } catch (err) {
