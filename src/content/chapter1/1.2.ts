@@ -1,5 +1,8 @@
+import audio12 from './audio/12audio.m4a';
+
 export const content = {
   title: "1.2 Why is Testing Necessary?",
+  audioSrc: audio12,
   content: `
     <div class="test-content">
       <div class="concept-block">

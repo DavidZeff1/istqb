@@ -1,5 +1,8 @@
+import audio11 from './audio/11audio.m4a';
+
 export const content = {
   title: "1.1 What is Testing?",
+  audioSrc: audio11,
   content: `
     <div class="test-content">
       <div class="concept-block">
