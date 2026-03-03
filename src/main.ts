@@ -58,7 +58,7 @@ function updateSubTabs(chapterId: string) {
   });
 
   if (firstVisible) {
-    firstVisible.click();
+    (firstVisible as HTMLElement).click();
   }
 }
 
