@@ -1,5 +1,8 @@
+import audio15 from './audio/15audio.m4a';
+
 export const content = {
   title: "1.5 Essential Skills and Good Practices in Testing",
+  audioSrc: audio15,
   content: `
     <div class="test-content">
       <div class="concept-block">
