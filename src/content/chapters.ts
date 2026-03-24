@@ -4,5 +4,6 @@ export const chapterTitles: Record<string, string> = {
   "3": "Static Testing",
   "4": "Test Analysis and Design",
   "5": "Managing the Test Activities",
-  "6": "Test Tools"
+  "6": "Test Tools",
+  "7": "Sample Exams & Tips"
 };
