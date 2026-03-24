@@ -1,462 +1,816 @@
 export const content = {
-  title: "Chapter 4 Exam Questions & Patterns",
+  title: "Chapter 4 Exam Questions",
   content: `
-    <div class="test-content">
-      <div class="concept-block intro-box">
-        <h3>Exam Strategy &amp; Patterns — Chapter 4</h3>
-        <p>Chapter 4 is the heaviest chapter on the exam — 11 questions covering black-box techniques (EP, BVA, Decision Tables, State Transitions), white-box techniques (statement/branch coverage), and experience-based techniques (error guessing, exploratory testing, user stories). Expect scenario-based K3 questions requiring you to apply techniques to real data. All questions are from ISTQB Sample Exam Set D.</p>
-      </div>
+<style>
+  .question-block {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .question-source {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .lo-badge {
+    font-size: 0.7rem;
+    background: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-family: monospace;
+  }
+  .question-text {
+    font-size: 0.95rem;
+    color: #1e293b;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .options-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 14px 0;
+  }
+  .option-item {
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #334155;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.5;
+  }
+  .option-correct {
+    background: #f0fdf4;
+    border-color: #86efac;
+    color: #166534;
+    font-weight: 500;
+  }
+  .option-letter {
+    font-weight: 700;
+    min-width: 22px;
+    color: #475569;
+    flex-shrink: 0;
+  }
+  .option-correct .option-letter {
+    color: #16a34a;
+  }
+  .correct-mark {
+    color: #16a34a;
+    font-weight: 700;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .answer-reveal {
+    font-size: 0.82rem;
+    color: #64748b;
+    padding-top: 10px;
+    border-top: 1px solid #f1f5f9;
+  }
+  .answer-reveal strong {
+    color: #16a34a;
+  }
+</style>
 
-      <!-- SECTION 4.1 -->
-      <div class="concept-block highlight-box" style="border-left: 4px solid #7c3aed;">
-        <h3 style="color: #7c3aed;">4.1 Test Technique Selection — Tips &amp; Tricks</h3>
-        <ul>
-          <li><strong>Black-box:</strong> Based on the specification/behavior — no internal code knowledge needed. Use when you have requirements, rules, or acceptance criteria.</li>
-          <li><strong>White-box:</strong> Based on internal structure/code. Useful when specs are vague or missing — you test what's actually there.</li>
-          <li><strong>Experience-based:</strong> Based on tester knowledge and intuition (error guessing, exploratory). Useful as a complement, not the most systematic choice when precise rules exist.</li>
-          <li><strong>Risk-based is NOT a test technique</strong> — it's an approach to prioritization, not a test design technique.</li>
-          <li><strong>Key rule:</strong> When a question describes specific business rules with thresholds (like "&gt;$100"), this signals EP boundary conditions → <strong>black-box</strong> is most appropriate.</li>
-        </ul>
-      </div>
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam A - Q19</span>
+    <span class="lo-badge">FL-4.1.1</span>
+  </div>
+  <div class="question-text">Which of the following is a characteristic of experience-based test techniques?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> Test cases are created based on detailed design information</li>
+        <li class="option-item"><span class="option-letter">b)</span> Items tested within the interface code section are used to measure coverage</li>
+        <li class="option-item option-correct"><span class="option-letter">c)</span> The test techniques heavily rely on the tester’s knowledge of the software and the business domain <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> The test cases are used to identify deviations from the requirements</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
+</div>
 
-      <div class="concept-block practice-questions exams-list">
-        <h3>4.1 — Sample Exam D, Question #19 <span style="font-weight:normal; font-size:0.85em;">(FL-4.1.1, K2)</span></h3>
-        <ol>
-          <li>
-            <strong>Q#19: Given the requirement: "If total purchases exceed $100, the customer gets a 5% discount; otherwise no discount." Which techniques are MOST helpful for designing test cases?</strong>
-            <div style="margin-top: 0.5rem; margin-bottom: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
-              <div>A) White-box test techniques</div>
-              <div>B) Black-box test techniques</div>
-              <div>C) Experience-based test techniques</div>
-              <div>D) Risk-based test techniques</div>
-            </div>
-            <div class="details-panel">
-              <details>
-                <summary>Show Answer &amp; Explanation</summary>
-                <div class="answer-box">
-                  <p><strong>Answer: B</strong></p>
-                  <p><em>Why A is wrong:</em> The requirement says nothing about internal code structure — white-box would test the implementation, not the specified behavior.</p>
-                  <p><em>Why C is wrong:</em> Experience-based techniques work but are less systematic. The phrase "exceeds $100" explicitly signals equivalence partition boundaries (≤$100 vs. &gt;$100) — BVA and EP are far more suitable.</p>
-                  <p><em>Why D is wrong:</em> Risk-based is not a test technique category.</p>
-                  <p><em>Why B is correct:</em> The requirement specifies desired behavior from the outside. Techniques like Boundary Value Analysis ($100, $100.01) and Equivalence Partitioning (with/without discount) are ideal.</p>
-                </div>
-              </details>
-            </div>
-          </li>
-        </ol>
-      </div>
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam A - Q20</span>
+    <span class="lo-badge">FL-4.2.1</span>
+  </div>
+  <div class="question-text">You are testing a simplified apartment search form which has only two search criteria: • • floor (with three possible options: ground floor; first floor; second or higher floor) garden type (with three possible options: no garden; small garden; large garden) Each of the apartment on the ground floor has a garden, apartments on higher floors don’t. The form has a built-in validation mechanism that will not allow you to use the search criteria which violate this rule. Each test has two input values: floor and garden type. You want to apply equivalence partitioning (EP) to cover each floor and each garden type in your tests. What is the minimal number of test cases to achieve 100% EP coverage for valid partitions?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> 3</li>
+        <li class="option-item option-correct"><span class="option-letter">b)</span> 4 <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">c)</span> 5</li>
+        <li class="option-item"><span class="option-letter">d)</span> 6</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
+</div>
 
-      <!-- SECTION 4.2 -->
-      <div class="concept-block highlight-box" style="border-left: 4px solid #6d28d9; margin-top: 2.5rem;">
-        <h3 style="color: #6d28d9;">4.2 Black-Box Test Techniques — Tips &amp; Tricks</h3>
-        <ul>
-          <li><strong>Equivalence Partitioning (EP):</strong> Divide inputs into groups where the software behaves the same. One test per partition gives EP coverage. You MUST cover all valid partitions for "full valid EP coverage."</li>
-          <li><strong>2-Value BVA:</strong> Test the two values on either side of each boundary. For partition [0,2]: boundaries are the last value of the lower partition (-1) and first valid value (0), and the last valid value (2) and first value of next partition (3).</li>
-          <li><strong>Decision Tables:</strong> Each column = one rule. Coverage = (test cases / total columns). Adding a test case only increases coverage if it covers a NEW (uncovered) column/rule.</li>
-          <li><strong>State Transition:</strong> Valid transitions coverage = percentage of defined transitions exercised. A test sequence is infeasible if it tries to take a transition that doesn't exist (e.g., triggering an event from a state where it has no defined outcome).</li>
-          <li><strong>BVA trap:</strong> Options like {-1, 3} only cover 2 of 4 boundary values — you need ALL boundaries for full coverage.</li>
-        </ul>
-      </div>
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam A - Q21</span>
+    <span class="lo-badge">FL-4.2.2</span>
+  </div>
+  <div class="question-text">You are testing a system that calculates the final course grade for a given student. The final grade is assigned based on the final result, according to the following rules: • • • • • • 0 – 50 points: failed 51 – 60 points: fair 61 – 70 points: satisfactory 71 – 80 points: good 81 – 90 points: very good 91 – 100 points: excellent You have prepared the following set of test cases: TC1 TC2 TC3 TC4 TC5 TC6 Final result 91 50 81 60 70 80 Final grade excellent failed very good fair satisfactory good What is the 2-value boundary value analysis (BVA) coverage for the final result that is achieved with the existing test cases?</div>
+  <ul class="options-list">
+        <li class="option-item option-correct"><span class="option-letter">a)</span> 50% <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> 60%</li>
+        <li class="option-item"><span class="option-letter">c)</span> 33.3%</li>
+        <li class="option-item"><span class="option-letter">d)</span> 100%</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
+</div>
 
-      <div class="concept-block practice-questions exams-list">
-        <h3>4.2 — Sample Exam D, Questions #20–#23 <span style="font-weight:normal; font-size:0.85em;">(FL-4.2.1/2/3/4, K3)</span></h3>
-        <ol>
-          <li>
-            <strong>Q#20: Cinema ticket discount system. D = CY − BY. Rules: D&lt;0 → error; 0≤D&lt;18 → student discount; 18≤D&lt;65 → no discount; D≥65 → pensioner discount. Existing tests: BY=1990/CY=2020 (no discount) and BY=2030/CY=2029 (error). Which TWO test sets achieve full valid EP coverage?</strong>
-            <div style="margin-top: 0.5rem; margin-bottom: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
-              <div>A) BY=2001, CY=2065</div>
-              <div>B) BY=1900, CY=1965</div>
-              <div>C) BY=1965, CY=1900</div>
-              <div>D) BY=2011, CY=2029</div>
-              <div>E) BY=2000, CY=2000</div>
-            </div>
-            <div class="details-panel">
-              <details>
-                <summary>Show Answer &amp; Explanation</summary>
-                <div class="answer-box">
-                  <p><strong>Answer: B and E</strong></p>
-                  <p><em>Four valid partitions:</em> error (D&lt;0), student (0≤D&lt;18), no discount (18≤D&lt;65), pensioner (D≥65).</p>
-                  <p>Already covered: no discount (D=30) and error (D=-1).</p>
-                  <p>Missing: <strong>student</strong> (0≤D&lt;18) and <strong>pensioner</strong> (D≥65).</p>
-                  <ul>
-                    <li>A: D=2065−2001=64 → no discount (already covered) ✗</li>
-                    <li>B: D=1965−1900=65 → <strong>pensioner</strong> ✓</li>
-                    <li>C: D=1900−1965=−65 → error (already covered) ✗</li>
-                    <li>D: D=2029−2011=18 → no discount (already covered) ✗</li>
-                    <li>E: D=2000−2000=0 → <strong>student</strong> ✓</li>
-                  </ul>
-                </div>
-              </details>
-            </div>
-          </li>
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam A - Q22</span>
+    <span class="lo-badge">FL-4.2.3</span>
+  </div>
+  <div class="question-text">Your favorite bicycle daily rental store has just introduced a new Customer Relationship Management system and asked you, one of their most loyal members, to test it. The implemented features are as follows: • • • Anyone can rent a bicycle, but members receive a 20% discount However, if the return deadline is missed, the discount is no longer available After 15 rentals, members get a gift: a T-Shirt Decision table describing the implemented features looks as follows: Conditions Being a member Missed deadline 15th rental Actions 20% discount Gift T-Shirt R1 T T F R2 T F F R3 T T T R4 T F T X X X X R5 F T F R6 F F F R7 F F T R8 F T T X Based ONLY on the feature description of the Customer Relationship Management system, which of the above rules describes an impossible situation?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> R4</li>
+        <li class="option-item"><span class="option-letter">b)</span> R2</li>
+        <li class="option-item"><span class="option-letter">c)</span> R6</li>
+        <li class="option-item option-correct"><span class="option-letter">d)</span> R8 <span class="correct-mark">&#10003;</span></li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+</div>
 
-          <li style="margin-top: 1.5rem;">
-            <strong>Q#21: Temperature control system. Input in full degrees Celsius. "temperature OK" if 0–2°C inclusive; "temperature too low" below 0; "temperature too high" above 2. Using 2-value BVA, which set provides HIGHEST coverage?</strong>
-            <div style="margin-top: 0.5rem; margin-bottom: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
-              <div>A) –1, 3</div>
-              <div>B) 0, 2</div>
-              <div>C) –1, 0, 2, 3</div>
-              <div>D) –2, 0, 2, 4</div>
-            </div>
-            <div class="details-panel">
-              <details>
-                <summary>Show Answer &amp; Explanation</summary>
-                <div class="answer-box">
-                  <p><strong>Answer: C</strong></p>
-                  <p><em>Three equivalence partitions:</em> {...,−2,−1} | {0,1,2} | {3,4,...}</p>
-                  <p><em>2-value BVA requires the last value of each partition AND the first value of the next partition at EVERY boundary:</em></p>
-                  <ul>
-                    <li>Boundary between "too low" and "OK": <strong>−1</strong> and <strong>0</strong></li>
-                    <li>Boundary between "OK" and "too high": <strong>2</strong> and <strong>3</strong></li>
-                  </ul>
-                  <p>Full 2-value BVA set = {-1, 0, 2, 3} → option C. Option A only has 2 of the 4 needed values. Option D has the wrong boundary values (−2 and 4 are not the boundary values).</p>
-                </div>
-              </details>
-            </div>
-          </li>
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam A - Q23</span>
+    <span class="lo-badge">FL-4.2.4</span>
+  </div>
+  <div class="question-text">You test a system whose lifecycle is modeled by the state transition diagram shown below. The system starts in the INIT state and ends its operation in the OFF state. What is the MINIMAL number of test cases to achieve valid transitions coverage?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> 4</li>
+        <li class="option-item"><span class="option-letter">b)</span> 2</li>
+        <li class="option-item"><span class="option-letter">c)</span> 7</li>
+        <li class="option-item option-correct"><span class="option-letter">d)</span> 3 <span class="correct-mark">&#10003;</span></li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+</div>
 
-          <li style="margin-top: 1.5rem;">
-            <strong>Q#22: Decision table below. TC1 covers R2, TC2 covers R3, TC3 covers R7, TC4 covers R6. Which new test case INCREASES decision table coverage?</strong>
-            <div style="margin-top: 0.75rem; overflow-x: auto;">
-              <table style="border-collapse: collapse; font-size: 0.85em; width: 100%;">
-                <thead>
-                  <tr style="background: #f3f4f6;">
-                    <th style="border: 1px solid #d1d5db; padding: 4px 8px;"></th>
-                    <th style="border: 1px solid #d1d5db; padding: 4px 8px;">R1</th>
-                    <th style="border: 1px solid #d1d5db; padding: 4px 8px;">R2</th>
-                    <th style="border: 1px solid #d1d5db; padding: 4px 8px;">R3</th>
-                    <th style="border: 1px solid #d1d5db; padding: 4px 8px;">R4</th>
-                    <th style="border: 1px solid #d1d5db; padding: 4px 8px;">R5</th>
-                    <th style="border: 1px solid #d1d5db; padding: 4px 8px;">R6</th>
-                    <th style="border: 1px solid #d1d5db; padding: 4px 8px;">R7</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"><strong>C1: Age</strong></td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">0–18</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">19–65</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">19–65</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">&gt;65</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">0–18</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">19–65</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">&gt;65</td>
-                  </tr>
-                  <tr>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"><strong>C2: Experience</strong></td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">—</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">0–4</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">&gt;4</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">—</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">—</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">—</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">—</td>
-                  </tr>
-                  <tr>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"><strong>C3: Registered?</strong></td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">NO</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">NO</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">NO</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">NO</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">YES</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">YES</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">YES</td>
-                  </tr>
-                  <tr style="background: #f9fafb;">
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"><strong>Category</strong></td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">A</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">A</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">B</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">B</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">B</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">D</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">C</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div style="margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.25rem;">
-              <div>A) 66-year-old, unregistered, no experience → category B</div>
-              <div>B) 55-year-old, unregistered, 2 years experience → category A</div>
-              <div>C) 19-year-old, registered, 5 years experience → category D</div>
-              <div>D) No additional test case can increase the coverage</div>
-            </div>
-            <div class="details-panel">
-              <details>
-                <summary>Show Answer &amp; Explanation</summary>
-                <div class="answer-box">
-                  <p><strong>Answer: A</strong></p>
-                  <p><em>Currently covered rules:</em> R2 (TC1), R3 (TC2), R7 (TC3), R6 (TC4). <strong>Uncovered: R1, R4, R5.</strong></p>
-                  <ul>
-                    <li>A: 66-year-old, unregistered, no experience → C1=&gt;65, C2=—, C3=NO → matches <strong>R4</strong> (not yet covered) ✓</li>
-                    <li>B: 55-year-old, unregistered, 2 years → C1=19–65, C2=0–4, C3=NO → <strong>R2</strong> (already covered by TC1) ✗</li>
-                    <li>C: 19-year-old, registered, 5 years → C1=19–65, C3=YES → <strong>R6</strong> (already covered by TC4) ✗</li>
-                    <li>D: Wrong — R1, R4, R5 are still uncovered.</li>
-                  </ul>
-                </div>
-              </details>
-            </div>
-          </li>
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam A - Q24</span>
+    <span class="lo-badge">FL-4.3.1</span>
+  </div>
+  <div class="question-text">Your test suite achieved 100% statement coverage. What is the consequence of this fact?</div>
+  <ul class="options-list">
+        <li class="option-item option-correct"><span class="option-letter">a)</span> Each instruction in the code that contains a defect has been executed at least once <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> Any test suite containing more test cases than your test suite will also achieve 100% statement coverage</li>
+        <li class="option-item"><span class="option-letter">c)</span> Each path in the code has been executed at least once</li>
+        <li class="option-item"><span class="option-letter">d)</span> Every combination of input values has been tested at least once</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
+</div>
 
-          <li style="margin-top: 1.5rem;">
-            <strong>Q#23: State transition table — hotel room reservation system. Which event sequence (starting from S1: Requesting) achieves HIGHEST valid transitions coverage?</strong>
-            <div style="margin-top: 0.75rem; overflow-x: auto;">
-              <table style="border-collapse: collapse; font-size: 0.85em; width: 100%;">
-                <thead>
-                  <tr style="background: #f3f4f6;">
-                    <th style="border: 1px solid #d1d5db; padding: 4px 8px;">State</th>
-                    <th style="border: 1px solid #d1d5db; padding: 4px 8px;">Available</th>
-                    <th style="border: 1px solid #d1d5db; padding: 4px 8px;">NotAvailable</th>
-                    <th style="border: 1px solid #d1d5db; padding: 4px 8px;">ChangeRoom</th>
-                    <th style="border: 1px solid #d1d5db; padding: 4px 8px;">Cancel</th>
-                    <th style="border: 1px solid #d1d5db; padding: 4px 8px;">Pay</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"><strong>S1: Requesting</strong></td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">→S2</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">→S3</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"></td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"></td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"></td>
-                  </tr>
-                  <tr>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"><strong>S2: Confirmed</strong></td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"></td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"></td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">→S1</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">→S4</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">→S4</td>
-                  </tr>
-                  <tr>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"><strong>S3: Waiting list</strong></td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">→S2</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"></td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"></td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;">→S4</td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"></td>
-                  </tr>
-                  <tr>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"><strong>S4: End</strong></td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"></td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"></td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"></td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"></td>
-                    <td style="border: 1px solid #d1d5db; padding: 4px 8px;"></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div style="margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.25rem;">
-              <div>A) NotAvailable, Available, ChangeRoom, NotAvailable, Cancel</div>
-              <div>B) Available, ChangeRoom, NotAvailable, Available, Pay</div>
-              <div>C) Available, ChangeRoom, Available, ChangeRoom, NotAvailable</div>
-              <div>D) NotAvailable, Cancel, ChangeRoom, Available, Pay</div>
-            </div>
-            <div class="details-panel">
-              <details>
-                <summary>Show Answer &amp; Explanation</summary>
-                <div class="answer-box">
-                  <p><strong>Answer: B — covers 5 of 7 valid transitions</strong></p>
-                  <p><em>7 valid transitions total:</em> S1→S2, S1→S3, S2→S1, S2→S4(Cancel), S2→S4(Pay), S3→S2, S3→S4</p>
-                  <p><em>Tracing B (Available, ChangeRoom, NotAvailable, Available, Pay):</em></p>
-                  <ul>
-                    <li>Start S1 + Available → S2 (S1→S2 ✓)</li>
-                    <li>S2 + ChangeRoom → S1 (S2→S1 ✓)</li>
-                    <li>S1 + NotAvailable → S3 (S1→S3 ✓)</li>
-                    <li>S3 + Available → S2 (S3→S2 ✓)</li>
-                    <li>S2 + Pay → S4 (S2→S4 via Pay ✓)</li>
-                  </ul>
-                  <p>= 5 unique transitions out of 7. Option A covers 4. Option C covers 3. Option D is infeasible (after Cancel, ends in S4 — no further transitions possible).</p>
-                </div>
-              </details>
-            </div>
-          </li>
-        </ol>
-      </div>
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam A - Q25</span>
+    <span class="lo-badge">FL-4.3.3</span>
+  </div>
+  <div class="question-text">Which of the following is NOT true for white-box testing?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> During white-box testing the entire software implementation is considered</li>
+        <li class="option-item"><span class="option-letter">b)</span> White-box coverage metrics can help identify additional tests to increase code coverage</li>
+        <li class="option-item"><span class="option-letter">c)</span> White-box test techniques can be used in static testing</li>
+        <li class="option-item option-correct"><span class="option-letter">d)</span> White-box testing can help identify gaps in requirements implementation <span class="correct-mark">&#10003;</span></li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+</div>
 
-      <!-- SECTION 4.3 -->
-      <div class="concept-block highlight-box" style="border-left: 4px solid #5b21b6; margin-top: 2.5rem;">
-        <h3 style="color: #5b21b6;">4.3 White-Box Test Techniques — Tips &amp; Tricks</h3>
-        <ul>
-          <li><strong>Statement Coverage:</strong> Each executable statement runs at least once. 100% statement coverage does NOT guarantee finding all bugs or 100% branch coverage.</li>
-          <li><strong>Branch Coverage:</strong> Each decision outcome (true/false) is tested. 100% branch coverage implies 100% statement coverage — but NOT vice versa.</li>
-          <li><strong>Key insight on white-box:</strong> White-box tests the actual implementation, so it can find extra features accidentally coded that aren't in the spec — something black-box testing can't do since black-box only tests what the spec says should exist.</li>
-          <li><strong>White-box weakness:</strong> If a requirement was forgotten and never coded, white-box won't detect it (there's no code to execute for it).</li>
-        </ul>
-      </div>
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam A - Q26</span>
+    <span class="lo-badge">FL-4.4.1</span>
+  </div>
+  <div class="question-text">Which of the following BEST describes the concept behind error guessing?</div>
+  <ul class="options-list">
+        <li class="option-item option-correct"><span class="option-letter">a)</span> Error guessing involves using your knowledge and experience of defects found in the past and typical errors made by developers <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> Error guessing involves using your personal experience of development and the errors you made as a developer</li>
+        <li class="option-item"><span class="option-letter">c)</span> Error guessing requires you to imagine that you are the user of the test object and to guess errors the user could make interacting with it</li>
+        <li class="option-item"><span class="option-letter">d)</span> Error guessing requires you to rapidly duplicate the development task to identify the sort of errors a developer might make</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
+</div>
 
-      <div class="concept-block practice-questions exams-list">
-        <h3>4.3 — Sample Exam D, Questions #24, #25 <span style="font-weight:normal; font-size:0.85em;">(FL-4.3.1/3, K2)</span></h3>
-        <ol>
-          <li>
-            <strong>Q#24: Test suite S achieves 100% statement coverage for program P. It has 3 test cases, each achieving 50% coverage. Which statement is CORRECT?</strong>
-            <div style="margin-top: 0.5rem; margin-bottom: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
-              <div>A) Executing S will cause all possible failures in P</div>
-              <div>B) S achieves 100% branch coverage for P</div>
-              <div>C) Every executable statement in P containing a defect has been run at least once</div>
-              <div>D) After removing one test case, the remaining two will still achieve 100% statement coverage</div>
-            </div>
-            <div class="details-panel">
-              <details>
-                <summary>Show Answer &amp; Explanation</summary>
-                <div class="answer-box">
-                  <p><strong>Answer: C</strong></p>
-                  <p><em>Why A is wrong:</em> Running a defective statement doesn't always produce a failure (e.g., x=y/z only fails when z=0).</p>
-                  <p><em>Why B is wrong:</em> Statement coverage does not guarantee branch coverage. Example: <code>IF (x=0) THEN A; ENDIF</code> — testing x=0 hits all statements (100%) but misses the false branch.</p>
-                  <p><em>Why C is correct:</em> By definition, 100% statement coverage means every executable statement executed at least once — including any defective ones.</p>
-                  <p><em>Why D is wrong:</em> The removed test case may cover statements not covered by the other two — you can't assume this without checking the overlap.</p>
-                </div>
-              </details>
-            </div>
-          </li>
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam A - Q27</span>
+    <span class="lo-badge">FL-4.4.2</span>
+  </div>
+  <div class="question-text">In your project there has been a delay in the release of a brand-new application and test execution started late, but you have very detailed domain knowledge and good analytical skills. The full list of requirements has not yet been shared with the team, but management is asking for some test results to be presented. Which test technique fits BEST in this situation?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> Checklist-based testing</li>
+        <li class="option-item"><span class="option-letter">b)</span> Error guessing</li>
+        <li class="option-item option-correct"><span class="option-letter">c)</span> Exploratory testing <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> Branch testing</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
+</div>
 
-          <li style="margin-top: 1.5rem;">
-            <strong>Q#25: Why does white-box testing facilitate defect detection even when the software specification is vague, outdated, or incomplete?</strong>
-            <div style="margin-top: 0.5rem; margin-bottom: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
-              <div>A) Test cases are designed based on the structure of the test object rather than the specification</div>
-              <div>B) Coverage can be well-defined and easily measured for each white-box technique</div>
-              <div>C) White-box techniques are very well designed to detect omissions in requirements</div>
-              <div>D) White-box techniques can be used in both static and dynamic testing</div>
-            </div>
-            <div class="details-panel">
-              <details>
-                <summary>Show Answer &amp; Explanation</summary>
-                <div class="answer-box">
-                  <p><strong>Answer: A</strong></p>
-                  <p><em>The core reason:</em> White-box ignores the spec entirely — it tests what the <em>code actually does</em>. So even if the spec is missing, outdated, or wrong, white-box can still find accidental extra features coded into the system that shouldn't be there.</p>
-                  <p><em>Why B is wrong:</em> Measurable coverage is a benefit, but it doesn't explain why specs being vague doesn't matter.</p>
-                  <p><em>Why C is wrong:</em> This is actually a white-box <em>weakness</em> — it cannot find defects of omission (things not coded at all).</p>
-                  <p><em>Why D is wrong:</em> Being usable for both static and dynamic testing is true but unrelated to the question about spec quality.</p>
-                </div>
-              </details>
-            </div>
-          </li>
-        </ol>
-      </div>
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam A - Q28</span>
+    <span class="lo-badge">FL-4.5.2</span>
+  </div>
+  <div class="question-text">Which of the following BEST describes the way acceptance criteria can be documented?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> Performing retrospectives to determine the actual needs of the stakeholders regarding a given user story</li>
+        <li class="option-item option-correct"><span class="option-letter">b)</span> Using the given/when/then format to describe an example test condition related to a given user story <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">c)</span> Using verbal communication to reduce the risk of misunderstanding the acceptance criteria by others</li>
+        <li class="option-item"><span class="option-letter">d)</span> Documenting risks related to a given user story in a test plan to facilitate the risk-based testing of a given user story</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
+</div>
 
-      <!-- SECTION 4.4 -->
-      <div class="concept-block highlight-box" style="border-left: 4px solid #4c1d95; margin-top: 2.5rem;">
-        <h3 style="color: #4c1d95;">4.4 Experience-Based Techniques — Tips &amp; Tricks</h3>
-        <ul>
-          <li><strong>Error Guessing:</strong> Testers anticipate errors (human mistakes), defects (code faults), and failures (bad outputs) based on experience. They CANNOT anticipate root causes — root causes are process/organizational issues outside the tester's view.</li>
-          <li><strong>Exploratory Testing:</strong> Test design, execution, and evaluation happen simultaneously. The tester learns about the system while testing. Test cases can be created DURING the session — not all pre-designed. Any test technique can be used during exploratory testing.</li>
-          <li><strong>Exploratory testing myth:</strong> Results are NOT reliable defect prediction models — they depend heavily on tester experience and cannot reliably predict how many defects remain.</li>
-        </ul>
-      </div>
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam A - Q29</span>
+    <span class="lo-badge">FL-4.5.3</span>
+  </div>
+  <div class="question-text">Consider the following user story: As an Editor I want to review content before it is published so that I can ensure the grammar is correct and its acceptance criteria: • • • • • • The user can log in to the content management system with &quot;Editor&quot; role The editor can view existing content pages The editor can edit the page content The editor can add markup comments The editor can save changes The editor can reassign to the &quot;content owner&quot; role to make updates Which of the following is the BEST example of an ATDD test for this user story?</div>
+  <ul class="options-list">
+        <li class="option-item option-correct"><span class="option-letter">a)</span> Test if the editor can save the document after edit the page content <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> Test if the content owner can log in and make updates to the content</li>
+        <li class="option-item"><span class="option-letter">c)</span> Test if the editor can schedule the edited content for publication</li>
+        <li class="option-item"><span class="option-letter">d)</span> Test if the editor can reassign to another editor to make updates</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
+</div>
 
-      <div class="concept-block practice-questions exams-list">
-        <h3>4.4 — Sample Exam D, Questions #26, #27 <span style="font-weight:normal; font-size:0.85em;">(FL-4.4.1/2, K2)</span></h3>
-        <ol>
-          <li>
-            <strong>Q#26: Which of the following is NOT anticipated by the tester when applying error guessing?</strong>
-            <div style="margin-top: 0.5rem; margin-bottom: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
-              <div>A) The developer misunderstood the formula in the user story for calculating interest</div>
-              <div>B) The developer wrote "FA = A*(1+IR^N)" instead of "FA = A*(1+IR)^N" in the source code</div>
-              <div>C) The developer missed the seminar on new compound interest rate legislation</div>
-              <div>D) The accuracy of the interest calculated by the system is not precise enough</div>
-            </div>
-            <div class="details-panel">
-              <details>
-                <summary>Show Answer &amp; Explanation</summary>
-                <div class="answer-box">
-                  <p><strong>Answer: C</strong></p>
-                  <p><em>Error guessing anticipates:</em></p>
-                  <ul>
-                    <li>A = an Error (developer misunderstood) ✓ anticipatable</li>
-                    <li>B = a Defect (wrong formula in code) ✓ anticipatable</li>
-                    <li>D = a Failure (inaccurate output) ✓ anticipatable</li>
-                  </ul>
-                  <p><em>C = a Root Cause</em> — "missed a seminar" is an organizational/process issue that led to knowledge gaps. This is not something a tester can anticipate because it's outside their view of the system.</p>
-                </div>
-              </details>
-            </div>
-          </li>
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam A - QA15</span>
+    <span class="lo-badge">FL-4.2.2</span>
+  </div>
+  <div class="question-text">A wine storage system uses a control device that measures the wine cell temperature T (measured in °C, rounded to the nearest degree) and alarms the user if it deviates from the optimal value of 12, according to the following rules: • • • if T = 12, the system says, “optimal temperature” if T &lt; 12, the system says, “temperature is too low!” if T &gt; 12, the system says, “temperature is too high!” You want to use the 3-point boundary value analysis (BVA) to verify the behavior of the control device. A test input is a temperature in °C provided by the device. What is the MINIMAL set of test inputs that achieves 100% of the desired coverage?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> 11, 12, 13</li>
+        <li class="option-item"><span class="option-letter">b)</span> 10, 12, 14</li>
+        <li class="option-item option-correct"><span class="option-letter">c)</span> 10, 11, 12, 13, 14 <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> 10, 11, 13, 14</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
+</div>
 
-          <li style="margin-top: 1.5rem;">
-            <strong>Q#27: Which statement about exploratory testing is TRUE?</strong>
-            <div style="margin-top: 0.5rem; margin-bottom: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
-              <div>A) Test cases are designed before the exploratory testing session starts</div>
-              <div>B) The tester can perform test execution, but cannot perform test design</div>
-              <div>C) Exploratory testing results are good predictors of the number of remaining defects</div>
-              <div>D) During exploratory testing the tester may use black-box test techniques</div>
-            </div>
-            <div class="details-panel">
-              <details>
-                <summary>Show Answer &amp; Explanation</summary>
-                <div class="answer-box">
-                  <p><strong>Answer: D</strong></p>
-                  <p><em>Why A is wrong:</em> Test cases are created <em>during</em> the session — that's a core characteristic of exploratory testing.</p>
-                  <p><em>Why B is wrong:</em> Design, execution, and evaluation happen simultaneously — the tester DOES perform design.</p>
-                  <p><em>Why C is wrong:</em> Results are highly experience-dependent and are NOT reliable quantitative defect prediction models.</p>
-                  <p><em>Why D is correct:</em> During exploratory testing, the tester can apply ANY techniques they find useful — including black-box, white-box, or experience-based.</p>
-                </div>
-              </details>
-            </div>
-          </li>
-        </ol>
-      </div>
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam A - QA16</span>
+    <span class="lo-badge">FL-4.3.2</span>
+  </div>
+  <div class="question-text">Which of the following statements about branch testing is CORRECT?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> If a program includes only unconditional branches, then 100% branch coverage can be achieved without executing any test cases</li>
+        <li class="option-item"><span class="option-letter">b)</span> If the test cases exercise all unconditional branches in the code, then 100% branch coverage is achieved</li>
+        <li class="option-item"><span class="option-letter">c)</span> If 100% statement coverage is achieved, then 100% branch coverage is also achieved</li>
+        <li class="option-item option-correct"><span class="option-letter">d)</span> If 100% branch coverage is achieved, then all decision outcomes in each decision statement in the code are exercised <span class="correct-mark">&#10003;</span></li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+</div>
 
-      <!-- SECTION 4.5 -->
-      <div class="concept-block highlight-box" style="border-left: 4px solid #7e22ce; margin-top: 2.5rem;">
-        <h3 style="color: #7e22ce;">4.5 Collaboration-Based Test Approaches — Tips &amp; Tricks</h3>
-        <ul>
-          <li><strong>The 3 Cs of User Stories:</strong> Card (the written story), Conversation (discussion of how it will be used → shared understanding), Confirmation (acceptance criteria).</li>
-          <li><strong>Conversation</strong> is what gives the team a shared vision of what to deliver — NOT planning poker (effort estimation), NOT reviews (defect detection), NOT iteration planning (work scheduling).</li>
-          <li><strong>Acceptance criteria → test cases:</strong> A good test case for a user story should directly trace to one or more acceptance criteria. Beware of test cases that test things not mentioned in the story's acceptance criteria.</li>
-        </ul>
-      </div>
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam A - QA17</span>
+    <span class="lo-badge">FL-4.4.3</span>
+  </div>
+  <div class="question-text">You are testing a mobile application that allows customers to access and manage their bank accounts. You are running a test suite that involves evaluating each screen, and each field on each screen, against a general list of user interface best practices derived from a popular book on the topic that maximizes usability for such applications. Which of the following options BEST categorizes the test technique you are using?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> Black-box</li>
+        <li class="option-item"><span class="option-letter">b)</span> Exploratory</li>
+        <li class="option-item option-correct"><span class="option-letter">c)</span> Checklist-based <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> Error guessing</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
+</div>
 
-      <div class="concept-block practice-questions exams-list">
-        <h3>4.5 — Sample Exam D, Questions #28, #29 <span style="font-weight:normal; font-size:0.85em;">(FL-4.5.1/3, K2/K3)</span></h3>
-        <ol>
-          <li>
-            <strong>Q#28: Which collaborative user story writing practice enables the team to achieve collective understanding of what needs to be delivered?</strong>
-            <div style="margin-top: 0.5rem; margin-bottom: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
-              <div>A) Planning poker — consensus on effort for implementing a user story</div>
-              <div>B) Reviews — to detect inconsistencies and contradictions</div>
-              <div>C) Iteration planning — to prioritize user stories by business value</div>
-              <div>D) Conversation — so team members can understand how the software will be used</div>
-            </div>
-            <div class="details-panel">
-              <details>
-                <summary>Show Answer &amp; Explanation</summary>
-                <div class="answer-box">
-                  <p><strong>Answer: D</strong></p>
-                  <p>The "Conversation" in the 3 Cs is specifically the activity through which the team discusses usage, agrees on acceptance criteria, and builds shared understanding of what to deliver. A, B, and C serve other purposes (estimation, defect detection, scheduling respectively).</p>
-                </div>
-              </details>
-            </div>
-          </li>
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam A - QA18</span>
+    <span class="lo-badge">FL-4.5.1</span>
+  </div>
+  <div class="question-text">Which of the following BEST describe the collaborative approach to user story writing?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> User stories are created by testers and developers and then accepted by business representatives</li>
+        <li class="option-item option-correct"><span class="option-letter">b)</span> User stories are created by business representatives, developers, and testers together <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">c)</span> User stories are created by business representatives and verified by developers and testers</li>
+        <li class="option-item"><span class="option-letter">d)</span> User stories are created in a way that they are independent, negotiable, valuable, estimable, small, and testable</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
+</div>
 
-          <li style="margin-top: 1.5rem;">
-            <strong>Q#29: User story — "As a customer, I want to filter search results by price range." Acceptance criteria: (1) works for app v3.0+, (2) allows setting min/max price, (3) results update dynamically as filter adjusts. Precondition: Product A = $100, Product B = $110. Which is the BEST test case?</strong>
-            <div style="margin-top: 0.5rem; margin-bottom: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
-              <div>A) Set filter $90–$100 → expect A only. Then set max to $110 → expect both A and B</div>
-              <div>B) Check default min/max are $100 and $110. Add Product C at $120 and refresh → default max changes to $120</div>
-              <div>C) Set filter $90–$115 → both products. Then change currency USD→EUR → filter range converts correctly</div>
-              <div>D) Open in Edge, Chrome, Opera. Set filter $90–$110. Expect both products and same layout in all browsers</div>
-            </div>
-            <div class="details-panel">
-              <details>
-                <summary>Show Answer &amp; Explanation</summary>
-                <div class="answer-box">
-                  <p><strong>Answer: A</strong></p>
-                  <p><em>Tracing each test to acceptance criteria:</em></p>
-                  <ul>
-                    <li>A ✓ — Sets price range (AC2) and verifies results update dynamically when range changes (AC3).</li>
-                    <li>B ✗ — Tests whether the system auto-detects default prices. This isn't mentioned in any acceptance criterion.</li>
-                    <li>C ✗ — Currency exchange feature is not discussed in this user story at all.</li>
-                    <li>D ✗ — Browser compatibility is not in any acceptance criterion of this story.</li>
-                  </ul>
-                </div>
-              </details>
-            </div>
-          </li>
-        </ol>
-      </div>
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam B - Q19</span>
+    <span class="lo-badge">FL-4.1.1</span>
+  </div>
+  <div class="question-text">Which of the following statements BEST describes the difference between decision table testing and branch testing?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> In decision table testing, the test cases are derived from the decision statements in the code. In branch testing, the test cases are derived from knowledge of the control flow of the test object.</li>
+        <li class="option-item"><span class="option-letter">b)</span> In decision table testing, the test cases are derived from the specification that describes the business logic. In branch testing the test cases are based on anticipation of potential defects in the source code.</li>
+        <li class="option-item"><span class="option-letter">c)</span> In decision table testing, the test cases are derived from knowledge of the control flow of the test object. In branch testing, test cases are derived from the specification that describes the business logic.</li>
+        <li class="option-item option-correct"><span class="option-letter">d)</span> In decision table testing, the test cases are independent of how the software is implemented. In branch testing, test cases can be created only after the design or implementation of the code. <span class="correct-mark">&#10003;</span></li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+</div>
 
-    </div>
-  `
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam B - Q20</span>
+    <span class="lo-badge">FL-4.2.1</span>
+  </div>
+  <div class="question-text">Customers of the TestWash car wash chain have cards with a record of the number of washes they have bought so far. The initial value is 0. After entering the car wash, the system increases the number on the card by one. This value represents the number of the current wash. Based on this number the system decides what discount the customer is entitled to. For every tenth wash the system gives a 10% discount, and for every twentieth wash, the system gives a further 40% discount (i.e., a 50% discount in total). Which of the following sets of input data (understood as the numbers of the current wash) achieves the highest equivalence partition coverage?</div>
+  <ul class="options-list">
+        <li class="option-item option-correct"><span class="option-letter">a)</span> 19, 20, 30 <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> 11, 12, 20</li>
+        <li class="option-item"><span class="option-letter">c)</span> 1, 10, 50</li>
+        <li class="option-item"><span class="option-letter">d)</span> 10, 29, 30, 31</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam B - Q21</span>
+    <span class="lo-badge">FL-4.2.2</span>
+  </div>
+  <div class="question-text">You are testing a form that verifies the correctness of the length of the password given as input. The form accepts a password with the correct length and rejects a password that is too short or too long. The password length is correct if it has between 6 and 12 characters inclusive. Otherwise, it is considered incorrect. At first, the form is empty (password length = 0). You apply boundary value analysis to the “password length” variable. Your set of test cases achieves 100% 2-value boundary value coverage. The team decided that due to the high risk of this component, test cases should be added to ensure 100% 3-value boundary value coverage. Which additional password lengths should be tested to achieve this?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> 4, 5, 13, 14</li>
+        <li class="option-item"><span class="option-letter">b)</span> 7, 11</li>
+        <li class="option-item"><span class="option-letter">c)</span> 1, 5, 13</li>
+        <li class="option-item option-correct"><span class="option-letter">d)</span> 1, 4, 7, 11, 14 <span class="correct-mark">&#10003;</span></li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam B - Q22</span>
+    <span class="lo-badge">FL-4.2.3</span>
+  </div>
+  <div class="question-text">The following decision table contains the rules for determining the risk of atherosclerosis. Rule 1 Rule 2 Rule 3 Rule 4 Rule 5 Cholesterol (mg/dl) ≤124 ≤ 124 125 – 200 125 – 200 ≥ 201 Blood pressure (mm Hg) ≤ 140 &gt; 140 ≤ 140 &gt; 140 – very low low medium high very high Conditions Action Risk level You designed the test cases with the following input data: TC1: Cholesterol = 125 mg/dl Blood pressure = 141 mm Hg TC2: Cholesterol = 200 mg/dl Blood pressure = 201 mm Hg TC3: Cholesterol = 124 mg/dl Blood pressure = 201 mm Hg TC4: Cholesterol = 109 mg/dl Blood pressure = 200 mm Hg TC5: Cholesterol = 201 mg/dl Blood pressure = 140 mm Hg What is the decision table coverage achieved by these test cases?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> 40%</li>
+        <li class="option-item option-correct"><span class="option-letter">b)</span> 60% <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">c)</span> 80%</li>
+        <li class="option-item"><span class="option-letter">d)</span> 100%</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam B - Q23</span>
+    <span class="lo-badge">FL-4.2.4</span>
+  </div>
+  <div class="question-text">A storage system can store up to three elements and is modeled by the following state transition diagram. The variable N represents the number of currently stored elements. Which of the following test cases, represented as sequences of events, achieves the highest level of valid transitions coverage?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> Add, Remove, Add, Add, Add</li>
+        <li class="option-item"><span class="option-letter">b)</span> Add, Add, Add, Add, Remove, Remove</li>
+        <li class="option-item option-correct"><span class="option-letter">c)</span> Add, Add, Add, Remove, Remove <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> Add, Add, Add, Remove, Add</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam B - Q24</span>
+    <span class="lo-badge">FL-4.3.1</span>
+  </div>
+  <div class="question-text">You run two test cases, T1 and T2, on the same code. Test T1 achieved 40% statement coverage and test T2 achieved 65% statement coverage. Which of the following sentences must be necessarily true?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> The test suite composed of tests T1 and T2 achieves 105% statement coverage</li>
+        <li class="option-item option-correct"><span class="option-letter">b)</span> There exists at least one statement that must have been executed by both T1 and T2 <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">c)</span> At least 5% of the statements in the code that was tested are non-executable</li>
+        <li class="option-item"><span class="option-letter">d)</span> The test suite composed of tests T1 and T2 achieves full branch coverage</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam B - Q25</span>
+    <span class="lo-badge">FL-4.3.2</span>
+  </div>
+  <div class="question-text">Let the branch coverage metric be defined as BCov = (X / Y) * 100%. What do X and Y represent in this formula?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> X = number of decision outcomes exercised by the test cases Y = total number of decision outcomes in the code</li>
+        <li class="option-item"><span class="option-letter">b)</span> X = number of conditional branches exercised by the test cases Y = total number of branches in the code</li>
+        <li class="option-item option-correct"><span class="option-letter">c)</span> X = number of branches exercised by the test cases Y = total number of branches in the code <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> X = number of conditional branches exercised by the test cases Y = total number of decision outcomes in the code</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam B - Q26</span>
+    <span class="lo-badge">FL-4.4.2</span>
+  </div>
+  <div class="question-text">Which TWO of the following statements provide the BEST rationale for using exploratory testing?</div>
+  <ul class="options-list">
+        <li class="option-item option-correct"><span class="option-letter">a)</span> Testers have not been allocated enough time for test design and test execution <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> The existing test strategy requires that testers use formal, black-box test techniques</li>
+        <li class="option-item"><span class="option-letter">c)</span> The specification is written in a formal language that can be processed by a tool</li>
+        <li class="option-item"><span class="option-letter">d)</span> Testers are the members of an agile team and have good programming skills</li>
+        <li class="option-item option-correct"><span class="option-letter">e)</span> Testers are experienced in the business domain and have good analytical skills <span class="correct-mark">&#10003;</span></li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>A, E</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam B - Q27</span>
+    <span class="lo-badge">FL-4.4.3</span>
+  </div>
+  <div class="question-text">Which of the following BEST fits as an element of the checklist used in checklist-based testing?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> “The developer made an error when implementing the code”</li>
+        <li class="option-item"><span class="option-letter">b)</span> “The achieved statement coverage exceeds 85%”</li>
+        <li class="option-item"><span class="option-letter">c)</span> “The program works correctly regarding functional and non-functional requirements”</li>
+        <li class="option-item option-correct"><span class="option-letter">d)</span> “The error messages are written in language that the user can understand” <span class="correct-mark">&#10003;</span></li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam B - Q28</span>
+    <span class="lo-badge">FL-4.5.2</span>
+  </div>
+  <div class="question-text">Consider the following acceptance criteria for a user story written from the perspective of an online store owner. Given that the user is logged in and on the homepage, When the user clicks on the &quot;Add Item&quot; button, Then the &quot;Create Item&quot; form should appear, And the user should be able to input a name and price for the new item. In what format is this acceptance criteria written?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> Rule-oriented</li>
+        <li class="option-item option-correct"><span class="option-letter">b)</span> Scenario-oriented <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">c)</span> Product-oriented</li>
+        <li class="option-item"><span class="option-letter">d)</span> Process-oriented</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam B - Q29</span>
+    <span class="lo-badge">FL-4.5.3</span>
+  </div>
+  <div class="question-text">Your team analyzes the following user story in order to define the acceptance criteria: As a registered customer, I want to be able to view my previous orders on the company's website, so that I can keep track of my purchases. Which of the following test cases will NOT be relevant for this user story?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> Input: the customer logs into their account on the website and clicks the “see order history” button Expected result: the system shows a list of all the customer’s previous orders, including the date, order number, and total cost</li>
+        <li class="option-item"><span class="option-letter">b)</span> Input: the customer clicks on an order from the order list Expected result: the system displays the individual items purchased, along with their prices and quantities</li>
+        <li class="option-item"><span class="option-letter">c)</span> Input: the customer clicks “Sort ascending” button on the order history screen Expected result: the system shows the order history sorted by order number in ascending order</li>
+        <li class="option-item option-correct"><span class="option-letter">d)</span> Input: an unregistered customer registers as a new customer with a valid e-mail address that does not already exist in the customer database Expected result: the system accepts the registration and creates the account <span class="correct-mark">&#10003;</span></li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam C - Q19</span>
+    <span class="lo-badge">FL-4.1.1</span>
+  </div>
+  <div class="question-text">What is the MAIN difference between black-box test techniques and experience-based test techniques?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> The test object</li>
+        <li class="option-item"><span class="option-letter">b)</span> The test level at which the test technique is used</li>
+        <li class="option-item option-correct"><span class="option-letter">c)</span> The test basis <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> The software development lifecycle (SDLC) in which the test technique can be used</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam C - Q20</span>
+    <span class="lo-badge">FL-4.2.1</span>
+  </div>
+  <div class="question-text">You are testing a PIN validator, which accepts valid PINs and rejects invalid PINs. A PIN is a sequence of digits. A PIN is valid if it consists of four digits, which are not all the same digit. You have identified the following valid equivalence partitions: Variable: PIN code length • The partition “length correct” • The partition “length incorrect” - four-digit PINs - PINs with length other than 4 Variable: Number of different digits • The partition “number of different digits correct” - PINs with at least two different digits • The partition “number of different digits incorrect” - PINs with all digits being the same Which of the following is the BEST set of input test data to cover the identified equivalence partitions?</div>
+  <ul class="options-list">
+        <li class="option-item option-correct"><span class="option-letter">a)</span> 12, 1111, 1234, 12345 <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> 1, 123, 1111, 1234</li>
+        <li class="option-item"><span class="option-letter">c)</span> 11, 12, 1111, 12345</li>
+        <li class="option-item"><span class="option-letter">d)</span> 123, 1222, 12345</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam C - Q21</span>
+    <span class="lo-badge">FL-4.2.2</span>
+  </div>
+  <div class="question-text">A developer was asked to implement the following business rule: INPUT: value (integer number) IF (value ≤ 100 OR value ≥ 200) THEN write “value incorrect” ELSE write “value OK” You design the test cases using 2-value boundary value analysis. Which of the following sets of test inputs achieves the greatest coverage?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> 100,</li>
+        <li class="option-item"><span class="option-letter">b)</span> 99,</li>
+        <li class="option-item"><span class="option-letter">c)</span> 98,</li>
+        <li class="option-item option-correct"><span class="option-letter">d)</span> 101, <span class="correct-mark">&#10003;</span></li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam C - Q22</span>
+    <span class="lo-badge">FL-4.2.3</span>
+  </div>
+  <div class="question-text">You are working on a project to develop a system to analyze driving test results. You have been asked to design test cases based on the following decision table. R1 R2 R3 C1: First attempt at the exam? - - F C2: Theoretical exam passed? T F - C3: Practical exam passed? T - F Issue a driving license? X Request additional driving lessons? Request to take the exam again? X X What test data will show that there are contradictory rules in the decision table?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> C1 = T, C2 = T, C3 = F</li>
+        <li class="option-item"><span class="option-letter">b)</span> C1 = T, C2 = F, C3 = T</li>
+        <li class="option-item"><span class="option-letter">c)</span> C1 = T, C2 = T, C3 = T and C1 = F, C2 = T, C3 = T</li>
+        <li class="option-item option-correct"><span class="option-letter">d)</span> C1 = F, C2 = F, C3 = F <span class="correct-mark">&#10003;</span></li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam C - Q23</span>
+    <span class="lo-badge">FL-4.2.4</span>
+  </div>
+  <div class="question-text">You are designing test cases based on the following state transition diagram: What is the MINIMUM number of test cases required to achieve 100% valid transitions coverage?</div>
+  <ul class="options-list">
+        <li class="option-item option-correct"><span class="option-letter">a)</span> 3 <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> 2</li>
+        <li class="option-item"><span class="option-letter">c)</span> 5</li>
+        <li class="option-item"><span class="option-letter">d)</span> 6</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam C - Q24</span>
+    <span class="lo-badge">FL-4.3.2</span>
+  </div>
+  <div class="question-text">You want to apply branch testing to the code represented by the following control flow graph. How many coverage items do you need to test?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> 2</li>
+        <li class="option-item"><span class="option-letter">b)</span> 4</li>
+        <li class="option-item option-correct"><span class="option-letter">c)</span> 8 <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> 7</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam C - Q25</span>
+    <span class="lo-badge">FL-4.3.3</span>
+  </div>
+  <div class="question-text">How can white-box testing be useful in support of black-box testing?</div>
+  <ul class="options-list">
+        <li class="option-item option-correct"><span class="option-letter">a)</span> White-box coverage measures can help testers evaluate black-box tests in terms of the code coverage achieved by these black-box tests <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> White-box coverage analysis can help testers identify unreachable fragments of the source code</li>
+        <li class="option-item"><span class="option-letter">c)</span> Branch testing subsumes black-box test techniques, so achieving full branch coverage guarantees achieving full coverage of any black-box technique</li>
+        <li class="option-item"><span class="option-letter">d)</span> White-box test techniques can provide coverage items for black-box techniques</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam C - Q26</span>
+    <span class="lo-badge">FL-4.4.1</span>
+  </div>
+  <div class="question-text">Consider the following list: • Correct input not accepted • Incorrect input accepted • Wrong output format • Division by zero What test technique is MOST PROBABLY used by the tester who uses this list when performing testing?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> Exploratory testing</li>
+        <li class="option-item option-correct"><span class="option-letter">b)</span> Fault attack <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">c)</span> Checklist-based testing</li>
+        <li class="option-item"><span class="option-letter">d)</span> Boundary value analysis</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam C - Q27</span>
+    <span class="lo-badge">FL-4.4.3</span>
+  </div>
+  <div class="question-text">Which of the following BEST describes how using checklist-based testing can result in increased coverage?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> Checklist items can be defined at a sufficiently low level of detail, so the tester can implement and execute detailed test cases based on these items</li>
+        <li class="option-item"><span class="option-letter">b)</span> Checklists can be automated, so each time an automated test execution covers the checklist items, it results in additional coverage</li>
+        <li class="option-item"><span class="option-letter">c)</span> Each checklist item should be tested separately and independently, so the elements cover different areas of the software</li>
+        <li class="option-item option-correct"><span class="option-letter">d)</span> Two testers designing and executing tests based on the same high-level checklist items will typically perform the testing in slightly different ways <span class="correct-mark">&#10003;</span></li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam C - Q28</span>
+    <span class="lo-badge">FL-4.5.2</span>
+  </div>
+  <div class="question-text">Which of the following provides the BEST example of a scenario-oriented acceptance criterion?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> The application must allow users to delete their account and all associated data upon request</li>
+        <li class="option-item option-correct"><span class="option-letter">b)</span> When a customer adds an item to their cart and proceeds to checkout, they should be prompted to log in or create an account if they haven’t already done so <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">c)</span> IF (contain(product(23).Name, cart.products())) THEN return FALSE</li>
+        <li class="option-item"><span class="option-letter">d)</span> The website must comply with the ICT Accessibility 508 Standards and ensure that all content is accessible to users with disabilities</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam C - Q29</span>
+    <span class="lo-badge">FL-4.5.3</span>
+  </div>
+  <div class="question-text">You are using acceptance test-driven development and designing test cases based on the following user story: As a Regular or Special user, I want to be able to use my electronic floor card, to access specific floors. Acceptance Criteria: AC1: Regular users have access to floors 1 to 3 AC2: Floor 4 is only accessible to Special users AC3: Special users have all the access rights of Regular users Which test case is the MOST reasonable one to test AC3?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> Check that a Regular user can access floors 1 and 3</li>
+        <li class="option-item"><span class="option-letter">b)</span> Check that a Regular user cannot access floor 4</li>
+        <li class="option-item"><span class="option-letter">c)</span> Check that a Special user can access floor 5</li>
+        <li class="option-item option-correct"><span class="option-letter">d)</span> Check that a Special user can access floors 1, 2 and 3 <span class="correct-mark">&#10003;</span></li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam D - Q19</span>
+    <span class="lo-badge">FL-4.1.1</span>
+  </div>
+  <div class="question-text">You perform system testing of an e-commerce web application and are provided with the following requirement: REQ 05-017. If the total cost of purchases exceeds $100, the customer gets a 5% discount on subsequent purchases. Otherwise, the customer does not receive a discount. Which test techniques will be MOST helpful in designing test cases based on this requirement?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> White-box test techniques</li>
+        <li class="option-item option-correct"><span class="option-letter">b)</span> Black-box test techniques <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">c)</span> Experience-based test techniques</li>
+        <li class="option-item"><span class="option-letter">d)</span> Risk-based test techniques</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam D - Q20</span>
+    <span class="lo-badge">FL-4.2.1</span>
+  </div>
+  <div class="question-text">The system for selling cinema tickets calculates the discount type based on the client’s birth year (BY) and on the current year (CY) as follows: Let D be the difference between CY and BY, that is, D = CY – BY • If D &lt; 0 then print the error message “birth year cannot be greater than current year” • If 0 ≤ D &lt; 18 then apply the student discount • If 18 ≤ D &lt; 65 then apply no discount • If D ≥ 65 then apply the pensioner discount Your test suite already contains two test cases: • BY = 1990, CY = 2020, expected result: no discount • BY = 2030, CY = 2029, expected result: print the error message Which of the following test data sets should be added to achieve full valid equivalence partitioning coverage for the discount type?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> BY = 2001,</li>
+        <li class="option-item option-correct"><span class="option-letter">b)</span> BY = 1900, <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">c)</span> BY = 1965,</li>
+        <li class="option-item"><span class="option-letter">d)</span> BY = 2011,</li>
+        <li class="option-item option-correct"><span class="option-letter">e)</span> BY = 2000, <span class="correct-mark">&#10003;</span></li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>B, E</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam D - Q21</span>
+    <span class="lo-badge">FL-4.2.2</span>
+  </div>
+  <div class="question-text">You are testing a temperature control system for a horticultural cold storage facility. The system receives the temperature (in full degrees Celsius) as the input. If the temperature is between 0 and 2 degrees inclusive, the system displays the message “temperature OK”. For lower temperatures, the system displays the message &quot;temperature too low&quot; and for higher temperatures it displays the message “temperature too high”. Using two-value boundary value analysis, which of the following sets of test inputs provides the highest level of boundary value coverage?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> –1, 3</li>
+        <li class="option-item"><span class="option-letter">b)</span> 0, 2</li>
+        <li class="option-item option-correct"><span class="option-letter">c)</span> –1, 0, 2, 3 <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> –2, 0, 2, 4</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam D - Q22</span>
+    <span class="lo-badge">FL-4.2.3</span>
+  </div>
+  <div class="question-text">You are designing test cases based on the following decision table. R1 R2 R3 R4 R5 R6 R7 0-18 19-65 19-65 &gt;65 0-18 19-65 &gt;65 C2: Experience - 0-4 &gt;4 - - - - C3: Registered? NO NO NO NO YES YES YES Category A A B B B D C C1: Age So far you have designed the following test cases: • TC1: 19-year-old, unregistered man with no experience; expected result: category A • TC2: 65-year-old, unregistered woman with 5 years of experience; expected result: category B • TC3: 66-year-old, registered man with no experience; expected result: category C • TC4: 65-year-old, registered woman with 4 years of experience; expected result: category D Which of the following test cases, when added to the existing set of test cases, will increase the decision table coverage?</div>
+  <ul class="options-list">
+        <li class="option-item option-correct"><span class="option-letter">a)</span> 66-year-old, unregistered man with no experience; <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> expected result: category B</li>
+        <li class="option-item"><span class="option-letter">c)</span> 55-year-old, unregistered woman with 2 years of experience; expected result: category A</li>
+        <li class="option-item"><span class="option-letter">d)</span> 19-year-old, registered woman with 5 years of experience;</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam D - Q23</span>
+    <span class="lo-badge">FL-4.2.4</span>
+  </div>
+  <div class="question-text">You are applying state transition testing to the hotel room reservation system modeled by the following state transition table, with 4 states and 5 different events: Events State Available NotAvailable S1: Requesting S2 S3 ChangeRoom Cancel Pay S1 S4 S4 S2: Confirmed S3: Waiting list S2 S4 S4: End Assuming all test cases start in the ‘Requesting’ state, which of the following test cases, represented as sequences of events, achieves the highest valid transitions coverage?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> NotAvailable, Available,</li>
+        <li class="option-item option-correct"><span class="option-letter">b)</span> ChangeRoom, NotAvailable, Cancel <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">c)</span> Available,</li>
+        <li class="option-item"><span class="option-letter">d)</span> ChangeRoom, NotAvailable, Available,</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam D - Q24</span>
+    <span class="lo-badge">FL-4.3.1</span>
+  </div>
+  <div class="question-text">Your test suite S for a program P achieves 100% statement coverage. It consists of three test cases, each of which achieves 50% statement coverage. Which of the following statements is CORRECT?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> Executing S will cause all possible failures in P</li>
+        <li class="option-item"><span class="option-letter">b)</span> S achieves 100% branch coverage for P</li>
+        <li class="option-item option-correct"><span class="option-letter">c)</span> Every executable statement in P containing a defect has been run at least once during the execution of S <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> After removing one test case from S, the remaining two test cases will still achieve 100% statement coverage</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam D - Q25</span>
+    <span class="lo-badge">FL-4.3.3</span>
+  </div>
+  <div class="question-text">Why does white-box testing facilitate defect detection even when the software specification is vague, outdated or incomplete?</div>
+  <ul class="options-list">
+        <li class="option-item option-correct"><span class="option-letter">a)</span> Test cases are designed based on the structure of the test object rather than the specification <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> For each white-box test technique the coverage can be well-defined and easily measured</li>
+        <li class="option-item"><span class="option-letter">c)</span> White-box test techniques are very well designed to detect omissions in the requirements</li>
+        <li class="option-item"><span class="option-letter">d)</span> White-box test techniques can be used in both static testing and dynamic testing</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam D - Q26</span>
+    <span class="lo-badge">FL-4.4.1</span>
+  </div>
+  <div class="question-text">Which of the following is NOT anticipated by the tester while applying error guessing?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> The developer misunderstood the formula in the user story for calculating the interest</li>
+        <li class="option-item"><span class="option-letter">b)</span> The developer wrote “FA = A*(1+IR^N)” instead of “FA = A*(1+IR)^N” in the source code</li>
+        <li class="option-item option-correct"><span class="option-letter">c)</span> The developer missed the seminar on new compound interest rate legislation <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> The accuracy of the interest calculated by the system is not precise enough</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam D - Q27</span>
+    <span class="lo-badge">FL-4.4.2</span>
+  </div>
+  <div class="question-text">Which of the following is true about exploratory testing?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> Test cases are designed before the exploratory testing session starts</li>
+        <li class="option-item"><span class="option-letter">b)</span> The tester can perform test execution, but cannot perform test design</li>
+        <li class="option-item"><span class="option-letter">c)</span> Exploratory testing results are good predictors of the number of remaining defects</li>
+        <li class="option-item option-correct"><span class="option-letter">d)</span> During exploratory testing the tester may use black-box test techniques <span class="correct-mark">&#10003;</span></li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam D - Q28</span>
+    <span class="lo-badge">FL-4.5.1</span>
+  </div>
+  <div class="question-text">Which collaborative user story writing practice enables the team to achieve a collective understanding of what needs to be delivered?</div>
+  <ul class="options-list">
+        <li class="option-item"><span class="option-letter">a)</span> Planning poker, so that a team can achieve consensus on the effort needed to implement a user story</li>
+        <li class="option-item"><span class="option-letter">b)</span> Reviews, so that a team can detect inconsistencies and contradictions in a user story</li>
+        <li class="option-item"><span class="option-letter">c)</span> Iteration planning, so that user stories with the highest business value for a customer can be prioritized for implementation</li>
+        <li class="option-item option-correct"><span class="option-letter">d)</span> Conversation, so that team members can understand how the software will be used <span class="correct-mark">&#10003;</span></li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+</div>
+
+<div class="question-block">
+  <div class="question-header">
+    <span class="question-source">Exam D - Q29</span>
+    <span class="lo-badge">FL-4.5.3</span>
+  </div>
+  <div class="question-text">You have just started designing test cases for the following user story. As a customer, I want to be able to filter search results by price range, so that I can find products within my budget more easily. Acceptance criteria: 1. The filter should work for all versions of the application from version 3.0 upwards 2. The filter should allow the customer to set a price range with a minimum and a maximum price 3. The search results should update dynamically as the customer adjusts the price range filter In all test cases the precondition is as follows: there are only two products available, products A and B. Product A costs $100 and product B costs $110. Which of the following is the BEST example of a test case for this user story?</div>
+  <ul class="options-list">
+        <li class="option-item option-correct"><span class="option-letter">a)</span> Enter webpage and set filter to show prices between $90 and $100. Expected result: results show product A only. Set maximum price to $110. Expected result: results now include both products A and B <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> Enter webpage. Expected result: the default minimum and maximum prices are $100 and $110 respectively. Add product C to stock, with price $120. Refresh the client’s webpage. Expected result: the default maximum price changes to $120</li>
+        <li class="option-item"><span class="option-letter">c)</span> Enter webpage and set filter to show prices between $90 and $115. Expected result: results show both products A and B. Change currency from USD to EUR. Expected result: the filter range changes correctly to EUR values, according to the current exchange rate</li>
+        <li class="option-item"><span class="option-letter">d)</span> Enter webpage with three different browsers: Edge, Chrome and Opera. In each browser set filter between $90 and $110. Expected result: results include both products A and B and the results layout is the same in all three browsers</li>
+  </ul>
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
+</div>
+`
 };
