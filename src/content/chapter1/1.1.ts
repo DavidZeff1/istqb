@@ -45,15 +45,25 @@ export const content = {
       <!-- 1.1.1 Test Objectives -->
       <section class="concept-block">
         <h3>1.1.1 Test Objectives</h3>
-        <p>The objectives of testing can vary depending on the context (e.g., component testing vs. system testing), but typical objectives include:</p>
-        <ul>
-          <li><strong>Evaluating Work Products:</strong> Reviewing requirements, user stories, designs, and code to prevent defects early.</li>
-          <li><strong>Triggering Failures:</strong> Executing the system specifically to find hidden <strong>defects</strong>.</li>
-          <li><strong>Required Coverage:</strong> Ensuring all necessary parts of the test object have been adequately tested.</li>
-          <li><strong>Measuring Quality & Building Confidence:</strong> Determining if the product's quality meets the required standard.</li>
-          <li><strong>Reducing Risk:</strong> Lowering the probability of software failures occurring in the real-world operational environment.</li>
-          <li><strong>Providing Information:</strong> Giving stakeholders clear data so they can make informed decisions (e.g., "Is it ready to release?").</li>
-          <li><strong>Ensuring Compliance:</strong> Verifying the software meets legal, contractual, or regulatory standards.</li>
+        <div class="definition-box" style="margin-bottom: 1.5rem;">
+          <p style="margin: 0;"><strong>Exam Tip: Action vs. Objective</strong><br>
+          A test objective is the <em>intent or planned outcome</em>, not the action itself. The exam often tests your ability to distinguish the two.</p>
+          <ul style="margin: 0.5rem 0 0; padding-left: 1.5rem;">
+            <li><em>Action:</em> "Reviewing a requirement document" &rarr; <em>Objective:</em> "To evaluate the work product / prevent defects"</li>
+            <li><em>Action:</em> "Running a test script" &rarr; <em>Objective:</em> "To trigger failures / find hidden defects"</li>
+          </ul>
+        </div>
+        
+        <p>Depending on the context (e.g., component testing vs. system testing), typical testing objectives include:</p>
+        <ul class="objective-list">
+          <li><strong>To prevent defects:</strong> Catching issues before code is written by evaluating requirements and designs early.</li>
+          <li><strong>To trigger failures & find defects:</strong> Exposing hidden issues in the software so they can be fixed.</li>
+          <li><strong>To verify requirements:</strong> Checking that the software accurately meets its specified technical design ("built it right").</li>
+          <li><strong>To validate the product:</strong> Checking that the software works in its real-world operational environment ("built the right thing").</li>
+          <li><strong>To build confidence:</strong> Measuring quality and identifying if the product meets the required standard.</li>
+          <li><strong>To reduce risk:</strong> Lowering the probability of failures negatively impacting real users.</li>
+          <li><strong>To provide information:</strong> Giving stakeholders clear data (like test reports) to make informed release decisions.</li>
+          <li><strong>To ensure compliance:</strong> Proving the system meets necessary legal, contractual, or regulatory standards.</li>
         </ul>
       </section>
 
