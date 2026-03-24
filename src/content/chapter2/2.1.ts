@@ -1,5 +1,9 @@
+import audio21 from "./audio/21audio.m4a";
+
 export const content = {
-  title: "2.1 Testing in the Context of a Software Development Lifecycle (SDLC)",
+  title:
+    "2.1 Testing in the Context of a Software Development Lifecycle (SDLC)",
+  audioSrc: audio21,
   content: `
     <div class="test-content">
       <div class="concept-block">
@@ -223,6 +227,5 @@ export const content = {
         </ol>
       </div>
     </div>
-  `
+  `,
 };
-

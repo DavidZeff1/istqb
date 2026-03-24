@@ -1,5 +1,8 @@
+import audio23 from "./audio/23audio.m4a";
+
 export const content = {
   title: "2.3 Maintenance Testing",
+  audioSrc: audio23,
   content: `
     <div class="test-content">
       <div class="concept-block">
@@ -111,6 +114,5 @@ export const content = {
         </ol>
       </div>
     </div>
-  `
+  `,
 };
-

@@ -1,5 +1,8 @@
+import audio22 from "./audio/22audio.m4a";
+
 export const content = {
   title: "2.2 Test Levels and Test Types",
+  audioSrc: audio22,
   content: `
     <div class="test-content">
       <div class="concept-block">
@@ -225,6 +228,5 @@ export const content = {
         </ol>
       </div>
     </div>
-  `
+  `,
 };
-
