@@ -103,7 +103,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> Test design and test implementation <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> Test completion</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong>. Explanation: Data preparation tools help generate, manipulate, and manage the test data needed when designing and implementing tests, which is why they support the test design and test implementation activity. (A) is wrong because test monitoring and control deals with tracking test progress and metrics, not preparing data. (B) is wrong because test analysis focuses on identifying what to test by analyzing the test basis, not on creating test data. (D) is wrong because test completion involves archiving testware and summarizing results after testing is done, not preparing data.
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
 </div>
 
 <div class="question-block">
@@ -118,7 +118,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Testing tools and associated testware may not be sufficiently relied upon</li>
         <li class="option-item"><span class="option-letter">d)</span> It may reduce the time allocated for manual testing</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: The ISTQB syllabus explicitly identifies underestimating the effort needed to maintain automated testware (test scripts, data, frameworks) as a key risk of test automation. (A) is wrong because introducing unknown regressions in production is a software development risk, not a specific risk of test automation itself; automation is actually intended to catch regressions. (C) is wrong because the recognized risk is over-reliance on tools, not under-reliance; the syllabus warns about depending too much on tools, not too little. (D) is wrong because reducing repetitive manual testing effort is actually listed as a benefit of automation, not a risk.
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
 
 <div class="question-block">
@@ -133,7 +133,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> 1C, 2D, 3B, 4A <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> 1D, 2C, 3A, 4B</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong>. Explanation: The correct mapping is 1C, 2D, 3B, 4A. "Support workflow tracking" maps to DevOps tools (C) because CI/CD and DevOps tools manage build-test-deploy workflows. "Facilitate communication" maps to Collaboration tools (D) because collaboration tools enable team communication and information sharing. "Virtual machines" maps to Tools supporting scalability and deployment standardization (B) because VMs and containers are used to standardize and scale test environments. "Support reviews" maps to Static testing tools (A) because static testing tools support review processes like code reviews and walkthroughs. (A) 1A is wrong because static testing tools support reviews, not workflow tracking. (B) 1B is wrong because scalability tools provide VMs/containers, not workflow tracking. (D) 1D is wrong because collaboration tools facilitate communication, not workflow tracking.
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
 </div>
 
 <div class="question-block">
@@ -148,7 +148,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> It removes the need for critical thinking when analyzing test results</li>
         <li class="option-item"><span class="option-letter">d)</span> It generates test cases from an analysis of the program code</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong>. Explanation: The ISTQB syllabus lists "easier access to information about testing" and providing coverage measures as benefits of test automation. Coverage tools can automatically compute complex coverage metrics (e.g., MC/DC, condition coverage) that would be impractical for humans to derive manually. (B) is wrong because sharing responsibility with the tool vendor is not a benefit—vendor dependency is actually listed as a risk of test automation. (C) is wrong because automation does not remove the need for critical thinking; testers must still analyze and interpret test results using human judgment. (D) is wrong because generating test cases from code analysis describes a capability of specific test design tools or static analysis, not a general benefit of test automation.
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
 </div>
 
 <div class="question-block">
@@ -163,7 +163,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Defect management tools</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> Test management tools <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong>. Explanation: Per the ISTQB syllabus, test management tools provide comprehensive support for organizing test cases, tracking detected defects, and managing configuration items all in one integrated platform. They cover the full scope described in the question. (A) is wrong because test execution and coverage tools focus on running tests and measuring code coverage, not on organizing test cases or managing configurations. (B) is wrong because test design and implementation tools help create test cases and test data, but do not handle defect tracking or configuration management. (C) is wrong because defect management tools only track defects—they do not organize test cases or handle configuration management, so they cover only part of what the question describes.
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
 </div>
 
 <div class="question-block">
@@ -178,7 +178,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> The increase in test execution times available with higher processing power</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> The prevention of human errors through greater consistency and repeatability <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong>. Explanation: The ISTQB syllabus explicitly lists "greater consistency and repeatability" as a key benefit of test automation. Automated tests execute the same steps identically every time, eliminating human errors caused by fatigue, inattention, or inconsistency in manual execution. (A) is wrong because generating test cases without a test basis is not a capability of automation; valid tests still require a test basis such as requirements or specifications. (B) is wrong because increased coverage through "more objective assessment" conflates two concepts—automation can increase coverage by running more tests faster, but objectivity in assessment is a characteristic of good test design, not automation itself. (C) is wrong because automation reduces test execution time, not increases it; the phrase "increase in test execution times" implies tests take longer, which contradicts a core benefit of automation.
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
 </div>
 
 <div class="question-block">
@@ -193,7 +193,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> i, iii, v</li>
         <li class="option-item"><span class="option-letter">d)</span> ii, iii, iv</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: DevOps tools (ii) facilitate test execution through CI/CD pipelines that automatically trigger and run tests as part of the build and delivery process. Non-functional testing tools (iv) such as performance and load testing tools directly execute tests against the system. Together, these two categories most directly facilitate test execution. (A) is wrong because collaboration tools (i) support team communication and test design tools (v) help create tests, but neither directly executes tests. (C) is wrong because it includes collaboration tools (i), management tools (iii), and design tools (v)—management tools track and organize test information but do not execute tests, and the other two also do not execute tests. (D) is wrong because management tools (iii) support planning, tracking, and reporting of tests but do not directly facilitate test execution.
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
 
 <div class="question-block">
@@ -208,7 +208,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> Incompatibility with the development platform <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> Substantially reduced test execution times</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong>. Explanation: The ISTQB syllabus explicitly lists incompatibility between the test tool and the development platform as a recognized risk of test automation. A tool that cannot integrate with the existing development environment, programming language, or infrastructure creates significant obstacles. (A) is wrong because detecting additional high-severity defects is a positive outcome and a benefit of testing, not a risk of automation. (B) is wrong because providing coverage measures too complicated for humans to derive is actually listed as a benefit of test automation, not a risk. (D) is wrong because substantially reduced test execution times is one of the primary benefits of test automation, not a risk.
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
 </div>
-`,
+`
 };

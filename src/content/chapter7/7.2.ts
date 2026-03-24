@@ -103,7 +103,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Only in iterative and incremental development models</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> In sequential, incremental, and iterative development models <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>D</strong>. The ISTQB syllabus states that "for every SDLC activity there is a corresponding test activity" is a universal good testing practice that applies to ALL development models — sequential, incremental, and iterative alike. Option A is wrong because this rule is not limited to sequential models only. Option B is wrong because it is not restricted to iterative models. Option C is wrong because it excludes sequential models. The principle is model-agnostic and applies universally.</div>
 </div>
 
 <div class="question-block">
@@ -118,7 +118,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> In ATDD, tests are created, based on acceptance criteria to drive the development of the related software <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> in ATDD, tests are based on the desired behavior of the software, which makes it easier for team members to understand them</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>C</strong>. ATDD (Acceptance Test-Driven Development) creates tests based on acceptance criteria to drive the development of the related software. Option A is wrong because the given/when/then format is characteristic of BDD (Behavior-Driven Development), not specifically ATDD. Option B is wrong because ATDD operates at the acceptance level, not at the component testing level. Option D is wrong because describing tests based on desired behavior of software is a description of BDD, not ATDD.</div>
 </div>
 
 <div class="question-block">
@@ -133,7 +133,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Executing a performance efficiency test for a component during component testing</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> Writing a test script before setting up the configuration management process <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>D</strong>. Writing a test script before configuration management is set up is NOT shift-left — it is performing a testing task out of proper sequence, not earlier in the lifecycle. Option A is shift-left (reviewing requirements before formal acceptance is testing earlier). Option B is shift-left (writing component tests before code is TDD, a classic shift-left practice). Option C is shift-left (performing non-functional testing at the component level moves it earlier than usual).</div>
 </div>
 
 <div class="question-block">
@@ -148,7 +148,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> Process weaknesses identified during the retrospective can be analyzed and serve as a to do list for the organization’s continuous process improvement program <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> Retrospectives embrace five values including courage and respect, which are crucial to maintain continuous improvement in the organization</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>C</strong>. Retrospectives identify process weaknesses that can be analyzed and used as input for the organization's continuous process improvement program. Option A is wrong because popularity is not a valid business argument for adopting retrospectives. Option B is wrong because retrospectives focus on internal team process improvement, not on collecting product feedback from end users. Option D is wrong because courage and respect are Scrum values, not the primary purpose or justification for holding retrospectives.</div>
 </div>
 
 <div class="question-block">
@@ -163,7 +163,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> 1B, 2A, 3D, 4C</li>
         <li class="option-item"><span class="option-letter">d)</span> 1C, 2B, 3A, 4D</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>A</strong>. The correct mapping is: 1D — failures in system behavior deviating from business needs map to acceptance testing (validates business requirements); 2B — failures in communication between components map to component integration testing (tests interfaces between components); 3A — failures in logic in the code map to component testing (tests individual code units); 4C — failures in incorrectly implemented business rules map to system testing (tests the whole system against specifications). The other options incorrectly assign failure types to wrong test levels.</div>
 </div>
 
 <div class="question-block">
@@ -178,7 +178,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Only 4, 6, 8, 9</li>
         <li class="option-item"><span class="option-letter">d)</span> Only 5, 6</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>B</strong>. Regression tests re-run previously passing tests to check nothing broke. Test 5 (TC2 in Execution 2) is regression because TC2 passed in Execution 1 but failed in Execution 2 — a previously passing test now fails. Test 7 (TC1 in Execution 3) is regression because TC1 passed in Execution 2 and is re-run to ensure it still passes. Option A is wrong because tests 4, 8, 9 include confirmation tests (re-testing previously failed tests after fixes). Option C is wrong because it mixes confirmation and regression tests. Option D is wrong because test 6 (TC3 in Execution 2) is a confirmation test — TC3 failed in Execution 1 and is re-tested after a fix.</div>
 </div>
 
 <div class="question-block">
@@ -194,7 +194,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">d)</span> Acceptance test execution</li>
         <li class="option-item"><span class="option-letter">e)</span> Maintenance testing</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B, C</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>B, C</strong>. In the V-model, static testing (e.g., reviews of requirements and design documents) and test planning can be performed in the initial phases before any code is written. Option A is wrong because dynamic test execution requires working software, which is not available in initial phases. Option D is wrong because acceptance test execution occurs in later phases when the complete system is available. Option E is wrong because maintenance testing happens after the system has been deployed, not during initial development phases.</div>
 </div>
 
 <div class="question-block">
@@ -209,7 +209,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> Constant availability of executable software <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> Reduction in the number of regression tests associated with code refactoring</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>C</strong>. Constant availability of executable software through CI/CD pipelines is a key DevOps advantage — the delivery pipeline always has working, deployable software ready. Option A is wrong because while faster delivery is a benefit, option C more precisely matches the ISTQB syllabus wording about DevOps advantages. Option B is wrong because DevOps reduces (not increases) the need for manual testing through automation. Option D is wrong because DevOps typically increases the number of regression tests needed, not reduces them, since frequent code changes require extensive regression testing.</div>
 </div>
 
 <div class="question-block">
@@ -224,7 +224,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Functional, because the test cases interact with the user interface</li>
         <li class="option-item"><span class="option-letter">d)</span> White-box, because we need to know the internal structure of the program to measure the</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>B</strong>. Testing processing time against a performance requirement ("less than 10 seconds in 95% of cases") is non-functional performance testing — it tests "how well" the system performs, not "what" it does. Option A is wrong because the test measures performance characteristics, not functional behavior. Option C is wrong because interacting with the UI doesn't make a test functional — the focus here is on timing/performance. Option D is wrong because no knowledge of internal structure is needed to measure processing time; this is a black-box approach.</div>
 </div>
 
 <div class="question-block">
@@ -239,7 +239,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Reliability testing</li>
         <li class="option-item"><span class="option-letter">d)</span> Integration testing</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>A</strong>. Testing data migration when a system is being retired is maintenance testing — it is triggered by system retirement, which is one of the recognized triggers for maintenance testing in the ISTQB syllabus. Option B is wrong because regression testing checks that unchanged areas still work after changes, which is not what's being described. Option C is wrong because reliability testing checks failure rates and stability. Option D is wrong because integration testing checks interfaces between components, not data migration during retirement.</div>
 </div>
 
 <div class="question-block">
@@ -254,7 +254,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> If an iterative development model is used, then component testing is typically performed manually by developers</li>
         <li class="option-item"><span class="option-letter">d)</span> If an incremental development model is used, then static testing is done in early increments and dynamic testing in later increments</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>B</strong>. In sequential development models, dynamic testing is typically restricted to later phases because working software is needed to execute tests — code isn't available until later stages. Option A is wrong because automation does not replace the need for regression testing; it supports it. Option C is wrong because in iterative models, component testing is often automated by developers, not performed manually. Option D is wrong because both static and dynamic testing can occur throughout incremental development, not separated into early and late increments.</div>
 </div>
 
 <div class="question-block">
@@ -269,7 +269,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Testers should review work products before test analysis and test design begin</li>
         <li class="option-item"><span class="option-letter">d)</span> Testers should review work products immediately after they are published</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>B</strong>. Reviewing work products as soon as drafts are available is a universal good testing practice — it aligns with the early testing principle and enables early defect detection. Option A is wrong because waiting until the next development phase is too late and misses the benefit of early feedback. Option C is wrong because delaying reviews until before test analysis unnecessarily postpones the review activity. Option D is wrong because "immediately after published" may still be too late if earlier drafts were available for review.</div>
 </div>
 
 <div class="question-block">
@@ -284,7 +284,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Quality-Driven Development</li>
         <li class="option-item"><span class="option-letter">d)</span> Feature-Driven Development</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>A</strong>. Test-Driven Development (TDD) is a recognized test-first approach where tests are written before the code that makes them pass. Option B (Coverage-Driven Development), Option C (Quality-Driven Development), and Option D (Feature-Driven Development — while a real methodology, it is not a test-first approach) are either made-up terms or not test-first approaches as defined in the ISTQB syllabus.</div>
 </div>
 
 <div class="question-block">
@@ -299,7 +299,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> To treat both developers and operations equally, the testers will allocate more effort to release testing by operations using a shift-right approach</li>
         <li class="option-item"><span class="option-letter">d)</span> To create increased synergy between testers, developers and operations, the testing must become fully automated with no manual testing</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>B</strong>. DevOps requires extensive automated regression testing to support frequent releases with confidence — many automated regression tests reduce risk when releasing often. Option A is wrong because developers still need to complete component testing; CI doesn't eliminate that need. Option C is wrong because shift-right is about testing in production environments, not about treating developers and operations equally. Option D is wrong because some manual testing (e.g., exploratory testing) is still needed in DevOps; full automation is not realistic or required.</div>
 </div>
 
 <div class="question-block">
@@ -314,7 +314,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Beta testing of a remote learning system by courseware developers</li>
         <li class="option-item"><span class="option-letter">d)</span> Testing interactions between the user interface and database of a human resources system</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>A</strong>. Security testing of a credit management system by an independent test team is system-level testing — it tests the complete integrated system for a non-functional quality characteristic. Option B is wrong because testing external interfaces with a banking system is system integration testing (testing between systems). Option C is wrong because beta testing by courseware developers is a form of acceptance testing. Option D is wrong because testing interactions between UI and database is component integration testing (testing interfaces between internal components).</div>
 </div>
 
 <div class="question-block">
@@ -329,7 +329,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Regression testing is concerned with checking that the operational environment remains unchanged, whereas confirmation testing is concerned with testing changes to the test object</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> Regression testing is concerned with adverse effects in unchanged code, whereas confirmation testing is concerned with testing changed code <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>D</strong>. Regression testing checks unchanged code for unintended adverse effects after changes, while confirmation testing (re-testing) verifies that the specific fix works correctly. Option A is wrong because the number of regression tests doesn't necessarily decrease — they typically grow. Option B is wrong because regression tests aren't specifically created when objects are fixed; they are existing tests that are re-run. Option C is wrong because regression testing doesn't check the operational environment; it checks that unchanged software still functions correctly.</div>
 </div>
 
 <div class="question-block">
@@ -344,7 +344,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> For every test activity, there is a corresponding user activity</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> For every development activity, there is a corresponding test activity <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>D</strong>. "For every development activity, there is a corresponding test activity" is a fundamental good testing practice stated in the ISTQB syllabus. Option A is wrong because test levels don't always map one-to-one to development levels. Option B is wrong because test objectives don't necessarily correspond to development objectives — they have distinct purposes. Option C is wrong because test activities don't correspond to user activities; testing aligns with development, not user activities.</div>
 </div>
 
 <div class="question-block">
@@ -359,7 +359,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> System Test-Driven Development</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> Acceptance Test-Driven Development <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>D</strong>. Acceptance Test-Driven Development (ATDD) is a recognized test-first approach in the ISTQB syllabus where acceptance tests are defined before development begins. Option A (Component Test-Driven Development), Option B (Integration Test-Driven Development), and Option C (System Test-Driven Development) are invented terms not found in the ISTQB syllabus.</div>
 </div>
 
 <div class="question-block">
@@ -374,7 +374,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> When they have spare time available, testers are required to automate tests for regression testing, starting with component tests and component integration tests</li>
         <li class="option-item"><span class="option-letter">d)</span> When available, testers are trained to perform tasks early in the SDLC to allow more test activities to be automated later in the SDLC</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>B</strong>. Shift-left means moving test activities earlier in the SDLC to reduce the total cost of quality by finding and fixing defects sooner when they are cheaper to resolve. Option A is wrong because it focuses on automation rather than moving activities earlier in time. Option C is wrong because it focuses on spare time and automation, not the core concept of earlier testing. Option D is wrong because it focuses on training testers, not the fundamental shift-left principle of performing test activities earlier.</div>
 </div>
 
 <div class="question-block">
@@ -389,7 +389,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> End users’ understanding of the development and test processes is improved <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> Automated test scripts are enhanced through feedback from developers</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>C</strong>. Improving end users' understanding of development and test processes is LEAST likely to result from a retrospective — retrospectives are internal team activities focused on team process improvement, not on educating end users. Option A is plausible because retrospectives can identify development practice improvements. Option B is plausible because retrospectives can lead to environment setup improvements. Option D is plausible because developer feedback during retrospectives can enhance test scripts.</div>
 </div>
 
 <div class="question-block">
@@ -404,7 +404,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> System integration testing</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> Acceptance testing <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>D</strong>. Acceptance testing is focused on validation (building the right product) and is typically performed by users or business representatives, not by professional testers. Option A (component testing) is performed by developers and focuses on verification. Option B (component integration testing) is performed by developers and tests interfaces between components. Option C (system integration testing) tests interfaces between systems and is typically done by testers, not users.</div>
 </div>
 
 <div class="question-block">
@@ -419,7 +419,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Only regression testing</li>
         <li class="option-item"><span class="option-letter">d)</span> Regression testing then confirmation testing</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>B</strong>. After fixing a defect, you first perform confirmation testing (to verify the fix resolves the original defect), then regression testing (to check that the fix hasn't broken anything else). Option A is wrong because you need both types of testing, not just confirmation. Option C is wrong because regression testing alone would miss verifying whether the actual fix works. Option D is wrong because confirmation testing must come first — you need to verify the fix before checking for side effects.</div>
 </div>
 
 <div class="question-block">
@@ -434,7 +434,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Testers should start test design as soon as drafts of the relevant work products become available</li>
         <li class="option-item"><span class="option-letter">d)</span> Every dynamic testing activity has a corresponding static testing activity</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>A</strong>. Each test level having specific and distinct test objectives is a universal good testing practice per the ISTQB syllabus. Option B is wrong because test implementation and execution don't start during the corresponding development phase in all models. Option C is wrong because starting test design as soon as drafts are available describes when to start reviews, not test design. Option D is wrong because there is no such one-to-one mapping between dynamic and static testing activities.</div>
 </div>
 
 <div class="question-block">
@@ -449,7 +449,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Function-Driven Development</li>
         <li class="option-item"><span class="option-letter">d)</span> Performance-Driven Development</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>A</strong>. Behavior-Driven Development (BDD) is a recognized test-first approach in the ISTQB syllabus where tests are based on desired system behavior using formats like given/when/then. Option B (Test Level Driven Development), Option C (Function-Driven Development), and Option D (Performance-Driven Development) are invented terms not defined as test-first approaches in the ISTQB syllabus.</div>
 </div>
 
 <div class="question-block">
@@ -464,7 +464,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> The need for more manual testers with suitable experience</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> Setting up the test automation as part of the delivery pipeline <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>D</strong>. Setting up test automation in the delivery pipeline is a key DevOps challenge — establishing and maintaining the CI/CD pipeline with proper automated testing requires significant effort. Option A is wrong because ensuring non-functional quality is a general testing challenge, not specific to DevOps implementation. Option B is wrong because it is vague and not the most specific DevOps challenge. Option C is wrong because DevOps needs automation skills, not more manual testers — the trend is toward automation, not manual testing.</div>
 </div>
 
 <div class="question-block">
@@ -479,7 +479,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Retrospectives are where agile team members are allowed to voice their concerns about management and customers in a blameless environment</li>
         <li class="option-item"><span class="option-letter">d)</span> Retrospectives give agile team members a forum where they focus on discussing the plan and technical decisions for the next iteration</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>B</strong>. Retrospectives give testers and team members an opportunity to identify successful activities that should be retained while making improvements for the future. Option A is wrong because assigning blame to team members is contrary to the blameless spirit of retrospectives. Option C is wrong because retrospectives are not a forum for voicing concerns about management and customers — they focus on team process improvement. Option D is wrong because iteration planning is a separate activity from retrospectives; retrospectives look backward, not forward at plans.</div>
 </div>
 
 <div class="question-block">
@@ -494,7 +494,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> The test checks how easily the sort function can be changed from sorting ascending to sorting descending</li>
         <li class="option-item"><span class="option-letter">d)</span> The test checks that the sort function still functions correctly when moved from a 32-bit to a 64-bit architecture</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>A</strong>. Checking that the sort function produces correct ascending order is functional testing — it tests what the system does (its function/behavior). Option B is wrong because measuring completion time is performance testing (non-functional). Option C is wrong because checking ease of change is maintainability testing (non-functional). Option D is wrong because checking correct function across architectures is portability testing (non-functional).</div>
 </div>
 
 <div class="question-block">
@@ -509,7 +509,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> The agile team has started developing a user story that adds a new customer loyalty feature to the currency exchange system</li>
         <li class="option-item"><span class="option-letter">d)</span> The language support option of the currency exchange system was used to enable both English and local language currency transactions</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
+  <div class="answer-reveal">Correct answer: <strong>B</strong>. Removing a feature (the refund option) from the system is a modification that triggers maintenance testing — the syllabus identifies retirement and modification of existing software as maintenance testing triggers. Option A is wrong because developers finding difficulty changing the system is not a recognized trigger for maintenance testing. Option C is wrong because developing a new user story is regular development work, not maintenance. Option D is wrong because using existing features for normal operations does not trigger maintenance testing.</div>
 </div>
-`
+`,
 };

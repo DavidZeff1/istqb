@@ -103,7 +103,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Finding coding defects that might not have been found by only performing dynamic testing</li>
         <li class="option-item"><span class="option-letter">d)</span> Detecting gaps and inconsistencies in requirements</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong>. Explanation: "Having less expensive defect management due to the ease of detecting defects later in the SDLC" is NOT a benefit — detecting defects later is MORE expensive, not less. This statement contradicts the value of static testing. B is a true benefit (early defect fixing is cheaper). C is a true benefit (static testing finds what dynamic testing cannot). D is a true benefit (static testing detects gaps and inconsistencies in requirements).
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
 </div>
 
 <div class="question-block">
@@ -118,7 +118,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> It provides a measure for the quality of changes</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> It helps avoid requirements misunderstandings <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong>. Explanation: Early and frequent feedback helps avoid requirements misunderstandings before they become costly defects. A is wrong — improving future test processes is a retrospective benefit, not a feedback benefit. B is wrong — feedback doesn't force prioritization by risk. C is wrong — feedback provides understanding, not a quality measure.
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
 </div>
 
 <div class="question-block">
@@ -133,7 +133,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Technical review</li>
         <li class="option-item"><span class="option-letter">d)</span> Inspection</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: Walkthrough is correct. Key indicators: the meeting is LED BY THE AUTHOR (unique to walkthroughs), has individual preparation, a scribe role, and a review report. A is wrong — informal reviews have no formal process. C is wrong — technical reviews are led by a trained moderator, not the author. D is wrong — inspections are led by a facilitator/moderator with the most formal process.
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
 
 <div class="question-block">
@@ -148,7 +148,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Participants should avoid behaviors that might indicate boredom, exasperation, or hostility to other participants</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> Failures found should be acknowledged, appreciated, and handled objectively <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong>. Explanation: The statement says "failures found" — but reviews find DEFECTS, not failures. Failures occur during dynamic testing. The incorrect terminology makes this NOT a valid success factor. A (dedicating adequate time), B (splitting large work products), and C (avoiding hostile behaviors) are all legitimate success factors for reviews.
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
 </div>
 
 <div class="question-block">
@@ -163,7 +163,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> i, ii, iii, and v can be reviewed <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> iii, iv, v can be reviewed</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong>. Explanation: Business requirements (i), schedule (ii), test budget (iii), and user stories (v) can all be reviewed — they are readable/understandable work products. Third-party executable code (iv) cannot be reviewed because it's not human-readable and may have legal restrictions. A is wrong — it includes iv which can't be reviewed. B is wrong — it also includes iv. D is wrong — it excludes i and ii which can be reviewed.
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
 </div>
 
 <div class="question-block">
@@ -178,7 +178,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> It identifies failures caused by defects when the software is run</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> Its test objective is to identify defects as early as possible <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong>. Explanation: Static testing's objective is to identify defects as early as possible, before dynamic testing. A is wrong — abnormal external behaviors are identified by dynamic testing. B is wrong — while static analysis CAN find coding standard deviations, option D is the broader/better answer about the objective. C is wrong — failures are found by dynamic testing, not static testing.
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
 </div>
 
 <div class="question-block">
@@ -193,7 +193,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Documentation to be reviewed is not distributed before the review meeting, with the exception of the work product for specific review types</li>
         <li class="option-item"><span class="option-letter">d)</span> Defects found during the review are not reported since they are not found by dynamic testing</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: The formal review process has several activities: planning, review initiation, individual review, communication and analysis, and fixing and reporting. A is wrong — formal reviews require multiple roles (author, reviewers, facilitator, scribe, etc.). C is wrong — documentation IS distributed before the meeting during review initiation. D is wrong — defects found during reviews ARE reported.
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
 
 <div class="question-block">
@@ -208,7 +208,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Ensuring the effective running of review meetings, and moderating, if necessary</li>
         <li class="option-item"><span class="option-letter">d)</span> Recording review information such as review decisions</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: Management decides WHAT is to be reviewed and provides resources (time, staff). A is wrong — overall responsibility belongs to the review leader. C is wrong — ensuring effective running of meetings is the facilitator's role. D is wrong — recording information is the scribe's role.
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
 
 <div class="question-block">
@@ -223,7 +223,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Poor response times for most of the expected users</li>
         <li class="option-item"><span class="option-letter">d)</span> Required features that are not implemented in the code</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: Unreachable code (dead code) can only be found by static testing/analysis — you can't reach it during execution by definition. A is wrong — usability issues are typically found through dynamic testing (user interaction). C is wrong — response times require execution (dynamic testing). D is wrong — missing features can be found by both static and dynamic testing.
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
 
 <div class="question-block">
@@ -238,7 +238,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> It facilitates early communication of potential quality issues <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> End users better understand why the delivery of the work product is delayed</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong>. Explanation: Early and frequent feedback facilitates early communication of potential quality issues before they become expensive to fix. A is wrong — this is about people management, not quality feedback. B is wrong — feedback isn't about prioritizing stakeholder interactions. D is wrong — feedback isn't about explaining delays to end users.
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
 </div>
 
 <div class="question-block">
@@ -253,7 +253,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> 1C, 2A, 3B, 4D</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> 1C, 2B, 3A, 4D <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong>. Explanation: Planning (C) = quality criteria and exit criteria selected; Review initiation (B) = everyone gets access to the work product; Individual review (A) = anomalies identified in the work product; Communication and analysis (D) = anomalies discussed. So the correct mapping is 1C, 2B, 3A, 4D.
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
 </div>
 
 <div class="question-block">
@@ -268,7 +268,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> 1B, 2D, 3A, 4C <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> 1B, 2D, 3C, 4A</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong>. Explanation: Scribe (1) = records review information (B); Review leader (2) = takes overall responsibility (D); Facilitator (3) = ensures effective running of meetings (A); Manager (4) = decides what to review and provides resources (C). So the correct mapping is 1B, 2D, 3A, 4C.
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
 </div>
 
 <div class="question-block">
@@ -283,7 +283,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> i, ii, iv</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> i, iii, iv <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong>. Explanation: Design disagreements (i), unreachable code (iii), and unused variables (iv) are found by static testing. Response time (ii) and memory usage (v) require execution and are found by dynamic testing. A (ii, v) lists only dynamic defects. B (iii, v) mixes static and dynamic. C (i, ii, iv) incorrectly includes response time (ii).
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
 </div>
 
 <div class="question-block">
@@ -298,7 +298,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> It allows product owners to change their requirements as often as they want</li>
         <li class="option-item"><span class="option-letter">d)</span> End users are told which requirements will not be implemented prior to release</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong>. Explanation: Changes to requirements are understood and implemented earlier when stakeholders provide early and frequent feedback. B is wrong — feedback doesn't ensure business stakeholder understanding of user requirements. C is wrong — this is about unlimited changes, not a benefit of feedback. D is wrong — informing about unimplemented requirements isn't the primary feedback benefit.
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
 </div>
 
 <div class="question-block">
@@ -313,7 +313,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> 1B, 2C, 3D, 4A</li>
         <li class="option-item"><span class="option-letter">d)</span> 1C, 2D, 3A, 4B</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: Technical review (1) = gaining consensus and new ideas (A); Informal review (2) = detecting defects with no formal output (D); Inspection (3) = detecting defects with metrics collection (C); Walkthrough (4) = educating reviewers, new ideas, and detecting defects (B). So the correct mapping is 1A, 2D, 3C, 4B.
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
 
 <div class="question-block">
@@ -328,7 +328,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Set reviewer evaluation as an objective</li>
         <li class="option-item"><span class="option-letter">d)</span> Plan to cover one document per review</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: Splitting large work products into smaller parts is a recognized success factor for reviews, making the effort less intense. A is wrong — management as reviewers can intimidate participants. C is wrong — evaluating reviewers creates an unsafe environment. D is wrong — reviews should be focused on small parts, not covering entire documents at once.
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
 
 <div class="question-block">
@@ -343,7 +343,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> Encrypted code <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> Test charter</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong>. Explanation: Encrypted code cannot be examined by static testing because it's not human-readable. Contracts (A), test plans (B), and test charters (D) are all readable work products that can be reviewed through static testing.
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
 </div>
 
 <div class="question-block">
@@ -358,7 +358,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> Dynamic testing can identify some of the defects that can be found by static testing but not all of them <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> Static testing can identify the defect types that can be found by dynamic testing as well as some extra defect types</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong>. Explanation: Dynamic testing can identify some but not all defects found by static testing (e.g., it cannot find unreachable code). A is wrong — the defect types overlap partially, they are not entirely different. B is wrong — dynamic testing can't find all static defects. D is wrong — static testing also can't find all dynamic defects (e.g., performance issues).
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
 </div>
 
 <div class="question-block">
@@ -373,7 +373,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> 5–4–1–3–2</li>
         <li class="option-item"><span class="option-letter">d)</span> 5–4–3–2–1</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: The correct sequence is 4 (Planning — objective and schedule established) → 5 (Review initiation — participants get access) → 3 (Individual review — reviewers spot anomalies) → 1 (Communication and analysis — anomalies deliberated) → 2 (Fixing and reporting — defects recorded and updates addressed).
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
 
 <div class="question-block">
@@ -388,7 +388,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Chairperson</li>
         <li class="option-item"><span class="option-letter">d)</span> Review Leader</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: The moderator (also called facilitator) ensures effective meetings and that everyone can voice opinions freely in a safe environment. A is wrong — the manager decides what to review and provides resources, not how meetings run. C is wrong — chairperson is not a standard ISTQB review role. D is wrong — the review leader has overall responsibility for the review, not meeting facilitation.
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
-`,
+`
 };

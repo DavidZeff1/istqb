@@ -103,7 +103,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> Testers participate in the detailed risk identification and risk assessment of user stories <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> Testers guarantee the release of high-quality software through early test design during the</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong>. Explanation: Option C is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
 </div>
 
 <div class="question-block">
@@ -119,7 +119,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">d)</span> Requirements are translated into given/when/then format</li>
         <li class="option-item option-correct"><span class="option-letter">e)</span> Regression tests are automated <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C, E</strong>. Explanation: Option C, E is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>C, E</strong></div>
 </div>
 
 <div class="question-block">
@@ -134,7 +134,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> 11 person-hours</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> 10 person-hours <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong>. Explanation: Option D is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
 </div>
 
 <div class="question-block">
@@ -149,7 +149,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> TC 002</li>
         <li class="option-item"><span class="option-letter">d)</span> TC 001</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong>. Explanation: Option A is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
 </div>
 
 <div class="question-block">
@@ -164,7 +164,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> 1C, 2B, 3D, 4A</li>
         <li class="option-item"><span class="option-letter">d)</span> 1D, 2B, 3C, 4A</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong>. Explanation: Option A is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
 </div>
 
 <div class="question-block">
@@ -179,7 +179,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> Risk mitigation <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> Risk transfer</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong>. Explanation: Option C is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
 </div>
 
 <div class="question-block">
@@ -194,7 +194,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Test completion report</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> Burndown chart <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong>. Explanation: Option D is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
 </div>
 
 <div class="question-block">
@@ -209,7 +209,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> Configuration management <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> Requirements engineering</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong>. Explanation: Option C is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
 </div>
 
 <div class="question-block">
@@ -224,7 +224,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> Test environment and test item <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> Priority and severity</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong>. Explanation: Option C is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
 </div>
 
 <div class="question-block">
@@ -239,7 +239,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Context of testing</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> Test approach <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong>. Explanation: Option D is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
 </div>
 
 <div class="question-block">
@@ -254,7 +254,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> No further action is needed. Consensus has been reached</li>
         <li class="option-item"><span class="option-letter">d)</span> Remove the new feature from the current release because consensus has not been</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: Option B is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
 
 <div class="question-block">
@@ -269,7 +269,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> It describes distribution of test types across the SDLC</li>
         <li class="option-item"><span class="option-letter">d)</span> It has no impact on the construction of automated tests</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong>. Explanation: Option A is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
 </div>
 
 <div class="question-block">
@@ -284,7 +284,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> One cannot say anything about risk likelihood. Risk impact and risk likelihood are independent. <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> Risk likelihood is not important with such a high-risk impact. One does not need to define it.</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong>. Explanation: Option C is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
 </div>
 
 <div class="question-block">
@@ -299,7 +299,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> i, iii are project risks</li>
         <li class="option-item"><span class="option-letter">d)</span> ii, v are project risks</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong>. Explanation: Option A is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
 </div>
 
 <div class="question-block">
@@ -314,7 +314,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> During the quantitative risk analysis, the team estimated the total level of all identified risks and reported it as the total residual risk before testing</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> Risk assessment revealed a very high level of performance risks, so it was decided to perform detailed performance efficiency testing early in the SDLC <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong>. Explanation: Option D is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
 </div>
 
 <div class="question-block">
@@ -330,7 +330,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">d)</span> Number of defects found divided by the size of a work product <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">e)</span> Time needed to repair a defect</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A, D</strong>. Explanation: Option A, D is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>A, D</strong></div>
 </div>
 
 <div class="question-block">
@@ -345,7 +345,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Test progress</li>
         <li class="option-item"><span class="option-letter">d)</span> New risks within the test cycle</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: Option B is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
 
 <div class="question-block">
@@ -360,7 +360,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Component tests are compiled and ready to be executed</li>
         <li class="option-item"><span class="option-letter">d)</span> Statement coverage is at least 80%</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong>. Explanation: Option A is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
 </div>
 
 <div class="question-block">
@@ -375,7 +375,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> $81,250</li>
         <li class="option-item"><span class="option-letter">d)</span> $82,500</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: Option B is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
 
 <div class="question-block">
@@ -390,7 +390,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> TC7</li>
         <li class="option-item"><span class="option-letter">d)</span> TC2</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: Option B is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
 
 <div class="question-block">
@@ -405,7 +405,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> User acceptance testing</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> Component integration testing <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong>. Explanation: Option D is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
 </div>
 
 <div class="question-block">
@@ -420,7 +420,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> 1B, <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> 1C,</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong>. Explanation: Option C is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
 </div>
 
 <div class="question-block">
@@ -435,7 +435,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Requirements coverage</li>
         <li class="option-item"><span class="option-letter">d)</span> Defect detection percentage</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong>. Explanation: Option A is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
 </div>
 
 <div class="question-block">
@@ -450,7 +450,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Email</li>
         <li class="option-item"><span class="option-letter">d)</span> Video conferencing</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong>. Explanation: Option A is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
 </div>
 
 <div class="question-block">
@@ -465,7 +465,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Having data about the date of purchase of a software license, the CM tool automatically generates information about the fact that the product license is coming to an end</li>
         <li class="option-item"><span class="option-letter">d)</span> Having the version number of the test case, the CM tool can automatically generate test data for this test case</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong>. Explanation: Option A is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
 </div>
 
 <div class="question-block">
@@ -480,7 +480,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> The system fails to sort negative numbers. Reference: TC4, TC5.</li>
         <li class="option-item"><span class="option-letter">d)</span> TC3, TC4 and TC5 have defects (duplicate input data) and should be corrected.</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: Option B is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
 
 <div class="question-block">
@@ -495,7 +495,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> To describe what fields the test progress report shall contain and what should be the form of this report</li>
         <li class="option-item"><span class="option-letter">d)</span> To explain why system integration testing will be excluded from testing, although the test strategy requires this test level</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong>. Explanation: Option A is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
 </div>
 
 <div class="question-block">
@@ -510,7 +510,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> 6.5 person-days <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> 9.4 person-days</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong>. Explanation: Option C is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
 </div>
 
 <div class="question-block">
@@ -525,7 +525,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> TC 6</li>
         <li class="option-item"><span class="option-letter">d)</span> TC 2</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong>. Explanation: Option A is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
 </div>
 
 <div class="question-block">
@@ -540,7 +540,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> That tests may require different coverage criteria</li>
         <li class="option-item"><span class="option-letter">d)</span> That tests may depend on other tests</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: Option B is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
 
 <div class="question-block">
@@ -555,7 +555,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Testing quadrants assign the test types that can be performed to the test levels</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> Testing quadrants group test levels and test types by several criteria such as targeting specific stakeholders <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong>. Explanation: Option D is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
 </div>
 
 <div class="question-block">
@@ -570,7 +570,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> The assessed risk level helps us to select the rigor of testing <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> Risk analysis allows us to derive coverage items</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong>. Explanation: Option C is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
 </div>
 
 <div class="question-block">
@@ -585,7 +585,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Test analysis</li>
         <li class="option-item"><span class="option-letter">d)</span> Test planning</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: Option B is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
 
 <div class="question-block">
@@ -600,7 +600,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> All requirement specifications are referenced unambiguously in test plans</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> All identified defects have an assigned status <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong>. Explanation: Option D is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
 </div>
 
 <div class="question-block">
@@ -615,7 +615,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Identification of the test object</li>
         <li class="option-item"><span class="option-letter">d)</span> Impact on the interests of stakeholders</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: Option B is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
 
 <div class="question-block">
@@ -631,7 +631,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">d)</span> Test cases achieved at least 80% statement coverage <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">e)</span> All test analysts are ISTQB certified at the Foundation Level</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B, D</strong>. Explanation: Option B, D is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>B, D</strong></div>
 </div>
 
 <div class="question-block">
@@ -646,7 +646,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> 16 hours</li>
         <li class="option-item"><span class="option-letter">d)</span> 12 hours</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong>. Explanation: Option A is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
 </div>
 
 <div class="question-block">
@@ -661,7 +661,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> TC3</li>
         <li class="option-item"><span class="option-letter">d)</span> TC4</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: Option B is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
 
 <div class="question-block">
@@ -676,7 +676,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> They help non-technical stakeholders to understand the different test types and that some test types are more relevant to certain test levels than others <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> They help agile teams to develop a communication strategy based on classifying people according to four basic psychological types, and on modelling the relations between them</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong>. Explanation: Option C is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
 </div>
 
 <div class="question-block">
@@ -691,7 +691,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> $50,000</li>
         <li class="option-item"><span class="option-letter">d)</span> $200</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B</strong>. Explanation: Option B is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>B</strong></div>
 </div>
 
 <div class="question-block">
@@ -707,7 +707,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">d)</span> Poor tool support</li>
         <li class="option-item option-correct"><span class="option-letter">e)</span> Too long response time <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>B, E</strong>. Explanation: Option B, E is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>B, E</strong></div>
 </div>
 
 <div class="question-block">
@@ -722,7 +722,7 @@ export const content = {
         <li class="option-item option-correct"><span class="option-letter">c)</span> Providing information about each defect, such as the steps to reproduce it <span class="correct-mark">&#10003;</span></li>
         <li class="option-item"><span class="option-letter">d)</span> Providing information on testing planned for the next period</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>C</strong>. Explanation: Option C is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>C</strong></div>
 </div>
 
 <div class="question-block">
@@ -737,7 +737,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Whole team approach</li>
         <li class="option-item option-correct"><span class="option-letter">d)</span> Configuration management <span class="correct-mark">&#10003;</span></li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>D</strong>. Explanation: Option D is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>D</strong></div>
 </div>
 
 <div class="question-block">
@@ -752,7 +752,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">c)</span> Adding memory dumps and database snapshots taken after each step described in the “Steps to Reproduce” section to the “Attachments” section.</li>
         <li class="option-item"><span class="option-letter">d)</span> Repeating the same test case for different environments and writing defect reports for each of them separately</li>
   </ul>
-  <div class="answer-reveal">Correct answer: <strong>A</strong>. Explanation: Option A is correct because it best satisfies the exam objective and stems from the official syllabus definition. Other options are incorrect because they either omit key requirements, overstate the scope, or describe related but not correct concepts.
+  <div class="answer-reveal">Correct answer: <strong>A</strong></div>
 </div>
 `
 };
