@@ -1,5 +1,8 @@
+import audio31 from "./audio/31audio.m4a";
+
 export const content = {
   title: "3.1 Static Testing Basics",
+  audioSrc: audio31,
   content: `
     <div class="test-content">
       <div class="concept-block">
@@ -172,5 +175,5 @@ export const content = {
         </ol>
       </div>
     </div>
-  `
+  `,
 };

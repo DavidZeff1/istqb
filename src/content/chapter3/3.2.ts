@@ -1,5 +1,8 @@
+import audio32 from "./audio/32audio.m4a";
+
 export const content = {
   title: "3.2 Feedback and Review Process",
+  audioSrc: audio32,
   content: `
     <div class="test-content">
       <div class="concept-block">
@@ -198,6 +201,5 @@ export const content = {
         </ol>
       </div>
     </div>
-  `
+  `,
 };
-
