@@ -275,8 +275,5 @@ export const content = {
         </ol>
       </section>
     </div>
-  `
-};
-    </div>
-  `
+  `,
 };
