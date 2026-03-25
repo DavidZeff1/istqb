@@ -6,159 +6,284 @@ export const content = {
   audioSrc: audio21,
   content: `
     <div class="test-content">
-      <div class="concept-block">
-        <h3>The Big Picture</h3>
-        <p>An <strong>SDLC model</strong> is an abstract, high-level representation of the software development process. It defines how different development phases and types of activities relate to each other, both logically and chronologically.</p>
-        <p>Examples of SDLC models include:</p>
-        <ul>
-          <li><strong>Sequential development models:</strong> Waterfall model, V-model.</li>
-          <li><strong>Iterative development models:</strong> Spiral model, Prototyping.</li>
-          <li><strong>Incremental development models:</strong> Unified Process.</li>
-        </ul>
-        <p>Some activities can also be described by more detailed methods and Agile practices, such as: <strong>ATDD, BDD, DDD, XP, FDD, Kanban, Lean IT, Scrum,</strong> and <strong>TDD</strong>.</p>
-      </div>
 
-      <div class="concept-block">
+      <!-- ==================== BIG PICTURE ==================== -->
+      <section class="concept-block">
+        <h3>The Big Picture — How You Build Software Changes How You Test It</h3>
+        <p>Before a team writes a single line of code, they choose <strong>how</strong> they're going to build the software. That choice is called an <strong>SDLC model</strong> (Software Development Lifecycle model) — it's the game plan for how the project moves from idea to finished product.</p>
+        <p><strong>Why does this matter for testing?</strong> Because the SDLC model dictates <em>when</em> you test, <em>how much</em> you test, <em>what tools</em> you use, and <em>how detailed</em> your documentation needs to be. Testing a banking app built in Waterfall looks completely different from testing one built in Scrum.</p>
+
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>The Three Families of SDLC Models</h4>
+          <table style="width:100%; border-collapse:collapse; margin-top:0.5rem;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.5rem;">Type</th>
+                <th style="text-align:left; padding:0.5rem;">How It Works</th>
+                <th style="text-align:left; padding:0.5rem;">Examples</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Sequential</strong></td><td>One phase finishes completely before the next begins. Like building a house — foundation, walls, roof, in order.</td><td>Waterfall, V-model</td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Iterative</strong></td><td>Go through the full cycle multiple times, refining each round. Like sculpting — rough shape first, then detail.</td><td>Spiral, Prototyping</td></tr>
+              <tr><td style="padding:0.4rem;"><strong>Incremental</strong></td><td>Build and deliver the product in chunks. Like publishing a book chapter by chapter.</td><td>Unified Process</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Agile practices like <strong>Scrum, Kanban, XP, TDD, ATDD, BDD</strong> fit within iterative/incremental models and add specific methods on top.</p>
+      </section>
+
+      <!-- ==================== 2.1.1 IMPACT OF SDLC ==================== -->
+      <section class="concept-block">
         <h3>2.1.1 Impact of the SDLC on Testing</h3>
-        <p>Testing must be <strong>adapted to the SDLC</strong> to succeed. The choice of SDLC impacts:</p>
-        <ul>
-          <li>Scope and timing of test activities (e.g., test levels and test types)</li>
-          <li>Level of detail of test documentation</li>
-          <li>Choice of test techniques and test approach</li>
-          <li>Extent of test automation</li>
-          <li>Role and responsibilities of a tester</li>
-        </ul>
+        <p><strong>Real scenario — same app, two different SDLCs:</strong></p>
 
-        <div class="comparison-grid" style="margin-top: 1rem;">
+        <div class="comparison-grid" style="margin: 1rem 0;">
           <div class="grid-item">
-            <h4>Sequential Models</h4>
-            <p>Testers typically participate in requirement reviews, test analysis, and test design in early phases. <strong>Dynamic testing cannot be performed early</strong> because executable code is created in later phases.</p>
+            <h4>Waterfall: Hospital Records System</h4>
+            <p>A government hospital needs a patient records system. Requirements are fixed by regulation — they won't change. The team uses <strong>Waterfall</strong>.</p>
+            <ul>
+              <li>Testers <strong>review requirements</strong> in month 1 (static testing — no code exists yet)</li>
+              <li>Design test cases in month 2-3 while devs are coding</li>
+              <li><strong>Can't run any tests</strong> until month 4 when code is finally delivered</li>
+              <li>Detailed, heavy documentation (regulators will audit it)</li>
+            </ul>
+            <p><em>Dynamic testing is <strong>impossible early on</strong> because there's no running code yet.</em></p>
           </div>
           <div class="grid-item">
-            <h4>Iterative / Incremental Models</h4>
-            <p>Each iteration delivers a working prototype or product increment. Both static and dynamic testing may be performed at <strong>all test levels</strong> in each iteration. Requires <strong>fast feedback</strong> and <strong>extensive regression testing</strong>.</p>
+            <h4>Scrum: Food Delivery App</h4>
+            <p>A startup is building a food delivery app. Features change based on user feedback every 2 weeks. They use <strong>Scrum</strong>.</p>
+            <ul>
+              <li>Every sprint delivers <strong>working features</strong> — testers test them immediately</li>
+              <li>Both static and dynamic testing happen <strong>every sprint</strong></li>
+              <li>Lightweight docs — user stories, not 100-page specs</li>
+              <li><strong>Heavy test automation</strong> for regression (features keep piling up)</li>
+              <li>Manual testing uses <strong>experience-based techniques</strong> — quick, exploratory</li>
+            </ul>
+            <p><em>Fast feedback is critical — a bug found today needs to be fixed today.</em></p>
           </div>
         </div>
 
-        <div class="highlight-box" style="margin-top: 1rem;">
-          <h4>Agile Development</h4>
-          <p>Agile assumes that <strong>change may occur throughout the project</strong>. Therefore:</p>
+        <div class="definition-box highlight-box" style="padding: 1rem; margin: 1rem 0; border-radius: 8px;">
+          <p style="margin: 0;">🎯 <strong>Exam key — the SDLC model impacts 5 things:</strong></p>
+          <ol style="margin: 0.5rem 0 0 1.5rem;">
+            <li>Scope and timing of test activities</li>
+            <li>Level of detail of test documentation</li>
+            <li>Choice of test techniques and approach</li>
+            <li>Extent of test automation</li>
+            <li>Role and responsibilities of a tester</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ==================== 2.1.2 GOOD PRACTICES ==================== -->
+      <section class="concept-block">
+        <h3>2.1.2 Good Testing Practices (Apply to ANY SDLC)</h3>
+        <p>No matter if you're using Waterfall, Scrum, or anything else — these 4 rules always apply:</p>
+
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <table style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.5rem;">Rule</th>
+                <th style="text-align:left; padding:0.5rem;">What It Means</th>
+                <th style="text-align:left; padding:0.5rem;">Real Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Every dev activity has a test activity</strong></td><td>Nothing gets built without being tested</td><td>Devs write login code → testers have login test cases ready</td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Different test levels = different objectives</strong></td><td>Unit tests catch different things than system tests</td><td>Unit test checks if password hashing works; system test checks the full login flow</td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Test analysis starts during development</strong></td><td>Don't wait until code is done to start thinking about tests</td><td>While devs design the payment module, testers are already identifying test conditions for it</td></tr>
+              <tr><td style="padding:0.4rem;"><strong>Testers review work products early</strong></td><td>Look at requirements/designs as soon as drafts exist</td><td>Tester reads the draft requirement: <em>"User can transfer unlimited amounts"</em> → flags: <em>"Shouldn't there be a daily limit?"</em></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="definition-box highlight-box" style="padding: 0.8rem; margin-top: 0.5rem; border-radius: 8px;">
+          <p style="margin: 0;">⚠️ <strong>Exam tip:</strong> The question might say "which practice is specific to Agile?" — trick answer: these 4 practices apply to <strong>ALL</strong> SDLC models.</p>
+        </div>
+      </section>
+
+      <!-- ==================== 2.1.3 TDD / ATDD / BDD ==================== -->
+      <section class="concept-block">
+        <h3>2.1.3 Testing as a Driver for Development — TDD, ATDD, BDD</h3>
+        <p>Normally: code first → test later. These 3 approaches <strong>flip it</strong>: <strong>test first → code later</strong>. They're all "shift left" in action — tests are written <em>before</em> the code exists.</p>
+
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>TDD — Test-Driven Development</h4>
+          <p><strong>Who uses it?</strong> Developers, at the code level.</p>
+          <p><strong>Real scenario:</strong> A developer needs to write a function that calculates shipping costs. Before writing <em>any</em> code, they write a test:</p>
+          <pre style="background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 6px; margin: 0.5rem 0; overflow-x: auto;"><code>test("shipping for order under $50 = $5.99", () => {
+  expect(calculateShipping(49.99)).toBe(5.99);
+});</code></pre>
+          <p>Then they write the code to make that test pass. Then they refactor. <strong>Red → Green → Refactor.</strong></p>
+        </div>
+
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>ATDD — Acceptance Test-Driven Development</h4>
+          <p><strong>Who uses it?</strong> The whole team (dev, tester, product owner) — at the feature level.</p>
+          <p><strong>Real scenario:</strong> Before building the "checkout" feature, the team writes acceptance criteria together:</p>
           <ul>
-            <li><strong>Lightweight documentation</strong> is favored.</li>
-            <li><strong>Extensive test automation</strong> makes regression testing easier.</li>
-            <li>Most manual testing uses <strong>experience-based test techniques</strong> (see Section 4.4) that don't require extensive prior test analysis and design.</li>
+            <li><em>"User with items in cart can complete purchase with valid credit card"</em></li>
+            <li><em>"User sees error if card is declined"</em></li>
+            <li><em>"Order confirmation email is sent within 60 seconds"</em></li>
           </ul>
-        </div>
-      </div>
-
-      <div class="concept-block">
-        <h3>2.1.2 SDLC and Good Testing Practices</h3>
-        <p>Good testing practices, <strong>independent of the chosen SDLC model</strong>, include:</p>
-        <div class="highlight-box">
-          <ul>
-            <li>For <strong>every software development activity</strong>, there is a corresponding test activity, so all development activities are subject to quality control.</li>
-            <li>Different <strong>test levels</strong> have specific and different test objectives, allowing testing to be comprehensive while avoiding redundancy.</li>
-            <li><strong>Test analysis and design</strong> for a given test level begins during the corresponding development phase, adhering to the principle of <strong>early testing</strong>.</li>
-            <li>Testers are involved in <strong>reviewing work products</strong> as soon as drafts are available, supporting <strong>shift left</strong> and earlier defect detection.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="concept-block">
-        <h3>2.1.3 Testing as a Driver for Software Development</h3>
-        <p>TDD, ATDD, and BDD are similar development approaches where <strong>tests are defined as a means of directing development</strong>. Each implements the principle of early testing and follows shift left, since tests are defined <em>before</em> the code is written. They support an iterative development model.</p>
-
-        <div class="comparison-grid" style="margin-top: 1rem;">
-          <div class="grid-item">
-            <h4>TDD (Test-Driven Development)</h4>
-            <p>Directs coding through <strong>test cases</strong> instead of extensive software design.<br>
-            <strong>Process:</strong> Write tests first → Write code to satisfy the tests → Refactor tests and code.</p>
-          </div>
-          <div class="grid-item">
-            <h4>ATDD (Acceptance Test-Driven Development)</h4>
-            <p>Derives tests from <strong>acceptance criteria</strong> as part of the system design process.<br>
-            Tests are written <strong>before</strong> the part of the application is developed to satisfy them.</p>
-          </div>
+          <p>These acceptance criteria <strong>become the tests</strong>. The devs then build the feature to pass them. Everyone agrees upfront on what "done" means.</p>
         </div>
 
-        <div class="highlight-box" style="margin-top: 1rem;">
-          <h4>BDD (Behavior-Driven Development)</h4>
-          <p>Expresses the desired behavior of an application with test cases written in a <strong>simple form of natural language</strong>, easy to understand by stakeholders — usually using the <strong>Given/When/Then</strong> format.</p>
-          <p>Test cases should then automatically be <strong>translated into executable tests</strong>.</p>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>BDD — Behavior-Driven Development</h4>
+          <p><strong>Who uses it?</strong> Everyone — written in plain English so even non-technical stakeholders understand.</p>
+          <p><strong>Real scenario:</strong> The product owner writes (or reviews) test scenarios in <strong>Given/When/Then</strong> format:</p>
+          <pre style="background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 6px; margin: 0.5rem 0; overflow-x: auto;"><code>Given the user has items in their cart
+When they enter a valid credit card and click "Pay"
+Then the order should be confirmed
+And a confirmation email should be sent</code></pre>
+          <p>This plain-English spec is then <strong>automatically translated into executable tests</strong> (using tools like Cucumber, SpecFlow).</p>
         </div>
 
-        <p style="margin-top: 1rem;"><em>For all three approaches, tests may persist as <strong>automated tests</strong> to ensure code quality in future adaptations and refactoring.</em></p>
-      </div>
+        <div class="definition-box highlight-box" style="padding: 1rem; margin: 1rem 0; border-radius: 8px;">
+          <p style="margin: 0;">🧠 <strong>Quick comparison:</strong></p>
+          <table style="width:100%; border-collapse:collapse; margin-top:0.5rem;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.4rem;"></th>
+                <th style="text-align:left; padding:0.4rem;">TDD</th>
+                <th style="text-align:left; padding:0.4rem;">ATDD</th>
+                <th style="text-align:left; padding:0.4rem;">BDD</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Level</strong></td><td>Code/unit level</td><td>Feature/acceptance level</td><td>Behavior/user level</td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Written by</strong></td><td>Developers</td><td>Team (dev + test + PO)</td><td>Everyone (plain language)</td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Tests based on</strong></td><td>Test cases (code)</td><td>Acceptance criteria</td><td>Given/When/Then scenarios</td></tr>
+              <tr><td style="padding:0.4rem;"><strong>Common in</strong></td><td>Unit testing</td><td>Sprint planning</td><td>User story refinement</td></tr>
+            </tbody>
+          </table>
+          <p style="margin: 0.5rem 0 0;">All three: write tests first → tests become automated → tests persist for regression.</p>
+        </div>
+      </section>
 
-      <div class="concept-block">
+      <!-- ==================== 2.1.4 DEVOPS ==================== -->
+      <section class="concept-block">
         <h3>2.1.4 DevOps and Testing</h3>
-        <p><strong>DevOps</strong> is an organizational approach aiming to create synergy by getting development (including testing) and operations to work together toward common goals. It requires a <strong>cultural shift</strong> within an organization and promotes team autonomy, fast feedback, integrated toolchains, and technical practices like <strong>CI</strong> (Continuous Integration) and <strong>CD</strong> (Continuous Delivery).</p>
+        <p><strong>The problem DevOps solves:</strong> Traditionally, developers would "throw code over the wall" to Operations, who would then deploy it. When things broke in production, dev and ops would blame each other. DevOps says: <em>"You build it, you run it — together."</em></p>
+        <p><strong>DevOps</strong> is an organizational approach that merges development (including testing) and operations into one team with shared goals. It's a <strong>cultural shift</strong>, not just a set of tools.</p>
 
-        <div class="comparison-grid" style="margin-top: 1rem;">
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Real scenario: E-commerce site with DevOps</h4>
+          <p>A developer pushes a fix for the search feature. Here's what happens automatically:</p>
+          <ol>
+            <li><strong>CI (Continuous Integration):</strong> Code is merged → automated unit tests run → static analysis checks for code smells → results in 3 minutes</li>
+            <li><strong>CD (Continuous Delivery):</strong> If all tests pass → code is automatically deployed to a staging environment → integration tests run → if pass, it's ready for production</li>
+            <li>The developer gets <strong>feedback within 15 minutes</strong> instead of waiting weeks for a manual test cycle</li>
+          </ol>
+        </div>
+
+        <div class="comparison-grid" style="margin: 1rem 0;">
           <div class="grid-item">
-            <h4>✅ Benefits of DevOps for Testing</h4>
+            <h4>✅ Benefits for Testing</h4>
             <ul>
-              <li><strong>Fast feedback</strong> on code quality and whether changes adversely affect existing code.</li>
-              <li>CI promotes <strong>shift left</strong> by encouraging developers to submit high-quality code with component tests and static analysis.</li>
-              <li>Automated processes like CI/CD facilitate establishing <strong>stable test environments</strong>.</li>
-              <li>Increased visibility on <strong>non-functional quality characteristics</strong> (e.g., performance, reliability).</li>
-              <li>Automation through a delivery pipeline <strong>reduces repetitive manual testing</strong>.</li>
-              <li><strong>Regression risk is minimized</strong> due to the scale and range of automated regression tests.</li>
+              <li><strong>Fast feedback</strong> — know within minutes if your change broke something</li>
+              <li><strong>Shift left</strong> — CI forces devs to write tests with their code</li>
+              <li><strong>Stable test environments</strong> — automated pipeline sets them up consistently</li>
+              <li><strong>Non-functional visibility</strong> — performance/reliability issues caught early</li>
+              <li><strong>Less manual repetition</strong> — automated pipeline handles regression</li>
+              <li><strong>Lower regression risk</strong> — thousands of automated tests run every commit</li>
             </ul>
           </div>
           <div class="grid-item">
-            <h4>⚠️ Risks and Challenges</h4>
+            <h4>⚠️ Challenges</h4>
             <ul>
-              <li>The DevOps <strong>delivery pipeline</strong> must be defined and established.</li>
-              <li>CI/CD <strong>tools must be introduced and maintained</strong>.</li>
-              <li>Test automation requires <strong>additional resources</strong> and may be difficult to establish and maintain.</li>
+              <li>The <strong>delivery pipeline takes effort</strong> to set up and maintain</li>
+              <li>CI/CD <strong>tools need expertise</strong> (Jenkins, GitHub Actions, etc.)</li>
+              <li>Test automation is <strong>expensive to build and maintain</strong></li>
             </ul>
-            <p><em>Note: Even with high levels of automated testing, <strong>manual testing</strong> — especially from the user's perspective — will still be needed.</em></p>
+            <div class="definition-box highlight-box" style="padding: 0.8rem; margin-top: 0.5rem; border-radius: 8px;">
+              <p style="margin: 0;">⚠️ <strong>Exam trap:</strong> Even with full automation, <strong>manual testing is still needed</strong> — especially from the user's perspective (exploratory testing, usability).</p>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="concept-block highlight-box">
-        <h3>2.1.5 Shift Left</h3>
-        <p>The principle of early testing is sometimes referred to as <strong>shift left</strong> because it is an approach where testing is performed <strong>earlier in the SDLC</strong>. It does <em>not</em> mean that testing later in the SDLC should be neglected.</p>
+      <!-- ==================== 2.1.5 SHIFT LEFT ==================== -->
+      <section class="concept-block highlight-box">
+        <h3>2.1.5 Shift Left — Find Bugs Early, Fix Them Cheap</h3>
+        <p><strong>Core idea:</strong> The later you find a bug, the more expensive it is to fix. A requirement error caught in a review costs almost nothing. The same error found after release? Could cost millions.</p>
 
-        <h4>Good Practices for Shift Left</h4>
-        <ul>
-          <li><strong>Reviewing specifications</strong> from the perspective of testers — review activities often find potential defects such as ambiguities, incompleteness, and inconsistencies.</li>
-          <li><strong>Writing test cases before the code</strong> is written and running the code in a test harness during implementation.</li>
-          <li>Using <strong>CI and CD</strong> which come with fast feedback and automated component tests when code is submitted.</li>
-          <li>Completing <strong>static analysis</strong> of source code prior to dynamic testing, or as part of an automated process.</li>
-          <li>Performing <strong>non-functional testing</strong> starting at the component test level, where possible (these tests are typically done later in the SDLC).</li>
-        </ul>
-
-        <p><em>Shift left might result in extra training, effort, and/or costs <strong>earlier</strong> in the process, but is expected to <strong>save</strong> effort and costs <strong>later</strong>. It is important that stakeholders are convinced and bought into this concept.</em></p>
-      </div>
-
-      <div class="concept-block">
-        <h3>2.1.6 Retrospectives and Process Improvement</h3>
-        <p><strong>Retrospectives</strong> are often held at the end of a project or iteration, at a release milestone, or when needed. Participants (testers, developers, architects, product owner, business analysts) discuss:</p>
-        <ul>
-          <li>What was <strong>successful</strong>, and should be retained?</li>
-          <li>What was <strong>not successful</strong> and could be improved?</li>
-          <li>How to <strong>incorporate the improvements</strong> and retain the successes in the future?</li>
-        </ul>
-        <p>Results should be recorded and are normally part of the <strong>test completion report</strong> (see Section 5.3.2). It is critical that any recommended improvements are <strong>followed up</strong>.</p>
-
-        <div class="highlight-box" style="margin-top: 1rem;">
-          <h4>Typical Benefits for Testing</h4>
+        <div class="highlight-box" style="margin: 1rem 0; padding: 1rem;">
+          <h4>Real scenario: Why shift left matters</h4>
+          <p>A requirement says: <em>"The system shall support 1,000 concurrent users."</em></p>
           <ul>
-            <li>Increased test <strong>effectiveness / efficiency</strong> (process improvement suggestions).</li>
-            <li>Increased quality of <strong>testware</strong> (jointly reviewing test processes).</li>
-            <li><strong>Team bonding and learning</strong> (opportunity to raise issues and propose improvements).</li>
-            <li>Improved quality of the <strong>test basis</strong> (requirements deficiencies can be addressed).</li>
-            <li>Better cooperation between <strong>development and testing</strong> (collaboration is reviewed regularly).</li>
+            <li><strong>Without shift left:</strong> Nobody tests performance until the end. After 6 months of development, load testing reveals the system crashes at 200 users. The entire architecture needs to be rewritten. Cost: $500K+ and 3 months delay.</li>
+            <li><strong>With shift left:</strong> During requirement review, a tester asks: <em>"How does each component handle load?"</em> The team designs for scale from day 1. Basic performance tests start at the component level. The issue is caught in week 2, not month 6.</li>
           </ul>
         </div>
-      </div>
+
+        <h4>5 Shift Left Practices</h4>
+        <table style="width:100%; border-collapse:collapse; margin: 0.5rem 0;">
+          <thead>
+            <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+              <th style="text-align:left; padding:0.5rem;">Practice</th>
+              <th style="text-align:left; padding:0.5rem;">Real Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Review specs as a tester</strong></td><td>Tester reads requirement: <em>"User can delete their account"</em> → asks: <em>"What about their pending orders? Their stored payment info?"</em> Catches ambiguity before any code.</td></tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Write tests before code</strong></td><td>TDD/ATDD — the test exists before the function. Dev runs code against the test during implementation.</td></tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Use CI/CD</strong></td><td>Every code push triggers automated tests. Dev knows in minutes if they broke something — not weeks later.</td></tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Static analysis early</strong></td><td>Linter + code analysis tools (SonarQube) flag security issues, code smells, and bugs <em>before</em> anyone runs the code.</td></tr>
+            <tr><td style="padding:0.4rem;"><strong>Non-functional testing early</strong></td><td>Performance test individual components early, not just the full system at the end.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="definition-box highlight-box" style="padding: 0.8rem; margin-top: 1rem; border-radius: 8px;">
+          <p style="margin: 0;">⚠️ <strong>Exam trap:</strong> Shift left does <strong>NOT</strong> mean stop testing later! It means <em>start</em> testing earlier. You still need system testing, acceptance testing, etc. at the end.</p>
+        </div>
+
+        <p style="margin-top: 0.5rem;"><em>Trade-off: Shift left costs more upfront (training, tools, effort) but <strong>saves significantly more</strong> later. Stakeholder buy-in is important.</em></p>
+      </section>
+
+      <!-- ==================== 2.1.6 RETROS ==================== -->
+      <section class="concept-block">
+        <h3>2.1.6 Retrospectives — Learn From What Happened</h3>
+        <p><strong>Real scenario:</strong> Your team just finished a 2-week sprint. In the retro meeting, the tester says: <em>"We found 12 bugs, but 8 of them were because the requirements were vague."</em> The product owner commits to writing clearer acceptance criteria next sprint. The dev lead notes: <em>"Our test environment was down for 2 days — let's automate the setup."</em></p>
+
+        <p><strong>Retrospectives</strong> are meetings held at the end of a project, iteration, or release where the team discusses 3 questions:</p>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <ol>
+            <li>🟢 <strong>What worked well?</strong> — Keep doing this</li>
+            <li>🔴 <strong>What didn't work?</strong> — Fix this</li>
+            <li>🔧 <strong>How do we improve?</strong> — Concrete action items</li>
+          </ol>
+        </div>
+
+        <p>Results go into the <strong>test completion report</strong>. The critical part: improvements must actually be <strong>followed up on</strong> — otherwise the retro was a waste of time.</p>
+
+        <div class="highlight-box" style="margin-top: 1rem;">
+          <h4>5 Benefits of Retrospectives for Testing</h4>
+          <table style="width:100%; border-collapse:collapse; margin-top:0.5rem;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.5rem;">Benefit</th>
+                <th style="text-align:left; padding:0.5rem;">Real Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Better test effectiveness</strong></td><td><em>"Let's add boundary value tests — we missed edge cases last sprint"</em></td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Better testware quality</strong></td><td><em>"Our test cases were too vague — let's add expected results to each one"</em></td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Team bonding</strong></td><td>Safe space to raise issues without blame</td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Better test basis</strong></td><td><em>"Requirements were incomplete — PO will add more detail next sprint"</em></td></tr>
+              <tr><td style="padding:0.4rem;"><strong>Better dev-test collaboration</strong></td><td><em>"Devs will tag testers for code review on critical modules"</em></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
       <hr class="section-divider">
 
-      <div class="concept-block practice-questions">
+      <!-- ==================== KNOWLEDGE CHECK ==================== -->
+      <section class="concept-block practice-questions">
         <h3>🧠 Knowledge Check Questions</h3>
         <ol>
           <li>
@@ -166,16 +291,16 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> The SDLC model impacts the scope and timing of test activities, the level of detail of test documentation, the choice of test techniques and approach, the extent of test automation, and the role and responsibilities of a tester.</p>
+                <p><strong>Answer:</strong> It impacts 5 things: (1) scope and timing of test activities, (2) level of detail of test documentation, (3) choice of test techniques and approach, (4) extent of test automation, (5) role and responsibilities of a tester. Example: Waterfall → heavy docs, late dynamic testing. Scrum → lightweight docs, testing every sprint, heavy automation.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> In sequential development models, why can't dynamic testing be performed early in the SDLC?
+            <strong>Question:</strong> In sequential development models, why can't dynamic testing be performed early?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Because executable code is usually created in the later phases of sequential models. In the initial phases, testers participate in requirement reviews, test analysis, and test design instead.</p>
+                <p><strong>Answer:</strong> Because executable code doesn't exist yet! In Waterfall, code is written in later phases. Early on, testers can only do static testing — reviewing requirements and designing test cases. You can't <em>run</em> software that hasn't been built yet.</p>
               </details>
             </div>
           </li>
@@ -184,16 +309,16 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> TDD directs coding through test cases — write tests first, then code, then refactor. ATDD derives tests from acceptance criteria as part of system design. BDD expresses desired behavior in simple natural language (usually Given/When/Then format) that is easy for stakeholders to understand, and these are automatically translated into executable tests. All three define tests before code is written.</p>
+                <p><strong>Answer:</strong> <strong>TDD</strong> = code level, developers write unit tests first → code → refactor. <strong>ATDD</strong> = feature level, the whole team writes acceptance criteria that become tests before the feature is built. <strong>BDD</strong> = behavior level, tests written in plain English Given/When/Then format that anyone can read, automatically translated into executable tests. All three: tests first → code second.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> What does "shift left" mean in testing, and does it mean we should stop testing later in the SDLC?
+            <strong>Question:</strong> What does "shift left" mean? Does it mean we skip testing at the end?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Shift left means performing testing earlier in the SDLC (e.g., not waiting for code to be implemented or components to be integrated). However, it does NOT mean that testing later in the SDLC should be neglected — both early and late testing are needed.</p>
+                <p><strong>Answer:</strong> Shift left = start testing <strong>earlier</strong> in the SDLC (review specs, write tests before code, run static analysis early, test components for performance early). But it does <strong>NOT</strong> mean skip late testing — you still need system testing, acceptance testing, etc. It's about <em>also</em> testing early, not <em>only</em> testing early.</p>
               </details>
             </div>
           </li>
@@ -202,30 +327,48 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Any three of: Fast feedback on code quality, CI promotes shift left, automated processes facilitate stable test environments, increased visibility on non-functional quality characteristics, automation reduces repetitive manual testing, regression risk is minimized through automated regression tests.</p>
+                <p><strong>Answer:</strong> Any three of: (1) fast feedback on code quality, (2) CI promotes shift left, (3) automated processes create stable test environments, (4) better visibility on performance/reliability, (5) automation reduces repetitive manual testing, (6) regression risk minimized by running thousands of automated tests every commit.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> What are the three key questions discussed during retrospectives?
+            <strong>Question:</strong> What are the three questions discussed during retrospectives?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> 1) What was successful and should be retained? 2) What was not successful and could be improved? 3) How to incorporate the improvements and retain the successes in the future?</p>
+                <p><strong>Answer:</strong> (1) What worked well and should be kept? (2) What didn't work and needs improvement? (3) How do we actually implement those improvements going forward? Results go into the test completion report and must be followed up — otherwise the retro achieves nothing.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> List at least 3 good testing practices that are independent of the chosen SDLC model.
+            <strong>Question:</strong> List at least 3 good testing practices that apply to ALL SDLC models.
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Any three of: Every development activity has a corresponding test activity; different test levels have specific and different test objectives; test analysis and design begins during the corresponding development phase (early testing); testers review work products as soon as drafts are available (shift left).</p>
+                <p><strong>Answer:</strong> (1) Every dev activity has a corresponding test activity, (2) different test levels have specific objectives to avoid redundancy, (3) test analysis/design starts during the corresponding dev phase (early testing), (4) testers review work products as soon as drafts exist (shift left). These are universal — not specific to Agile or Waterfall.</p>
+              </details>
+            </div>
+          </li>
+          <li>
+            <strong>Question:</strong> A developer pushes code to GitHub. Automated unit tests run, static analysis flags 2 issues, and a build is created. If all pass, it's auto-deployed to staging. What DevOps practices are shown here?
+            <div class="details-panel">
+              <details>
+                <summary>Show Answer</summary>
+                <p><strong>Answer:</strong> <strong>CI (Continuous Integration)</strong> — code is merged and automatically tested (unit tests + static analysis). <strong>CD (Continuous Delivery)</strong> — the build is automatically deployed to staging. This demonstrates fast feedback, shift left, and automated regression testing — all key DevOps benefits.</p>
+              </details>
+            </div>
+          </li>
+          <li>
+            <strong>Question:</strong> In BDD, a test is written as: "Given the user is logged in, When they click 'Delete Account', Then their account should be deactivated." Who writes this, and what happens to it?
+            <div class="details-panel">
+              <details>
+                <summary>Show Answer</summary>
+                <p><strong>Answer:</strong> Written collaboratively by the team (dev, tester, product owner) in <strong>plain natural language</strong> so even non-technical stakeholders understand it. The Given/When/Then scenario is then <strong>automatically translated into an executable test</strong> using tools like Cucumber or SpecFlow. It persists as an automated test for future regression.</p>
               </details>
             </div>
           </li>
         </ol>
-      </div>
+      </section>
     </div>
   `,
 };
