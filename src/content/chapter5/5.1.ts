@@ -2,199 +2,271 @@ export const content = {
   title: "5.1 Test Planning",
   content: `
     <div class="test-content">
-      <div class="concept-block">
+
+      <!-- ==================== BIG PICTURE ==================== -->
+      <section class="concept-block">
+        <h3>The Big Picture — Building a GPS Navigation App</h3>
+        <p>You're the test lead for a <strong>GPS navigation app</strong> (think Waze / Google Maps). Before your 8-person QA team touches any test case, you need a <strong>test plan</strong> — who tests what, when, with what tools, and how much it'll cost. This section covers everything that goes into that plan.</p>
+      </section>
+
+      <!-- ==================== TEST PLAN ==================== -->
+      <section class="concept-block">
         <h3>5.1.1 Purpose and Content of a Test Plan</h3>
-        <p>A <strong>test plan</strong> describes the test objectives, resources, and processes for a test project. It:</p>
-        <ul>
-          <li>Documents the means and schedule for achieving <strong>test objectives</strong></li>
-          <li>Helps ensure performed test activities will meet <strong>established criteria</strong></li>
-          <li>Serves as a means of <strong>communication</strong> with team members and stakeholders</li>
-          <li>Demonstrates testing will adhere to the existing <strong>test policy and test strategy</strong> (or explains deviations)</li>
-        </ul>
-        <p>Test planning forces testers to confront future challenges related to <strong>risks, schedules, people, tools, costs, effort</strong>, etc.</p>
+        <p>A test plan documents <strong>objectives, resources, and processes</strong>. It forces you to think about risks, schedules, people, tools, and costs <em>before</em> testing starts.</p>
 
-        <div class="highlight-box" style="margin-top: 1rem;">
-          <h4>Typical Test Plan Content</h4>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>What a Test Plan Does</h4>
           <ul>
-            <li><strong>Context of testing:</strong> Test scope, test objectives, test basis</li>
-            <li><strong>Assumptions and constraints</strong> of the test project</li>
-            <li><strong>Stakeholders:</strong> Roles, responsibilities, relevance to testing, hiring and training needs</li>
-            <li><strong>Communication:</strong> Forms, frequency, documentation templates</li>
-            <li><strong>Risk register:</strong> Product risks, project risks</li>
-            <li><strong>Test approach:</strong> Test levels, test types, test techniques, test deliverables, entry/exit criteria, independence of testing, metrics, test data requirements, test environment requirements, deviations from test policy/strategy</li>
-            <li><strong>Budget and schedule</strong></li>
+            <li>Documents <strong>how</strong> and <strong>when</strong> test objectives will be achieved</li>
+            <li>Ensures activities meet <strong>established criteria</strong></li>
+            <li>Serves as a <strong>communication tool</strong> with stakeholders</li>
+            <li>Shows adherence to <strong>test policy and strategy</strong> (or explains deviations)</li>
           </ul>
         </div>
-      </div>
 
-      <div class="concept-block">
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>🧠 Test Plan Content — "CARS CALM BS"</h4>
+          <table style="width:100%; border-collapse:collapse;">
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem; width:30px;"><strong>C</strong></td><td><strong>Context</strong> — scope, objectives, test basis</td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>A</strong></td><td><strong>Assumptions & constraints</strong></td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>R</strong></td><td><strong>Risk register</strong> — product + project risks</td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>S</strong></td><td><strong>Stakeholders</strong> — roles, responsibilities, hiring/training</td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>C</strong></td><td><strong>Communication</strong> — forms, frequency, templates</td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>A</strong></td><td><strong>Approach</strong> — levels, types, techniques, entry/exit criteria, metrics, environment</td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>L</strong></td><td><strong>(De)Liverables</strong> — test deliverables, test data requirements</td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>M</strong></td><td><strong>Metrics</strong> — what to measure</td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>B</strong></td><td><strong>Budget</strong></td></tr>
+              <tr><td style="padding:0.4rem;"><strong>S</strong></td><td><strong>Schedule</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== RELEASE VS ITERATION PLANNING ==================== -->
+      <section class="concept-block">
         <h3>5.1.2 Tester's Contribution to Iteration and Release Planning</h3>
-        <p>In iterative SDLCs, typically <strong>two kinds of planning</strong> occur:</p>
-
-        <div class="comparison-grid" style="margin-top: 1rem;">
+        <div class="comparison-grid" style="margin: 1rem 0;">
           <div class="grid-item">
-            <h4>Release Planning</h4>
-            <p>Looks ahead to the <strong>release of a product</strong>. Defines and re-defines the product backlog, may refine larger user stories into smaller ones.</p>
-            <p><strong>Tester contributions:</strong></p>
+            <h4>Release Planning (big picture)</h4>
+            <p>Looks ahead to the <strong>product release</strong> — e.g., "Navigation App v3.0 launching in 3 months."</p>
+            <p><strong>Tester contributes:</strong></p>
             <ul>
-              <li>Writing testable user stories and acceptance criteria</li>
-              <li>Project and quality risk analyses</li>
-              <li>Estimating test effort for user stories</li>
-              <li>Determining the test approach</li>
-              <li>Planning testing for the release</li>
+              <li>Writing <strong>testable user stories</strong> + acceptance criteria</li>
+              <li>Project & quality <strong>risk analyses</strong></li>
+              <li>Estimating <strong>test effort</strong> for stories</li>
+              <li>Determining the <strong>test approach</strong></li>
+              <li>Planning testing <strong>for the whole release</strong></li>
             </ul>
           </div>
           <div class="grid-item">
-            <h4>Iteration Planning</h4>
-            <p>Looks ahead to the end of a <strong>single iteration</strong>. Concerned with the iteration backlog.</p>
-            <p><strong>Tester contributions:</strong></p>
+            <h4>Iteration Planning (this sprint)</h4>
+            <p>Looks ahead to <strong>one sprint</strong> — e.g., "Sprint 7: Offline maps + voice guidance."</p>
+            <p><strong>Tester contributes:</strong></p>
             <ul>
-              <li>Detailed risk analysis of user stories</li>
-              <li>Determining testability of user stories</li>
-              <li>Breaking down user stories into tasks (especially testing tasks)</li>
-              <li>Estimating test effort for all testing tasks</li>
-              <li>Identifying and refining functional and non-functional aspects</li>
+              <li><strong>Detailed risk analysis</strong> of sprint user stories</li>
+              <li>Assessing <strong>testability</strong> of each story</li>
+              <li><strong>Breaking down</strong> stories into testing tasks</li>
+              <li>Estimating effort for <strong>all testing tasks</strong></li>
+              <li>Identifying <strong>functional + non-functional</strong> test needs</li>
             </ul>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="concept-block">
+      <!-- ==================== ENTRY / EXIT CRITERIA ==================== -->
+      <section class="concept-block">
         <h3>5.1.3 Entry Criteria and Exit Criteria</h3>
-        <p><strong>Entry criteria</strong> define the preconditions for undertaking a given activity. If not met, the activity will likely be more difficult, time-consuming, costly, and riskier.</p>
-        <p><strong>Exit criteria</strong> define what must be achieved to declare an activity completed.</p>
-        <p><em>Both should be defined for each test level and will differ based on the test objectives.</em></p>
-
-        <div class="comparison-grid" style="margin-top: 1rem;">
+        <div class="comparison-grid" style="margin: 1rem 0;">
           <div class="grid-item">
-            <h4>Typical Entry Criteria</h4>
+            <h4>Entry Criteria ("Are we ready to START?")</h4>
             <ul>
-              <li>Availability of <strong>resources</strong> (people, tools, environments, test data, budget, time)</li>
-              <li>Availability of <strong>testware</strong> (test basis, testable requirements, user stories, test cases)</li>
-              <li>Initial <strong>quality level</strong> of a test object (e.g., all smoke tests have passed)</li>
+              <li><strong>Resources available:</strong> testers, devices, test environment, GPS simulators</li>
+              <li><strong>Testware ready:</strong> test basis, requirements, user stories, test cases</li>
+              <li><strong>Quality gate passed:</strong> e.g., all smoke tests green before system testing begins</li>
             </ul>
           </div>
           <div class="grid-item">
-            <h4>Typical Exit Criteria</h4>
+            <h4>Exit Criteria ("Are we done ENOUGH?")</h4>
             <ul>
-              <li>Measures of <strong>thoroughness</strong> (coverage levels, unresolved defects, defect density, failed test cases)</li>
-              <li>Binary <strong>"yes/no" criteria</strong> (planned tests executed, static testing performed, all defects reported, regression tests automated)</li>
+              <li><strong>Thoroughness measures:</strong> coverage levels, unresolved defects, defect density, failed test cases</li>
+              <li><strong>Binary checks:</strong> all planned tests executed? All defects reported? Regressions automated?</li>
             </ul>
           </div>
         </div>
 
-        <div class="concept-block" style="background: rgba(255,200,50,0.08); padding: 1rem; border-radius: 8px; border-left: 4px solid rgba(255,200,50,0.5); margin-top: 1rem;">
-          <h4>⚠️ Important Notes</h4>
-          <p><strong>Running out of time or budget</strong> can also be valid exit criteria. It can be acceptable to end testing under such circumstances if stakeholders have reviewed and accepted the risk.</p>
-          <p>In <strong>Agile</strong>: Exit criteria = <strong>Definition of Done</strong>. Entry criteria = <strong>Definition of Ready</strong>.</p>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Key Exam Points</h4>
+          <ul>
+            <li><strong>Running out of time/budget</strong> CAN be a valid exit criterion — if stakeholders accept the risk</li>
+            <li>In <strong>Agile:</strong> Entry criteria = <strong>Definition of Ready (DoR)</strong>. Exit criteria = <strong>Definition of Done (DoD)</strong></li>
+          </ul>
         </div>
-      </div>
+      </section>
 
-      <div class="concept-block">
+      <!-- ==================== ESTIMATION TECHNIQUES ==================== -->
+      <section class="concept-block">
         <h3>5.1.4 Estimation Techniques</h3>
-        <p>Test effort estimation involves predicting the amount of work needed to meet test objectives. Estimates are based on <strong>assumptions</strong> and are always subject to <strong>estimation error</strong>. Estimating small tasks is usually more accurate than large ones — so large tasks can be <strong>decomposed</strong> into smaller ones.</p>
+        <p>How long will testing take? Four techniques, two categories:</p>
 
-        <div class="highlight-box" style="margin-bottom: 1rem;">
-          <h4>1. Estimation Based on Ratios (Metrics-Based)</h4>
-          <p>Figures are collected from <strong>previous projects</strong> to derive "standard" ratios. An organization's own historical data is the best source.</p>
-          <p><strong>Example:</strong> If the previous project had a dev-to-test effort ratio of 3:2, and the current project expects 600 person-days of development effort, then test effort ≈ <strong>400 person-days</strong>.</p>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Metrics-Based Techniques</h4>
+          <table style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.4rem;">Technique</th>
+                <th style="text-align:left; padding:0.4rem;">How It Works</th>
+                <th style="text-align:left; padding:0.4rem;">Navigation App Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>1. Ratios</strong></td>
+                <td>Use historical data ratios from past projects</td>
+                <td>Last project: dev:test = 3:2. This project: 600 dev-days → <strong>400 test-days</strong></td>
+              </tr>
+              <tr>
+                <td style="padding:0.4rem;"><strong>2. Extrapolation</strong></td>
+                <td>Measure early, project forward using a math model</td>
+                <td>Sprints 1-3 averaged 45 test-hours each → estimate remaining 7 sprints at ~45 hrs = <strong>315 hours</strong></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <div class="highlight-box" style="margin-bottom: 1rem;">
-          <h4>2. Extrapolation (Metrics-Based)</h4>
-          <p>Measurements are made <strong>as early as possible</strong> in the current project. With enough observations, remaining work is approximated by extrapolating the data (using a mathematical model).</p>
-          <p><em>Very suitable for iterative SDLCs — e.g., averaging test effort from the last three iterations.</em></p>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Expert-Based Techniques</h4>
+          <table style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.4rem;">Technique</th>
+                <th style="text-align:left; padding:0.4rem;">How It Works</th>
+                <th style="text-align:left; padding:0.4rem;">Navigation App Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>3. Wideband Delphi</strong></td>
+                <td>Experts estimate <strong>in isolation</strong>, discuss, re-estimate until <strong>consensus</strong>. Planning Poker is the Agile variant.</td>
+                <td>3 senior QAs independently estimate "offline maps testing" → one says 5 days, one says 12, one says 8 → discuss → converge on 9</td>
+              </tr>
+              <tr>
+                <td style="padding:0.4rem;"><strong>4. Three-Point</strong></td>
+                <td><strong>E = (a + 4m + b) / 6</strong><br>a = optimistic, m = most likely, b = pessimistic<br>SD = (b - a) / 6</td>
+                <td>Route calculation tests: a=6h, m=9h, b=18h → E = (6+36+18)/6 = <strong>10h ± 2h</strong></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </section>
 
-        <div class="highlight-box" style="margin-bottom: 1rem;">
-          <h4>3. Wideband Delphi (Expert-Based)</h4>
-          <p>An <strong>iterative</strong> technique where experts estimate effort <strong>in isolation</strong>. If estimates deviate beyond agreed boundaries, experts discuss and re-estimate. Process repeats until <strong>consensus is reached</strong>.</p>
-          <p><strong>Planning Poker</strong> is a variant commonly used in Agile — estimates are made using cards with numbers representing effort size.</p>
-        </div>
-
-        <div class="highlight-box" style="margin-bottom: 1rem;">
-          <h4>4. Three-Point Estimation (Expert-Based)</h4>
-          <p>Three estimates are made:</p>
-          <ul>
-            <li><strong>a</strong> = most optimistic</li>
-            <li><strong>m</strong> = most likely</li>
-            <li><strong>b</strong> = most pessimistic</li>
-          </ul>
-          <p><strong>Formula:</strong> E = (a + 4*m + b) / 6</p>
-          <p><strong>Measurement error:</strong> SD = (b – a) / 6</p>
-          <p><strong>Example:</strong> a=6, m=9, b=18 → E = (6 + 36 + 18) / 6 = <strong>10</strong>, SD = (18 – 6) / 6 = <strong>2</strong> → Final estimate: <strong>10 ± 2 person-hours</strong> (between 8 and 12).</p>
-        </div>
-      </div>
-
-      <div class="concept-block">
+      <!-- ==================== PRIORITIZATION ==================== -->
+      <section class="concept-block">
         <h3>5.1.5 Test Case Prioritization</h3>
-        <p>Test suites can be arranged in a <strong>test execution schedule</strong> defining the order in which they run. The most commonly used prioritization strategies:</p>
-
         <div class="highlight-box" style="margin: 1rem 0;">
-          <ul>
-            <li><strong>Risk-based prioritization:</strong> Based on results of risk analysis. Test cases covering the <strong>most important risks</strong> are executed first.</li>
-            <li><strong>Coverage-based prioritization:</strong> Based on coverage (e.g., statement coverage). Test cases achieving the <strong>highest coverage</strong> are executed first. Variant: <strong>additional coverage prioritization</strong> — each subsequent test case achieves the highest <em>additional</em> coverage.</li>
-            <li><strong>Requirements-based prioritization:</strong> Based on priorities of requirements traced to test cases. Test cases related to the <strong>most important requirements</strong> are executed first.</li>
-          </ul>
+          <h4>Three Prioritization Strategies</h4>
+          <table style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.4rem;">Strategy</th>
+                <th style="text-align:left; padding:0.4rem;">Navigation App Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Risk-based</strong></td>
+                <td>Route calculation in tunnels (high risk of GPS loss) tested first</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Coverage-based</strong></td>
+                <td>Test "search destination + route + navigate + arrive" first — covers most code paths</td>
+              </tr>
+              <tr>
+                <td style="padding:0.4rem;"><strong>Requirements-based</strong></td>
+                <td>Turn-by-turn voice guidance is the #1 user requirement → test it first</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top:0.5rem;"><strong>Note:</strong> If test B depends on test A, run A first regardless of priority. Also consider resource availability (devices, simulators).</p>
         </div>
+      </section>
 
-        <p><strong>Practical considerations:</strong></p>
-        <ul>
-          <li>If test cases have <strong>dependencies</strong>, a lower-priority test case that is a dependency must be executed first.</li>
-          <li>Test execution order must also consider <strong>availability of resources</strong> (tools, environments, people).</li>
-        </ul>
-      </div>
-
-      <div class="concept-block">
+      <!-- ==================== TEST PYRAMID ==================== -->
+      <section class="concept-block">
         <h3>5.1.6 Test Pyramid</h3>
-        <p>The <strong>test pyramid</strong> is a model showing that different tests have different <strong>granularity</strong>. It supports the team in test automation and test effort allocation.</p>
-
         <div class="highlight-box" style="margin: 1rem 0;">
-          <h4>Pyramid Characteristics (Bottom to Top)</h4>
-          <ul>
-            <li><strong>Bottom layer:</strong> Small, isolated, fast tests checking small pieces of functionality. <strong>Many</strong> are needed for reasonable coverage. (e.g., unit/component tests)</li>
-            <li><strong>Middle layer:</strong> Integration-level tests. (e.g., service/component integration tests)</li>
-            <li><strong>Top layer:</strong> Complex, high-level, end-to-end tests. <strong>Slower</strong> and check large pieces of functionality. <strong>Few</strong> are needed. (e.g., UI/end-to-end tests)</li>
-          </ul>
-          <p><em>The higher the layer: lower granularity, lower test isolation (more dependencies), higher execution time.</em></p>
+          <h4>Three Layers (bottom to top)</h4>
+          <table style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.4rem;">Layer</th>
+                <th style="text-align:left; padding:0.4rem;">Characteristics</th>
+                <th style="text-align:left; padding:0.4rem;">Navigation Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Bottom</strong> (widest)</td>
+                <td>Small, fast, isolated unit tests. <strong>Many</strong> needed.</td>
+                <td>500 unit tests for route algorithm, coordinate parsing, distance calc</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Middle</strong></td>
+                <td>Integration/service tests. Moderate speed.</td>
+                <td>50 API tests: Maps API + traffic service + geocoding service integration</td>
+              </tr>
+              <tr>
+                <td style="padding:0.4rem;"><strong>Top</strong> (narrowest)</td>
+                <td>End-to-end, UI tests. Slow, complex. <strong>Few</strong> needed.</td>
+                <td>10 E2E tests: open app → search "Tel Aviv Airport" → navigate → arrive</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top:0.5rem;">Higher layer = <strong>lower granularity</strong>, <strong>more dependencies</strong>, <strong>slower execution</strong>.</p>
         </div>
-      </div>
+      </section>
 
-      <div class="concept-block highlight-box">
-        <h3>5.1.7 Testing Quadrants</h3>
-        <p>The <strong>testing quadrants</strong> (Brian Marick) group test levels with appropriate test types, activities, techniques, and work products in Agile development. Tests can be <strong>business facing</strong> or <strong>technology facing</strong>, and they can <strong>support the team</strong> (guide development) or <strong>critique the product</strong> (measure behavior against expectations).</p>
+      <!-- ==================== TESTING QUADRANTS ==================== -->
+      <section class="concept-block">
+        <h3>5.1.7 Testing Quadrants (Brian Marick)</h3>
+        <p>Tests organized on two axes: <strong>business vs technology facing</strong> and <strong>support the team vs critique the product</strong>.</p>
 
-        <div class="comparison-grid" style="margin-top: 1rem;">
+        <div class="comparison-grid" style="margin: 1rem 0;">
           <div class="grid-item">
-            <h4>Q1 — Technology Facing, Support the Team</h4>
-            <p>Component tests, component integration tests.<br><em>Should be automated and included in CI.</em></p>
+            <h4>Q1 — Tech Facing + Support Team</h4>
+            <p>Unit tests, component integration tests.</p>
+            <p><em>Navigation:</em> Unit tests for Dijkstra's routing algorithm. <strong>Automated in CI.</strong></p>
           </div>
           <div class="grid-item">
-            <h4>Q2 — Business Facing, Support the Team</h4>
-            <p>Functional tests, examples, user story tests, UX prototypes, API testing, simulations.<br><em>Check acceptance criteria. Manual or automated.</em></p>
+            <h4>Q2 — Business Facing + Support Team</h4>
+            <p>Functional tests, user story tests, API tests, simulations.</p>
+            <p><em>Navigation:</em> "Search Tel Aviv → get route within 3s" acceptance test. <strong>Manual or automated.</strong></p>
           </div>
           <div class="grid-item">
-            <h4>Q3 — Business Facing, Critique the Product</h4>
-            <p>Exploratory testing, usability testing, user acceptance testing.<br><em>User-oriented and often manual.</em></p>
+            <h4>Q3 — Business Facing + Critique Product</h4>
+            <p>Exploratory, usability, user acceptance testing.</p>
+            <p><em>Navigation:</em> Real users test "Is the voice guidance clear in Hebrew?" <strong>Usually manual.</strong></p>
           </div>
           <div class="grid-item">
-            <h4>Q4 — Technology Facing, Critique the Product</h4>
-            <p>Smoke tests, non-functional tests (except usability).<br><em>Often automated.</em></p>
+            <h4>Q4 — Tech Facing + Critique Product</h4>
+            <p>Smoke tests, performance, security, reliability tests.</p>
+            <p><em>Navigation:</em> Load test: 100K concurrent route requests. <strong>Often automated.</strong></p>
           </div>
         </div>
-      </div>
+      </section>
 
       <hr class="section-divider">
 
-      <div class="concept-block practice-questions">
-        <h3>🧠 Knowledge Check Questions</h3>
+      <!-- ==================== PRACTICE QUESTIONS ==================== -->
+      <section class="concept-block practice-questions">
+        <h3>🧠 Practice Questions</h3>
         <ol>
           <li>
             <strong>Question:</strong> What is the purpose of a test plan?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> A test plan describes the test objectives, resources, and processes for a test project. It documents the means and schedule for achieving test objectives, helps ensure test activities meet established criteria, serves as communication with stakeholders, and demonstrates adherence to test policy and strategy.</p>
+                <p><strong>Answer:</strong> Documents objectives, resources, and processes. Ensures activities meet criteria, communicates with stakeholders, and demonstrates adherence to test policy/strategy.</p>
               </details>
             </div>
           </li>
@@ -203,57 +275,66 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Release planning looks ahead to the product release — testers participate in writing testable user stories, risk analyses, estimating test effort, determining the test approach, and planning testing for the release. Iteration planning looks ahead to the end of a single iteration — testers perform detailed risk analysis, determine testability, break down user stories into testing tasks, and estimate effort for all testing tasks.</p>
+                <p><strong>Answer:</strong> Release planning = big picture (whole release) — testable stories, risk analysis, test approach, effort estimates. Iteration planning = one sprint — detailed risk analysis, testability assessment, task breakdown, effort per task.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> What is the difference between entry criteria and exit criteria? What are they called in Agile?
+            <strong>Question:</strong> What are entry/exit criteria called in Agile?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Entry criteria define the preconditions for undertaking an activity. Exit criteria define what must be achieved to declare an activity completed. In Agile, exit criteria are called Definition of Done, and entry criteria are called Definition of Ready.</p>
+                <p><strong>Answer:</strong> Entry criteria = <strong>Definition of Ready (DoR)</strong>. Exit criteria = <strong>Definition of Done (DoD)</strong>. Running out of time/budget can also be a valid exit criterion if stakeholders accept the risk.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> Name the four estimation techniques and classify them as metrics-based or expert-based.
+            <strong>Question:</strong> Name and classify all four estimation techniques.
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Metrics-based: 1) Estimation based on ratios (using historical data and standard ratios), 2) Extrapolation (using early measurements and mathematical models). Expert-based: 3) Wideband Delphi (iterative expert estimation until consensus, Planning Poker variant), 4) Three-point estimation (optimistic/likely/pessimistic with formula E = (a + 4m + b) / 6).</p>
+                <p><strong>Answer:</strong> <strong>Metrics-based:</strong> 1) Ratios (historical data), 2) Extrapolation (early measurements projected forward). <strong>Expert-based:</strong> 3) Wideband Delphi / Planning Poker (iterative consensus), 4) Three-point estimation (E = (a + 4m + b) / 6).</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> What are the three most common test case prioritization strategies?
+            <strong>Scenario Question:</strong> Your team estimates testing "offline maps" feature. Optimistic = 4 days, most likely = 7 days, pessimistic = 16 days. What's the three-point estimate and standard deviation?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> 1) Risk-based prioritization — test cases covering the most important risks first. 2) Coverage-based prioritization — test cases achieving the highest coverage first. 3) Requirements-based prioritization — test cases related to the most important requirements first.</p>
+                <p><strong>Answer:</strong> E = (4 + 4×7 + 16) / 6 = (4 + 28 + 16) / 6 = 48/6 = <strong>8 days</strong>. SD = (16 - 4) / 6 = <strong>2 days</strong>. Estimate = 8 ± 2 days (6–10 days).</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> How does the test pyramid model relate to test granularity and test execution time?
+            <strong>Question:</strong> What are the three test case prioritization strategies?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> The higher the layer in the pyramid, the lower the test granularity, the lower the test isolation (more dependencies), and the higher the execution time. Bottom-layer tests are small, fast, and isolated (many needed). Top-layer tests are complex, slow, end-to-end (few needed).</p>
+                <p><strong>Answer:</strong> 1) Risk-based — highest risks first. 2) Coverage-based — highest coverage first (or additional coverage variant). 3) Requirements-based — most important requirements first. Dependencies and resource availability override priority.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> Describe the four testing quadrants and what each contains.
+            <strong>Question:</strong> Describe the test pyramid layers and their characteristics.
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Q1 (technology facing, support team): component and integration tests, automated in CI. Q2 (business facing, support team): functional tests, user story tests, API testing, manual or automated. Q3 (business facing, critique product): exploratory, usability, and acceptance testing, often manual. Q4 (technology facing, critique product): smoke tests and non-functional tests (except usability), often automated.</p>
+                <p><strong>Answer:</strong> Bottom: many small, fast, isolated unit tests. Middle: integration/service tests, moderate count. Top: few complex, slow end-to-end tests. Higher = less granularity, more dependencies, slower.</p>
+              </details>
+            </div>
+          </li>
+          <li>
+            <strong>Scenario Question:</strong> Your navigation app has 4 types of tests: unit tests for routing algorithms, acceptance tests against user stories, exploratory testing by real drivers, and load testing of the server. Which testing quadrant does each belong to?
+            <div class="details-panel">
+              <details>
+                <summary>Show Answer</summary>
+                <p><strong>Answer:</strong> Unit tests for routing → <strong>Q1</strong> (tech facing, support team). Acceptance tests → <strong>Q2</strong> (business facing, support team). Exploratory by drivers → <strong>Q3</strong> (business facing, critique product). Load testing → <strong>Q4</strong> (tech facing, critique product).</p>
               </details>
             </div>
           </li>
         </ol>
-      </div>
+      </section>
     </div>
-  `
+  `,
 };

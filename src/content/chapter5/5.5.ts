@@ -2,70 +2,167 @@ export const content = {
   title: "5.5 Defect Management",
   content: `
     <div class="test-content">
-      <div class="concept-block">
-        <h3>The Big Picture</h3>
-        <p>Since a major test objective is to <strong>find defects</strong>, an established defect management process is essential. Reported anomalies may turn out to be <strong>real defects</strong> or something else (e.g., false-positive results, change requests) — this is resolved during the process of dealing with defect reports.</p>
-        <p>Anomalies may be reported during <strong>any phase of the SDLC</strong>. It is advisable to handle defects from <strong>static testing</strong> (especially static analysis) in a similar way.</p>
 
-        <div class="highlight-box" style="margin-top: 1rem;">
-          <h4>Minimum Defect Management Process</h4>
-          <ul>
-            <li>A <strong>workflow</strong> for handling individual defects/anomalies from discovery to closure</li>
-            <li><strong>Rules for classification</strong> of defects</li>
-          </ul>
-          <p><strong>Typical workflow activities:</strong></p>
+      <!-- ==================== BIG PICTURE ==================== -->
+      <section class="concept-block">
+        <h3>The Big Picture — Tracking Every Bug in a Ride-Hailing App</h3>
+        <p>You're QA lead on a <strong>ride-hailing app</strong> (think Uber / Lyft). Last week your team found 47 anomalies — some turned out to be real bugs, some were configuration issues, one was a change request. Without a solid <strong>defect management process</strong>, how do you decide what gets fixed, track fixes through to closure, and use the data to improve?</p>
+
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Key Insight</h4>
+          <p>Not every reported anomaly is a real defect. Anomalies may be <strong>real defects</strong>, <strong>false positives</strong>, <strong>change requests</strong>, or <strong>environment issues</strong>. The defect management process sorts this out.</p>
+          <p>Anomalies can be reported during <strong>any SDLC phase</strong>, including from static testing (code reviews, static analysis).</p>
+        </div>
+      </section>
+
+      <!-- ==================== WORKFLOW ==================== -->
+      <section class="concept-block">
+        <h3>The Defect Management Workflow</h3>
+        <p>At minimum, a defect management process needs: a <strong>workflow</strong> (discovery → closure) and <strong>classification rules</strong>.</p>
+
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>🧠 Memory Trick — "LADC" → Log, Analyze, Decide, Close</h4>
+          <table style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.4rem;">Step</th>
+                <th style="text-align:left; padding:0.4rem;">Action</th>
+                <th style="text-align:left; padding:0.4rem;">Ride-Hailing Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>1. Log</strong></td>
+                <td>Record the anomaly</td>
+                <td>Tester logs: "Driver location jumps 500m after tunnel exit on iOS 17"</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>2. Analyze & Classify</strong></td>
+                <td>Is it a defect, false positive, or change request?</td>
+                <td>Dev investigates: confirmed — GPS reconnection logic doesn't interpolate after signal loss</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>3. Decide</strong></td>
+                <td>Fix, defer, or reject</td>
+                <td>Product owner: "Fix for v4.2 — high severity, affects estimated arrival times"</td>
+              </tr>
+              <tr>
+                <td style="padding:0.4rem;"><strong>4. Close</strong></td>
+                <td>Verify fix, close the report</td>
+                <td>Tester confirms fix in v4.2 beta, closes defect report</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top:0.5rem;"><em>All involved stakeholders must follow this process.</em></p>
+        </div>
+      </section>
+
+      <!-- ==================== OBJECTIVES ==================== -->
+      <section class="concept-block">
+        <h3>Three Objectives of Defect Reports</h3>
+        <div class="highlight-box" style="margin: 1rem 0;">
           <ol>
-            <li><strong>Log</strong> the reported anomaly</li>
-            <li><strong>Analyze and classify</strong> it</li>
-            <li><strong>Decide on a response</strong> (fix it or keep it as-is)</li>
-            <li><strong>Close</strong> the defect report</li>
+            <li><strong>Resolve:</strong> Give those responsible enough information to fix the issue</li>
+            <li><strong>Track:</strong> Provide a means of tracking work product quality over time</li>
+            <li><strong>Improve:</strong> Provide ideas for improving the development and test process</li>
           </ol>
-          <p><em>The process must be followed by <strong>all involved stakeholders</strong>.</em></p>
+          <p><em>Example: After analyzing 6 months of defect data, the team discovers 35% of bugs originate in the payment module → they add more unit tests and a dedicated reviewer for payment PRs.</em></p>
         </div>
-      </div>
+      </section>
 
-      <div class="concept-block">
-        <h3>Objectives of Defect Reports</h3>
-        <p>Typical defect reports have the following objectives:</p>
-        <div class="highlight-box">
-          <ul>
-            <li>Provide those responsible for handling and resolving reported defects with <strong>sufficient information to resolve the issue</strong></li>
-            <li>Provide a means of <strong>tracking the quality</strong> of the work product</li>
-            <li>Provide ideas for <strong>improvement</strong> of the development and test process</li>
-          </ul>
+      <!-- ==================== DEFECT REPORT FIELDS ==================== -->
+      <section class="concept-block">
+        <h3>Content of a Defect Report</h3>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <table style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.4rem;">Field</th>
+                <th style="text-align:left; padding:0.4rem;">Ride-Hailing Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Unique ID</strong></td><td>BUG-2847</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Title</strong></td><td>"Driver pin jumps 500m after tunnel exit on iOS"</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Date, author, role</strong></td><td>Mar 15, 2026 — Sarah Chen (QA Engineer)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Test object & environment</strong></td><td>v4.1.3, iOS 17.2, iPhone 15 Pro, staging server</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Context</strong></td><td>TC-1203 "GPS accuracy after signal loss", system testing, exploratory session</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Description (steps to reproduce)</strong></td><td>1. Start ride 2. Enter tunnel (simulate GPS loss) 3. Exit tunnel → observe pin location. Attached: screen recording, GPS log</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Expected result</strong></td><td>Pin smoothly transitions to current location within 3 seconds</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Actual result</strong></td><td>Pin jumps 500m north, stays there for 8 seconds, then snaps to correct location</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Severity</strong></td><td>High — affects ETA calculation and fare accuracy</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Priority</strong></td><td>High — fix for v4.2 release</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Status</strong></td><td>Open → In Progress → Fixed → Verified → Closed</td>
+              </tr>
+              <tr>
+                <td style="padding:0.4rem;"><strong>References</strong></td><td>Linked to TC-1203, requirement REQ-GPS-014</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top:0.5rem;"><em>Some fields (ID, date, initial status) may be <strong>auto-populated</strong> by defect management tools like Jira, Azure DevOps, or Bugzilla.</em></p>
         </div>
-      </div>
+      </section>
 
-      <div class="concept-block highlight-box">
-        <h3>Content of a Defect Report (Dynamic Testing)</h3>
-        <p>A defect report logged during dynamic testing typically includes:</p>
-        <ul>
-          <li><strong>Unique identifier</strong></li>
-          <li><strong>Title</strong> with a short summary of the anomaly</li>
-          <li><strong>Date</strong> when the anomaly was observed, issuing organization, and <strong>author</strong> (including their role)</li>
-          <li><strong>Identification</strong> of the test object and test environment</li>
-          <li><strong>Context of the defect:</strong> Test case being run, test activity being performed, SDLC phase, and other relevant information (test technique, checklist, or test data being used)</li>
-          <li><strong>Description of the failure</strong> to enable reproduction and resolution — including test steps, relevant test logs, database dumps, screenshots, or recordings</li>
-          <li><strong>Expected results</strong> and <strong>actual results</strong></li>
-          <li><strong>Severity</strong> of the defect (degree of impact on stakeholders' interests or requirements)</li>
-          <li><strong>Priority</strong> to fix</li>
-          <li><strong>Status</strong> of the defect (e.g., open, deferred, duplicate, waiting to be fixed, awaiting confirmation testing, re-opened, closed, rejected)</li>
-          <li><strong>References</strong> (e.g., to the test case)</li>
-        </ul>
-        <p style="margin-top: 1rem;"><em>Some data may be <strong>automatically included</strong> when using defect management tools (e.g., identifier, date, author, initial status).</em></p>
-      </div>
+      <!-- ==================== SEVERITY VS PRIORITY ==================== -->
+      <section class="concept-block">
+        <h3>Severity vs Priority — The Classic Distinction</h3>
+        <div class="comparison-grid" style="margin: 1rem 0;">
+          <div class="grid-item">
+            <h4>Severity</h4>
+            <p><strong>How bad is it?</strong> Impact on stakeholders/requirements.</p>
+            <ul>
+              <li>High: GPS jump causes wrong fare charges</li>
+              <li>Low: App icon has 1px misalignment on Android</li>
+            </ul>
+          </div>
+          <div class="grid-item">
+            <h4>Priority</h4>
+            <p><strong>How urgently must it be fixed?</strong></p>
+            <ul>
+              <li>High: Login page typo (low severity but visible to ALL users)</li>
+              <li>Low: Crash in admin-only debug mode (high severity but rarely triggered)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="definition-box highlight-box" style="padding: 1rem; margin: 1rem 0; border-radius: 8px;">
+          <p style="margin: 0;">🎯 <strong>Exam favorite:</strong> Severity and priority are <strong>independent</strong>. A defect can be <strong>high severity / low priority</strong> (serious bug in a rarely used feature) or <strong>low severity / high priority</strong> (typo on the homepage seen by millions of users).</p>
+        </div>
+      </section>
 
       <hr class="section-divider">
 
-      <div class="concept-block practice-questions">
-        <h3>🧠 Knowledge Check Questions</h3>
+      <!-- ==================== PRACTICE QUESTIONS ==================== -->
+      <section class="concept-block practice-questions">
+        <h3>🧠 Practice Questions</h3>
         <ol>
           <li>
             <strong>Question:</strong> What is the minimum a defect management process should include?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> At a minimum, a defect management process includes a workflow for handling individual defects or anomalies from their discovery to their closure, and rules for their classification. The workflow typically comprises logging, analyzing and classifying, deciding on a response, and closing the defect report.</p>
+                <p><strong>Answer:</strong> A <strong>workflow</strong> for handling defects from discovery to closure (Log → Analyze/Classify → Decide → Close) and <strong>rules for classification</strong>. All involved stakeholders must follow the process.</p>
               </details>
             </div>
           </li>
@@ -74,7 +171,7 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> No. Reported anomalies may turn out to be real defects or something else, such as false-positive results or change requests. This is resolved during the process of dealing with the defect reports.</p>
+                <p><strong>Answer:</strong> No. Anomalies may be real defects, false positives, change requests, or environment issues. This is resolved during the analyze/classify step of the workflow.</p>
               </details>
             </div>
           </li>
@@ -83,16 +180,25 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> 1) Provide those responsible for handling defects with sufficient information to resolve the issue. 2) Provide a means of tracking the quality of the work product. 3) Provide ideas for improvement of the development and test process.</p>
+                <p><strong>Answer:</strong> 1) Provide enough information to <strong>resolve</strong> the issue. 2) Provide a means of <strong>tracking</strong> work product quality. 3) Provide ideas for <strong>improving</strong> the development and test process.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> What is the difference between severity and priority in a defect report?
+            <strong>Question:</strong> What is the difference between severity and priority?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Severity refers to the degree of impact of the defect on the interests of stakeholders or requirements — how serious the defect is. Priority refers to how urgently the defect needs to be fixed. A defect can be high severity but low priority (e.g., a serious defect in a rarely used feature) or low severity but high priority (e.g., a cosmetic issue on the login page).</p>
+                <p><strong>Answer:</strong> <strong>Severity</strong> = degree of impact on stakeholders/requirements (how bad). <strong>Priority</strong> = how urgently it needs fixing. They're independent — a defect can be high severity/low priority (serious but in a rarely used feature) or low severity/high priority (cosmetic but on a high-visibility page).</p>
+              </details>
+            </div>
+          </li>
+          <li>
+            <strong>Scenario Question:</strong> A tester finds that the ride-hailing app's "Cancel Ride" button doesn't work, but only when the driver is less than 30 seconds away. What severity and priority would you assign, and why?
+            <div class="details-panel">
+              <details>
+                <summary>Show Answer</summary>
+                <p><strong>Answer:</strong> <strong>High severity</strong> — a core feature (cancellation) is broken in a specific scenario. <strong>High priority</strong> — this directly impacts paying customers who may be charged for rides they tried to cancel. Both severity and priority are high because the feature is critical and the scenario occurs frequently.</p>
               </details>
             </div>
           </li>
@@ -101,12 +207,12 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Any six of: Unique identifier, title, date/author, identification of test object and environment, context of the defect, description of the failure (steps to reproduce), expected and actual results, severity, priority, status, and references.</p>
+                <p><strong>Answer:</strong> Any six of: unique ID, title, date/author/role, test object & environment, context, description/steps to reproduce, expected result, actual result, severity, priority, status, and references.</p>
               </details>
             </div>
           </li>
         </ol>
-      </div>
+      </section>
     </div>
-  `
+  `,
 };

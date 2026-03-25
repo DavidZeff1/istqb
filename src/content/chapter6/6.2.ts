@@ -2,70 +2,195 @@ export const content = {
   title: "6.2 Benefits and Risks of Test Automation",
   content: `
     <div class="test-content">
-      <div class="concept-block">
-        <h3>The Big Picture</h3>
-        <p>Simply acquiring a tool <strong>does not guarantee success</strong>. Each new tool requires effort for <strong>introduction, maintenance, and training</strong> to achieve real and lasting benefits. There are also risks that need analysis and mitigation.</p>
-      </div>
 
-      <div class="concept-block">
-        <h3>Potential Benefits of Test Automation</h3>
-        <div class="comparison-grid">
-          <div class="grid-item">
-            <h4>✅ Benefits</h4>
-            <ul>
-              <li><strong>Time saved</strong> by reducing repetitive manual work (e.g., regression tests, re-entering test data, comparing expected vs actual results, checking coding standards).</li>
-              <li><strong>Prevention of simple human errors</strong> through greater consistency and repeatability (e.g., tests consistently derived from requirements, test data created systematically, tests executed in the same order with the same frequency).</li>
-              <li><strong>More objective assessment</strong> (e.g., coverage) and providing measures too complicated for humans to determine.</li>
-              <li><strong>Easier access to information</strong> about testing to support test management and reporting (e.g., statistics, graphs, aggregated data about progress, failure rates, execution duration).</li>
-              <li><strong>Reduced test execution times</strong> providing earlier defect detection, faster feedback, and faster time to market.</li>
-              <li><strong>More time for testers</strong> to design new, deeper, and more effective tests.</li>
-            </ul>
-          </div>
-          <div class="grid-item">
-            <h4>⚠️ Risks</h4>
-            <ul>
-              <li><strong>Unrealistic expectations</strong> about the benefits of a tool (including functionality and ease of use).</li>
-              <li><strong>Inaccurate estimations</strong> of time, costs, and effort required to introduce a tool, maintain test scripts, and change the existing manual test process.</li>
-              <li><strong>Using a test tool when manual testing is more appropriate.</strong></li>
-              <li><strong>Relying on a tool too much</strong> — e.g., ignoring the need for human critical thinking.</li>
-              <li><strong>Dependency on the tool vendor</strong> — vendor may go out of business, retire the tool, sell it, or provide poor support (responses, upgrades, defect fixes).</li>
-              <li><strong>Using open-source software</strong> that may be abandoned (no further updates) or require frequent internal component updates.</li>
-              <li><strong>Tool incompatibility</strong> with the development platform.</li>
-              <li><strong>Choosing an unsuitable tool</strong> that does not comply with regulatory requirements and/or safety standards.</li>
-            </ul>
-          </div>
+      <!-- ==================== BIG PICTURE ==================== -->
+      <section class="concept-block">
+        <h3>The Big Picture — A Cautionary Tale</h3>
+        <p>Your <strong>e-commerce company</strong> just spent $50,000 on a shiny new test automation framework. Management expects "zero manual testing" within 3 months. Six months later, half the automated scripts are broken, nobody maintains them, and manual testers were let go. Sound familiar?</p>
+        <p>The ISTQB message is clear: <strong>simply acquiring a tool does NOT guarantee success</strong>. Every tool requires effort for <strong>introduction, maintenance, and training</strong>. There are real benefits — but also real risks that need analysis and mitigation.</p>
+      </section>
+
+      <!-- ==================== BENEFITS ==================== -->
+      <section class="concept-block">
+        <h3>6 Potential Benefits of Test Automation</h3>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <table style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.5rem;">Benefit</th>
+                <th style="text-align:left; padding:0.5rem;">What It Means</th>
+                <th style="text-align:left; padding:0.5rem;">E-Commerce Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>1. Time Saved</strong></td>
+                <td>Reduces repetitive manual work — regression tests, re-entering data, comparing results, checking standards</td>
+                <td>500 regression tests run in 20 minutes instead of 3 days of manual clicking</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>2. Consistency & Repeatability</strong></td>
+                <td>Prevents simple human errors — tests derived consistently, data created systematically, same order/frequency</td>
+                <td>Checkout flow tested identically across Chrome, Safari, Firefox every night — no "I forgot to test Safari"</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>3. Objective Assessment</strong></td>
+                <td>Provides measures too complex for humans (e.g., code coverage percentages)</td>
+                <td>Istanbul reports 82% branch coverage, highlighting that error-handling paths in payment processing are untested</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>4. Easier Reporting</strong></td>
+                <td>Statistics, graphs, aggregated data on progress, failure rates, execution duration</td>
+                <td>Dashboard shows pass/fail trend over last 30 sprints — stakeholders see quality improving</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>5. Faster Execution</strong></td>
+                <td>Earlier defect detection, faster feedback, faster time to market</td>
+                <td>CI catches a broken add-to-cart API within 8 minutes of a developer's push — not 2 days later</td>
+              </tr>
+              <tr>
+                <td style="padding:0.4rem;"><strong>6. More Time for Design</strong></td>
+                <td>Frees testers to design new, deeper, more effective tests instead of running repetitive ones</td>
+                <td>QA now spends time on exploratory testing of the new recommendation engine instead of re-running checkout regression</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
+
+        <div class="definition-box highlight-box" style="padding: 1rem; margin: 1rem 0; border-radius: 8px;">
+          <h4>🧠 Memory Trick — "SCORER"</h4>
+          <p><strong>S</strong>aved time · <strong>C</strong>onsistency · <strong>O</strong>bjective measures · <strong>R</strong>eporting · <strong>E</strong>xecution speed · <strong>R</strong>edirect time to design</p>
+        </div>
+      </section>
 
       <hr class="section-divider">
 
-      <div class="concept-block practice-questions">
-        <h3>🧠 Knowledge Check Questions</h3>
+      <!-- ==================== RISKS ==================== -->
+      <section class="concept-block">
+        <h3>8 Potential Risks of Test Automation</h3>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <table style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.5rem;">Risk</th>
+                <th style="text-align:left; padding:0.5rem;">What Goes Wrong</th>
+                <th style="text-align:left; padding:0.5rem;">E-Commerce Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>1. Unrealistic Expectations</strong></td>
+                <td>Overestimating functionality or ease of use</td>
+                <td>CEO expects "100% automated testing in 2 weeks" — reality: 6 months for 60% coverage</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>2. Inaccurate Estimates</strong></td>
+                <td>Underestimating time, cost, effort for introduction + maintenance</td>
+                <td>Budget was $50K for tool purchase — actual cost was $200K including training, scripting, and ongoing maintenance</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>3. Automating When Manual Is Better</strong></td>
+                <td>Some tests are better done manually (exploratory, UX)</td>
+                <td>Team automates visual layout checks — scripts can't tell the "Add to Cart" button overlaps the product image on mobile</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>4. Over-Reliance on Tools</strong></td>
+                <td>Ignoring need for human critical thinking</td>
+                <td>"All 500 automated tests pass!" — but nobody noticed the search bar returns results in random order</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>5. Vendor Dependency</strong></td>
+                <td>Vendor goes out of business, retires tool, provides poor support</td>
+                <td>Tool vendor acquired by competitor → tool discontinued → 2,000 test scripts become worthless</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>6. Open-Source Abandonment</strong></td>
+                <td>OSS may be abandoned or require frequent component updates</td>
+                <td>Team builds framework on Protractor → Angular team announces Protractor is deprecated and EOL</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>7. Platform Incompatibility</strong></td>
+                <td>Tool doesn't work with the development platform</td>
+                <td>Purchased tool only supports Windows desktop apps — your app is a React Native mobile app</td>
+              </tr>
+              <tr>
+                <td style="padding:0.4rem;"><strong>8. Regulatory Non-Compliance</strong></td>
+                <td>Tool doesn't meet regulatory or safety standards</td>
+                <td>Medical device app requires FDA-compliant audit trail — chosen tool has no audit logging capability</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="definition-box highlight-box" style="padding: 1rem; margin: 1rem 0; border-radius: 8px;">
+          <h4>⚠️ Exam Trap</h4>
+          <p>The exam loves to test: <strong>"Using a test tool when manual testing is more appropriate"</strong> — this IS a risk, not a benefit. Automation isn't always the answer. Also watch for: <strong>over-reliance ≠ over-automation</strong>. Over-reliance means ignoring human critical thinking, not simply having too many automated tests.</p>
+        </div>
+      </section>
+
+      <hr class="section-divider">
+
+      <!-- ==================== COMPARISON ==================== -->
+      <section class="concept-block">
+        <h3>Benefits vs. Risks — Side by Side</h3>
+        <div class="comparison-grid">
+          <div class="grid-item">
+            <h4>✅ Benefits (SCORER)</h4>
+            <ul>
+              <li><strong>S</strong>aved time — less repetitive manual work</li>
+              <li><strong>C</strong>onsistency — no human errors in repetition</li>
+              <li><strong>O</strong>bjective assessment — coverage, metrics</li>
+              <li><strong>R</strong>eporting — dashboards, statistics, graphs</li>
+              <li><strong>E</strong>xecution speed — fast feedback, earlier defect detection</li>
+              <li><strong>R</strong>edirect time — testers design deeper tests</li>
+            </ul>
+          </div>
+          <div class="grid-item">
+            <h4>⚠️ Risks (8 items)</h4>
+            <ul>
+              <li>Unrealistic expectations</li>
+              <li>Inaccurate estimates</li>
+              <li>Automating when manual is better</li>
+              <li>Over-reliance (ignoring human thinking)</li>
+              <li>Vendor dependency</li>
+              <li>Open-source abandonment</li>
+              <li>Platform incompatibility</li>
+              <li>Regulatory non-compliance</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider">
+
+      <!-- ==================== PRACTICE QUESTIONS ==================== -->
+      <section class="concept-block practice-questions">
+        <h3>🧠 Practice Questions</h3>
         <ol>
           <li>
             <strong>Question:</strong> Does simply acquiring a test automation tool guarantee success?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> No. Each new tool requires effort to achieve real and lasting benefits, including tool introduction, maintenance, and training. There are also risks that need analysis and mitigation.</p>
+                <p><strong>Answer:</strong> No. Each new tool requires effort for <strong>introduction, maintenance, and training</strong>. There are also risks that need analysis and mitigation. Buying the tool is just the beginning.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> Name at least 4 potential benefits of test automation.
+            <strong>Question:</strong> Name all 6 potential benefits of test automation.
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Any four of: Time saved by reducing repetitive manual work, prevention of human errors through consistency and repeatability, more objective assessment and complex measures, easier access to testing information for management/reporting, reduced test execution times for faster feedback, and more time for testers to design deeper tests.</p>
+                <p><strong>Answer (SCORER):</strong> <strong>S</strong>aved time (less repetitive work), <strong>C</strong>onsistency & repeatability (no human error), <strong>O</strong>bjective assessment (coverage metrics), <strong>R</strong>eporting (statistics, graphs), <strong>E</strong>xecution speed (faster feedback, faster time to market), <strong>R</strong>edirect time (testers design deeper tests).</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> Name at least 4 potential risks of test automation.
+            <strong>Question:</strong> Name at least 5 potential risks of test automation.
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Any four of: Unrealistic expectations about tool benefits, inaccurate estimations of introduction costs/effort, using automation when manual testing is more appropriate, over-reliance on tools (ignoring human critical thinking), dependency on tool vendor, abandoned open-source tools, tool incompatibility with the development platform, and choosing a tool that doesn't comply with regulatory/safety standards.</p>
+                <p><strong>Answer:</strong> Any five of: unrealistic expectations, inaccurate estimates, automating when manual is better, over-reliance on tools, vendor dependency, open-source abandonment, platform incompatibility, regulatory non-compliance.</p>
               </details>
             </div>
           </li>
@@ -74,22 +199,30 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Because it may lead to ignoring the need for human critical thinking. Automated tools execute predefined checks, but they cannot replace the tester's ability to think creatively, explore edge cases, or apply judgment in ambiguous situations. A balance between automation and manual testing is essential.</p>
+                <p><strong>Answer:</strong> It leads to ignoring the need for <strong>human critical thinking</strong>. Automated tools execute predefined checks but cannot think creatively, explore edge cases, or apply judgment in ambiguous situations. A balance between automation and manual testing is essential.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> What are the risks associated with relying on a specific tool vendor or open-source software?
+            <strong>Scenario Question:</strong> A startup adopts Selenium for their React e-commerce site. After 3 months, tests break every sprint because the UI changes frequently. Management blames automation. What risk was underestimated?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> The vendor may go out of business, retire the tool, sell it to a different vendor, or provide poor support (slow responses to queries, delayed upgrades, unfixed defects). For open-source software, it may be abandoned with no further updates available, or its internal components may require frequent updates as part of ongoing development.</p>
+                <p><strong>Answer:</strong> <strong>Inaccurate estimation</strong> of the effort required to <strong>maintain test scripts</strong>. Frequent UI changes require regular script updates. The team underestimated ongoing maintenance costs and should have invested in more resilient locators or a page-object model.</p>
+              </details>
+            </div>
+          </li>
+          <li>
+            <strong>Scenario Question:</strong> A QA lead says: "We automated 800 tests and they all pass — we don't need manual testing anymore." Why is this dangerous?
+            <div class="details-panel">
+              <details>
+                <summary>Show Answer</summary>
+                <p><strong>Answer:</strong> This reflects <strong>over-reliance on tools</strong>. Automated tests only check what they were programmed to check. They miss usability issues, visual glitches, unexpected workflows, and edge cases that require human critical thinking and exploratory testing. Eliminating manual testing entirely is a recognized risk.</p>
               </details>
             </div>
           </li>
         </ol>
-      </div>
+      </section>
     </div>
-  `
+  `,
 };
-

@@ -2,189 +2,352 @@ export const content = {
   title: "4.2 Black-Box Test Techniques",
   content: `
     <div class="test-content">
-      <div class="concept-block">
-        <h3>The Big Picture</h3>
-        <p>The commonly used black-box test techniques covered in this syllabus are:</p>
-        <ol>
-          <li><strong>Equivalence Partitioning (EP)</strong></li>
-          <li><strong>Boundary Value Analysis (BVA)</strong></li>
-          <li><strong>Decision Table Testing</strong></li>
-          <li><strong>State Transition Testing</strong></li>
-        </ol>
-      </div>
 
-      <div class="concept-block">
+      <!-- ==================== BIG PICTURE ==================== -->
+      <section class="concept-block">
+        <h3>The Big Picture — A Flight Booking System</h3>
+        <p>You're testing a <strong>flight booking platform</strong> (think Booking.com / Skyscanner). Users search flights, apply filters, enter passenger details, choose seats, and pay. Each black-box technique shines in a different part of this system:</p>
+        <ul>
+          <li><strong>Equivalence Partitioning & BVA</strong> → Passenger age field, baggage weight limits</li>
+          <li><strong>Decision Table Testing</strong> → Discount/upgrade rules based on loyalty tier + fare class + route</li>
+          <li><strong>State Transition Testing</strong> → Booking lifecycle: Searching → Selected → Reserved → Paid → Checked-in → Boarded → Completed (or Cancelled)</li>
+        </ul>
+      </section>
+
+      <!-- ==================== EP ==================== -->
+      <section class="concept-block">
         <h3>4.2.1 Equivalence Partitioning (EP)</h3>
-        <p>EP divides data into <strong>partitions</strong> (equivalence partitions) based on the expectation that all elements of a given partition are processed <strong>in the same way</strong> by the test object.</p>
+        <p>EP divides data into <strong>partitions</strong> where all values in a partition are expected to be processed <strong>the same way</strong>. If one test per partition finds the bug, any other value in that partition would too — so <strong>one test per partition is sufficient</strong>.</p>
 
-        <div class="highlight-box" style="margin-bottom: 1rem;">
-          <h4>Core Principle</h4>
-          <p>If a test case that tests one value from a partition detects a defect, this defect should also be detected by test cases testing <strong>any other value</strong> from the same partition. Therefore, <strong>one test per partition is sufficient</strong>.</p>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Real Example — Passenger Age Field</h4>
+          <p>The booking system classifies passengers by age:</p>
+          <table style="width:100%; border-collapse:collapse; margin-top:0.5rem;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.4rem;">Partition</th>
+                <th style="text-align:left; padding:0.4rem;">Type</th>
+                <th style="text-align:left; padding:0.4rem;">Values</th>
+                <th style="text-align:left; padding:0.4rem;">System Behavior</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;">P1</td><td><strong>Invalid</strong></td><td>age &lt; 0</td><td>Reject — "Invalid age"</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;">P2</td><td>Valid</td><td>0–1</td><td>Infant fare (no seat)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;">P3</td><td>Valid</td><td>2–11</td><td>Child fare (own seat, escort required)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;">P4</td><td>Valid</td><td>12–64</td><td>Adult fare</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;">P5</td><td>Valid</td><td>65–120</td><td>Senior discount applied</td>
+              </tr>
+              <tr>
+                <td style="padding:0.4rem;">P6</td><td><strong>Invalid</strong></td><td>age &gt; 120</td><td>Reject — "Invalid age"</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top:0.5rem;">6 partitions → minimum <strong>6 test cases</strong> for 100% EP coverage. You'd pick one representative from each: e.g., -5, 1, 7, 30, 70, 150.</p>
         </div>
 
-        <p><strong>Key characteristics of equivalence partitions:</strong></p>
-        <ul>
-          <li>Can be identified for <strong>any data element</strong>: inputs, outputs, configuration items, internal values, time-related values, and interface parameters.</li>
-          <li>May be continuous or discrete, ordered or unordered, finite or infinite.</li>
-          <li>Must <strong>not overlap</strong> and must be <strong>non-empty sets</strong>.</li>
-          <li>Partitioning should be done <strong>with care</strong> — understanding how the test object treats different values can be complicated.</li>
-        </ul>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Key Rules</h4>
+          <ul>
+            <li>Partitions must <strong>not overlap</strong> and must be <strong>non-empty sets</strong></li>
+            <li>Can be identified for <strong>any data element</strong>: inputs, outputs, config items, internal values, time-related values, interface parameters</li>
+            <li>May be continuous or discrete, ordered or unordered, finite or infinite</li>
+          </ul>
+        </div>
 
-        <div class="comparison-grid" style="margin-top: 1rem;">
+        <div class="comparison-grid" style="margin: 1rem 0;">
           <div class="grid-item">
             <h4>Valid Partitions</h4>
-            <p>Contain values that <strong>should be processed</strong> by the test object, or values for which the specification defines processing.</p>
+            <p>Values the system <strong>should process</strong> normally. Example: age 30 → Adult fare applied.</p>
           </div>
           <div class="grid-item">
             <h4>Invalid Partitions</h4>
-            <p>Contain values that <strong>should be ignored or rejected</strong> by the test object, or values for which no processing is defined in the specification.</p>
+            <p>Values the system should <strong>reject or ignore</strong>. Example: age -5 → "Invalid age" error shown.</p>
           </div>
         </div>
 
-        <div class="highlight-box" style="margin-top: 1rem;">
-          <h4>Coverage</h4>
-          <p>Coverage items = equivalence partitions. To achieve <strong>100% coverage</strong>, test cases must exercise <strong>all identified partitions</strong> (including invalid ones) by covering each partition at least once.</p>
-          <p><strong>Formula:</strong> <em>Number of partitions exercised ÷ Total number of identified partitions × 100%</em></p>
-          <p>When there are <strong>multiple sets of partitions</strong> (e.g., multiple input parameters), the simplest coverage criterion is <strong>Each Choice coverage</strong> — requiring test cases to exercise each partition from each set at least once. Each Choice coverage does <strong>not</strong> take combinations of partitions into account.</p>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Coverage Formula</h4>
+          <p><strong>EP Coverage = (Partitions exercised ÷ Total partitions) × 100%</strong></p>
+          <p>When you have <strong>multiple input parameters</strong> (age + baggage weight + cabin class), the simplest criterion is <strong>Each Choice coverage</strong> — exercise each partition from each parameter at least once. Each Choice does <strong>NOT</strong> consider combinations.</p>
         </div>
-      </div>
 
-      <div class="concept-block">
+        <div class="definition-box highlight-box" style="padding: 1rem; margin: 1rem 0; border-radius: 8px;">
+          <p style="margin: 0;">🎯 <strong>Exam trap:</strong> "Each Choice coverage tests all combinations of partitions" — <strong>FALSE</strong>. It only ensures each partition is covered at least once, without regard to how they combine.</p>
+        </div>
+      </section>
+
+      <!-- ==================== BVA ==================== -->
+      <section class="concept-block">
         <h3>4.2.2 Boundary Value Analysis (BVA)</h3>
-        <p>BVA is based on exercising the <strong>boundaries of equivalence partitions</strong>. It can only be used for <strong>ordered partitions</strong>. The minimum and maximum values of a partition are its boundary values.</p>
+        <p>BVA exercises the <strong>boundaries of equivalence partitions</strong>. It only works on <strong>ordered partitions</strong>. Why? Because developers make the most mistakes at boundaries — off-by-one errors, using <code>&lt;</code> instead of <code>&lt;=</code>, etc.</p>
 
-        <div class="concept-block" style="background: rgba(255,200,50,0.08); padding: 1rem; border-radius: 8px; border-left: 4px solid rgba(255,200,50,0.5); margin-bottom: 1rem;">
-          <h4>⚠️ Why Boundaries?</h4>
-          <p>Developers are <strong>more likely to make errors</strong> with boundary values. Typical defects found by BVA are where implemented boundaries are <strong>misplaced</strong> (above or below their intended positions) or <strong>omitted altogether</strong>.</p>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Real Example — Checked Baggage Weight (max 23 kg per bag)</h4>
+          <p>Spec says: Bags 0–23 kg = standard fee. Over 23 kg = overweight surcharge.</p>
+          <table style="width:100%; border-collapse:collapse; margin-top:0.5rem;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.4rem;">Boundary</th>
+                <th style="text-align:left; padding:0.4rem;">2-Value BVA Tests</th>
+                <th style="text-align:left; padding:0.4rem;">3-Value BVA Tests</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;">Lower boundary (0 kg)</td>
+                <td>0, -1</td>
+                <td>-1, 0, 1</td>
+              </tr>
+              <tr>
+                <td style="padding:0.4rem;">Upper boundary (23 kg)</td>
+                <td>23, 24</td>
+                <td>22, 23, 24</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top:0.5rem;"><strong>2-value BVA:</strong> 4 tests total. <strong>3-value BVA:</strong> 6 tests total.</p>
         </div>
 
-        <div class="comparison-grid">
+        <div class="comparison-grid" style="margin: 1rem 0;">
           <div class="grid-item">
             <h4>2-Value BVA</h4>
-            <p>For each boundary: <strong>2 coverage items</strong>:</p>
+            <p>For each boundary → <strong>2 coverage items</strong>:</p>
             <ul>
               <li>The boundary value itself</li>
-              <li>Its closest neighbor belonging to the <strong>adjacent partition</strong></li>
+              <li>Its closest neighbor in the <strong>adjacent partition</strong></li>
             </ul>
-            <p><strong>100% coverage:</strong> Exercise all identified boundary values.</p>
           </div>
           <div class="grid-item">
-            <h4>3-Value BVA</h4>
-            <p>For each boundary: <strong>3 coverage items</strong>:</p>
+            <h4>3-Value BVA (More Rigorous)</h4>
+            <p>For each boundary → <strong>3 coverage items</strong>:</p>
             <ul>
               <li>The boundary value itself</li>
-              <li><strong>Both</strong> its neighbors (one from each side)</li>
+              <li><strong>Both</strong> neighbors (one from each side)</li>
             </ul>
-            <p><strong>100% coverage:</strong> Exercise all boundary values and their neighbors.</p>
           </div>
         </div>
 
-        <div class="highlight-box" style="margin-top: 1rem;">
-          <h4>3-Value BVA is More Rigorous</h4>
-          <p>3-value BVA may detect defects overlooked by 2-value BVA.</p>
-          <p><strong>Example:</strong> If <code>if (x ≤ 10)</code> is incorrectly implemented as <code>if (x = 10)</code>, the 2-value BVA tests (x=10, x=11) would <em>not</em> detect the defect. However, x=9 from 3-value BVA is likely to detect it.</p>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Why 3-Value BVA Catches More Bugs</h4>
+          <p><strong>Scenario:</strong> A developer codes <code>if (weight == 23)</code> instead of <code>if (weight &lt;= 23)</code>.</p>
+          <ul>
+            <li><strong>2-Value BVA</strong> tests 23 and 24 → 23 passes (matches ==), 24 fails as expected → <strong>bug NOT detected</strong></li>
+            <li><strong>3-Value BVA</strong> also tests 22 → 22 should get standard fee but now triggers overweight branch → <strong>bug DETECTED</strong></li>
+          </ul>
         </div>
-      </div>
 
-      <div class="concept-block">
+        <div class="definition-box highlight-box" style="padding: 1rem; margin: 1rem 0; border-radius: 8px;">
+          <p style="margin: 0;">🎯 <strong>Exam trap:</strong> "BVA can be applied to any partition" — <strong>FALSE</strong>. BVA only works on <strong>ordered</strong> partitions. You can't do BVA on a partition like {red, green, blue} because there's no ordering.</p>
+        </div>
+      </section>
+
+      <!-- ==================== DECISION TABLE ==================== -->
+      <section class="concept-block">
         <h3>4.2.3 Decision Table Testing</h3>
-        <p>Decision tables test the implementation of requirements that specify how different <strong>combinations of conditions</strong> result in different <strong>outcomes</strong>. They are an effective way of recording <strong>complex logic</strong> (e.g., business rules).</p>
+        <p>Decision tables handle <strong>complex business rules</strong> where combinations of conditions produce different outcomes. Perfect for the booking platform's <strong>discount engine</strong>.</p>
 
-        <div class="highlight-box" style="margin-bottom: 1rem;">
-          <h4>Structure of a Decision Table</h4>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Real Example — Upgrade/Discount Rules</h4>
+          <p>Business rules: "Gold members get free upgrade on domestic flights. Silver members get 10% discount on international flights. All members booking round-trip get 5% off."</p>
+          <table style="width:100%; border-collapse:collapse; margin-top:0.5rem; font-size:0.9em;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.4rem;"></th>
+                <th style="padding:0.4rem;">R1</th><th style="padding:0.4rem;">R2</th><th style="padding:0.4rem;">R3</th><th style="padding:0.4rem;">R4</th><th style="padding:0.4rem;">R5</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Gold member?</strong></td>
+                <td style="text-align:center;">T</td><td style="text-align:center;">T</td><td style="text-align:center;">F</td><td style="text-align:center;">F</td><td style="text-align:center;">F</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Domestic flight?</strong></td>
+                <td style="text-align:center;">T</td><td style="text-align:center;">F</td><td style="text-align:center;">–</td><td style="text-align:center;">–</td><td style="text-align:center;">–</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Silver member?</strong></td>
+                <td style="text-align:center;">N/A</td><td style="text-align:center;">N/A</td><td style="text-align:center;">T</td><td style="text-align:center;">T</td><td style="text-align:center;">F</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Round-trip?</strong></td>
+                <td style="text-align:center;">–</td><td style="text-align:center;">–</td><td style="text-align:center;">T</td><td style="text-align:center;">F</td><td style="text-align:center;">T</td>
+              </tr>
+              <tr style="border-top: 2px solid rgba(255,255,255,0.2);">
+                <td style="padding:0.4rem;"><strong>Free upgrade</strong></td>
+                <td style="text-align:center;">X</td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>10% discount</strong></td>
+                <td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;">X</td><td style="text-align:center;">X</td><td style="text-align:center;"></td>
+              </tr>
+              <tr>
+                <td style="padding:0.4rem;"><strong>5% round-trip discount</strong></td>
+                <td style="text-align:center;">X</td><td style="text-align:center;"></td><td style="text-align:center;">X</td><td style="text-align:center;"></td><td style="text-align:center;">X</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>🧠 Notation Cheat Sheet — "TF–NAX"</h4>
+          <table style="width:100%; border-collapse:collapse;">
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem; width:60px;"><strong>T</strong></td><td>Condition is true (satisfied)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>F</strong></td><td>Condition is false (not satisfied)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>–</strong></td><td>Condition <strong>irrelevant</strong> to the outcome</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>N/A</strong></td><td>Condition is <strong>infeasible</strong> for this rule (e.g., can't be both Gold AND Silver)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>X</strong></td><td>Action <strong>should occur</strong></td>
+              </tr>
+              <tr>
+                <td style="padding:0.4rem;"><strong>blank</strong></td><td>Action should <strong>not</strong> occur</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="comparison-grid" style="margin: 1rem 0;">
+          <div class="grid-item">
+            <h4>Limited-Entry Tables</h4>
+            <p>All values are <strong>Boolean</strong> (T/F). Simple but can grow large.</p>
+          </div>
+          <div class="grid-item">
+            <h4>Extended-Entry Tables</h4>
+            <p>Conditions can have <strong>multiple values</strong> (ranges, partitions). More compact.</p>
+          </div>
+        </div>
+
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Coverage & Table Management</h4>
+          <p><strong>Coverage = (Exercised feasible columns ÷ Total feasible columns) × 100%</strong></p>
           <ul>
-            <li><strong>Rows:</strong> Conditions and resulting actions.</li>
-            <li><strong>Columns:</strong> Decision rules — each defines a unique combination of conditions with associated actions.</li>
-            <li><strong>Limited-entry:</strong> All values shown as Boolean (true/false).</li>
-            <li><strong>Extended-entry:</strong> Conditions/actions may take on multiple values (ranges, partitions, discrete values).</li>
+            <li><strong>Full table:</strong> Every combination → grows <strong>exponentially</strong> (n conditions = 2ⁿ rules)</li>
+            <li><strong>Simplified:</strong> Remove infeasible combinations (e.g., can't be Gold AND Silver)</li>
+            <li><strong>Minimized:</strong> Merge columns where a condition doesn't affect the outcome (the "–" entries)</li>
           </ul>
+          <p><strong>Strength:</strong> Systematically finds gaps & contradictions in business rules.</p>
         </div>
+      </section>
 
-        <div class="highlight-box" style="margin-bottom: 1rem;">
-          <h4>Notation</h4>
-          <ul>
-            <li><strong>"T"</strong> — condition is satisfied (true)</li>
-            <li><strong>"F"</strong> — condition is not satisfied (false)</li>
-            <li><strong>"–"</strong> — value of the condition is irrelevant for the action outcome</li>
-            <li><strong>"N/A"</strong> — condition is infeasible for a given rule</li>
-            <li><strong>"X"</strong> — action should occur</li>
-            <li><strong>Blank</strong> — action should not occur</li>
-          </ul>
-        </div>
-
-        <p><strong>Table management:</strong></p>
-        <ul>
-          <li>A <strong>full decision table</strong> covers every combination of conditions.</li>
-          <li>Tables can be <strong>simplified</strong> by deleting columns with infeasible combinations.</li>
-          <li>Tables can be <strong>minimized</strong> by merging columns where certain conditions don't affect the outcome.</li>
-        </ul>
-
-        <div class="highlight-box" style="margin-top: 1rem;">
-          <h4>Coverage</h4>
-          <p>Coverage items = columns containing <strong>feasible combinations</strong> of conditions. <strong>100% coverage</strong> means exercising all feasible columns.</p>
-          <p><strong>Formula:</strong> <em>Number of exercised columns ÷ Total number of feasible columns × 100%</em></p>
-        </div>
-
-        <p style="margin-top: 1rem;"><strong>Strengths & considerations:</strong></p>
-        <ul>
-          <li><strong>Strength:</strong> Systematic approach to identifying all combinations of conditions — finds gaps and contradictions in requirements.</li>
-          <li><strong>Consideration:</strong> The number of rules grows <strong>exponentially</strong> with the number of conditions. Use minimized tables or risk-based approaches to manage this.</li>
-        </ul>
-      </div>
-
-      <div class="concept-block">
+      <!-- ==================== STATE TRANSITION ==================== -->
+      <section class="concept-block">
         <h3>4.2.4 State Transition Testing</h3>
-        <p>A <strong>state diagram</strong> models the behavior of a system by showing its possible states and valid state transitions. A transition is initiated by an <strong>event</strong>, which may be qualified by a <strong>guard condition</strong>. Transitions may result in the software taking an <strong>action</strong>.</p>
+        <p>Models the system's <strong>states</strong> and the <strong>transitions</strong> between them, triggered by events. Perfect for the booking lifecycle.</p>
 
-        <div class="highlight-box" style="margin-bottom: 1rem;">
-          <h4>Transition Labeling Syntax</h4>
-          <p><strong>"event [guard condition] / action"</strong></p>
-          <p><em>Guard conditions and actions can be omitted if they don't exist or are irrelevant.</em></p>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Real Example — Booking Lifecycle</h4>
+          <p>States: <strong>Searching → Selected → Reserved → Paid → Checked-in → Boarded → Completed</strong> (or <strong>Cancelled</strong> from several states).</p>
+          <p>Transition syntax: <strong>"event [guard condition] / action"</strong></p>
+          <ul>
+            <li><code>select flight [seats available] / hold seat for 15 min</code></li>
+            <li><code>payment received [amount correct] / issue e-ticket</code></li>
+            <li><code>cancel [> 24h before departure] / refund 100%</code></li>
+            <li><code>cancel [≤ 24h before departure] / refund 50%</code></li>
+          </ul>
         </div>
 
-        <p><strong>State Table</strong> — a model equivalent to a state diagram:</p>
-        <ul>
-          <li><strong>Rows:</strong> States</li>
-          <li><strong>Columns:</strong> Events (with guard conditions if they exist)</li>
-          <li><strong>Cells:</strong> Target state and resulting actions</li>
-          <li><strong>Empty cells:</strong> Represent <strong>invalid transitions</strong> (explicitly shown, unlike in state diagrams)</li>
-        </ul>
-
-        <div class="highlight-box" style="margin-top: 1rem;">
-          <h4>Three Coverage Criteria</h4>
-
-          <div style="margin-bottom: 1rem; padding: 0.75rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
-            <p><strong>1. All States Coverage</strong></p>
-            <p>Coverage items = <strong>states</strong>. Test cases must ensure all states are exercised.</p>
-            <p><em>Weakest criterion — can typically be achieved without exercising all transitions.</em></p>
-          </div>
-
-          <div style="margin-bottom: 1rem; padding: 0.75rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
-            <p><strong>2. Valid Transitions Coverage (0-switch)</strong></p>
-            <p>Coverage items = <strong>single valid transitions</strong>. Test cases must exercise all valid transitions.</p>
-            <p><em>Most widely used criterion. Achieving full valid transitions coverage <strong>guarantees</strong> full all states coverage.</em></p>
-          </div>
-
-          <div style="padding: 0.75rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
-            <p><strong>3. All Transitions Coverage</strong></p>
-            <p>Coverage items = <strong>all transitions</strong> (valid and invalid) shown in a state table. Test cases must exercise all valid transitions and <strong>attempt to execute invalid transitions</strong>.</p>
-            <p><em>Strongest criterion. Achieving full all transitions coverage guarantees both full all states and full valid transitions coverage. Should be a <strong>minimum requirement for mission and safety-critical software</strong>.</em></p>
-            <p>Testing only <strong>one invalid transition per test case</strong> helps avoid <strong>defect masking</strong> (where one defect prevents the detection of another).</p>
-          </div>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>State Table</h4>
+          <p>A state table is equivalent to a state diagram but reveals <strong>invalid transitions</strong> explicitly (empty cells).</p>
+          <table style="width:100%; border-collapse:collapse; font-size:0.9em;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.4rem;">Current State</th>
+                <th style="padding:0.4rem;">Select Flight</th>
+                <th style="padding:0.4rem;">Pay</th>
+                <th style="padding:0.4rem;">Check-in</th>
+                <th style="padding:0.4rem;">Cancel</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;">Searching</td><td style="text-align:center;">→ Selected</td><td style="text-align:center;">—</td><td style="text-align:center;">—</td><td style="text-align:center;">—</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;">Selected</td><td style="text-align:center;">—</td><td style="text-align:center;">→ Paid</td><td style="text-align:center;">—</td><td style="text-align:center;">→ Cancelled</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;">Paid</td><td style="text-align:center;">—</td><td style="text-align:center;">—</td><td style="text-align:center;">→ Checked-in</td><td style="text-align:center;">→ Cancelled</td>
+              </tr>
+              <tr>
+                <td style="padding:0.4rem;">Checked-in</td><td style="text-align:center;">—</td><td style="text-align:center;">—</td><td style="text-align:center;">—</td><td style="text-align:center;">→ Cancelled</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top: 0.5rem;">The "—" cells are <strong>invalid transitions</strong> — you should test that the system properly <strong>rejects</strong> them (e.g., can't check-in from "Searching").</p>
         </div>
-      </div>
+
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Three Coverage Criteria (weakest → strongest)</h4>
+          <table style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.4rem;">Criterion</th>
+                <th style="text-align:left; padding:0.4rem;">Coverage Items</th>
+                <th style="text-align:left; padding:0.4rem;">Booking Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>1. All States</strong> (weakest)</td>
+                <td>Every state is visited</td>
+                <td>Visit Searching, Selected, Paid, Checked-in, Cancelled</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>2. Valid Transitions</strong> (0-switch, most used)</td>
+                <td>Every valid transition is exercised</td>
+                <td>Searching→Selected, Selected→Paid, Paid→Checked-in, Paid→Cancelled, etc.</td>
+              </tr>
+              <tr>
+                <td style="padding:0.4rem;"><strong>3. All Transitions</strong> (strongest)</td>
+                <td>Every valid AND invalid transition</td>
+                <td>Also attempt: Searching→Cancel (should fail), Checked-in→Pay (should fail)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="definition-box highlight-box" style="padding: 1rem; margin: 1rem 0; border-radius: 8px;">
+          <h4>Key Relationships</h4>
+          <ul>
+            <li>100% All Transitions → <strong>guarantees</strong> 100% Valid Transitions → <strong>guarantees</strong> 100% All States</li>
+            <li>All Transitions coverage should be the <strong>minimum for safety-critical software</strong></li>
+            <li>Test only <strong>one invalid transition per test case</strong> to avoid <strong>defect masking</strong></li>
+          </ul>
+        </div>
+      </section>
 
       <hr class="section-divider">
 
-      <div class="concept-block practice-questions">
-        <h3>🧠 Knowledge Check Questions</h3>
+      <!-- ==================== PRACTICE QUESTIONS ==================== -->
+      <section class="concept-block practice-questions">
+        <h3>🧠 Practice Questions</h3>
         <ol>
           <li>
             <strong>Question:</strong> What is the core principle of Equivalence Partitioning?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> EP divides data into partitions where all elements are expected to be processed in the same way. If one test case from a partition detects a defect, any other value from the same partition should also detect it. Therefore, one test per partition is sufficient.</p>
+                <p><strong>Answer:</strong> EP divides data into partitions where all elements are expected to be processed the same way. If one test case from a partition detects a defect, any other value from that partition should also detect it — so <strong>one test per partition</strong> is sufficient.</p>
               </details>
             </div>
           </li>
@@ -193,76 +356,84 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Equivalence partitions must not overlap and must be non-empty sets. They may be continuous or discrete, ordered or unordered, finite or infinite. They can be identified for any data element: inputs, outputs, configuration items, internal values, time-related values, and interface parameters.</p>
+                <p><strong>Answer:</strong> Partitions must <strong>not overlap</strong> and must be <strong>non-empty sets</strong>. They may be continuous or discrete, ordered or unordered, finite or infinite. They can be identified for any data element: inputs, outputs, configuration items, internal values, time-related values, and interface parameters.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> What is the difference between 2-value BVA and 3-value BVA?
+            <strong>Scenario Question:</strong> A flight booking site has a passenger age field. Ages 0–1 = infant, 2–11 = child, 12–64 = adult, 65–120 = senior. Negative numbers and ages >120 are invalid. How many EP partitions exist, and what's the minimum number of test cases for 100% EP coverage?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> In 2-value BVA, each boundary has 2 coverage items: the boundary value and its closest neighbor in the adjacent partition. In 3-value BVA, each boundary has 3 coverage items: the boundary value and both its neighbors. 3-value BVA is more rigorous and may detect defects that 2-value BVA overlooks.</p>
+                <p><strong>Answer:</strong> 6 partitions: {<0} invalid, {0–1} infant, {2–11} child, {12–64} adult, {65–120} senior, {>120} invalid. Minimum 6 test cases — one value from each partition.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> BVA can only be used for which type of partitions?
+            <strong>Question:</strong> What is the difference between 2-value and 3-value BVA?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> BVA can only be used for ordered partitions. If two elements belong to the same partition, all elements between them must also belong to that partition.</p>
+                <p><strong>Answer:</strong> 2-value BVA: for each boundary → test the boundary value + its closest neighbor in the adjacent partition (2 tests). 3-value BVA: test the boundary value + both neighbors from each side (3 tests). 3-value is more rigorous and catches bugs like <code>==</code> instead of <code>&lt;=</code>.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> In a decision table, what do "T", "F", "–", and "N/A" represent?
+            <strong>Question:</strong> BVA can only be applied to which type of partitions, and why?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> "T" means the condition is satisfied (true). "F" means the condition is not satisfied (false). "–" means the value of the condition is irrelevant for the action outcome. "N/A" means the condition is infeasible for a given rule. For actions, "X" means the action should occur, and blank means it should not.</p>
+                <p><strong>Answer:</strong> <strong>Ordered partitions only</strong>. BVA tests values at the edges of partitions, which requires a meaningful ordering. You can't find "boundaries" in an unordered set like {red, green, blue}.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> What is the main strength of decision table testing, and what is its main limitation?
+            <strong>Question:</strong> In a decision table, what do "T", "F", "–", "N/A", "X", and blank mean?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Strength: It provides a systematic approach to identify all combinations of conditions, helping find gaps and contradictions in requirements. Limitation: The number of rules grows exponentially with the number of conditions, which can make exercising all rules time-consuming. Minimized tables or risk-based approaches can help manage this.</p>
+                <p><strong>Answer:</strong> T = condition true. F = condition false. – = condition irrelevant to outcome. N/A = condition infeasible for the rule. X = action should occur. Blank = action should not occur.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> List the three coverage criteria for state transition testing, from weakest to strongest.
+            <strong>Scenario Question:</strong> A discount engine has 4 conditions (each T/F). A full decision table has 2⁴ = 16 rules. After analysis, 3 rules are infeasible and 4 pairs can be merged. How many feasible columns remain in the simplified table? What is coverage if you test 8 of them?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> 1) All States Coverage (weakest) — exercise all states. 2) Valid Transitions Coverage (0-switch, most widely used) — exercise all valid transitions. 3) All Transitions Coverage (strongest) — exercise all valid and invalid transitions. Each stronger level guarantees the one below it. All transitions coverage should be a minimum for mission and safety-critical software.</p>
+                <p><strong>Answer:</strong> 16 - 3 infeasible = 13 feasible. After merging 4 pairs (reducing 8 columns to 4), that's 13 - 4 = 9 columns. Coverage = 8/9 × 100% = 88.9%. (Note: the exact merged count depends on specifics, but the formula is: exercised feasible columns ÷ total feasible columns.)</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> Why should only one invalid transition be tested per test case in state transition testing?
+            <strong>Question:</strong> List the three state transition coverage criteria from weakest to strongest, and state their relationships.
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> To avoid defect masking — a situation where one defect prevents the detection of another. Testing only one invalid transition per test case ensures that each invalid transition's behavior can be independently observed.</p>
+                <p><strong>Answer:</strong> 1) All States (weakest). 2) Valid Transitions / 0-switch (most common). 3) All Transitions (strongest). Each stronger level guarantees the weaker — 100% All Transitions guarantees 100% Valid Transitions guarantees 100% All States. All Transitions should be the minimum for mission/safety-critical software.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> What is the "Each Choice" coverage criterion in Equivalence Partitioning with multiple sets of partitions?
+            <strong>Question:</strong> Why should only one invalid transition be tested per test case?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Each Choice coverage requires test cases to exercise each partition from each set of partitions at least once. It is the simplest coverage criterion for multiple sets of partitions and does not take combinations of partitions into account.</p>
+                <p><strong>Answer:</strong> To avoid <strong>defect masking</strong> — where one defect's behavior hides another defect. Testing one invalid transition per test case ensures each failure can be independently observed and attributed.</p>
+              </details>
+            </div>
+          </li>
+          <li>
+            <strong>Scenario Question:</strong> A tester has a booking system that rejects baggage over 23 kg. They test with 23 kg and 24 kg — both behave correctly. A colleague tests with 22 kg and discovers it's wrongly rejected. Which BVA approach would have caught this, and why did the first tester's approach miss it?
+            <div class="details-panel">
+              <details>
+                <summary>Show Answer</summary>
+                <p><strong>Answer:</strong> The first tester used <strong>2-value BVA</strong> (boundary value 23 + neighbor 24). The colleague's test of 22 is part of <strong>3-value BVA</strong> (22, 23, 24). The bug is likely <code>if (weight == 23)</code> instead of <code>if (weight &lt;= 23)</code>, which only fails for values below the boundary — caught by 3-value BVA's additional neighbor check.</p>
               </details>
             </div>
           </li>
         </ol>
-      </div>
+      </section>
     </div>
-  `
+  `,
 };
-

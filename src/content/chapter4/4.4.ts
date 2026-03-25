@@ -2,134 +2,201 @@ export const content = {
   title: "4.4 Experience-Based Test Techniques",
   content: `
     <div class="test-content">
-      <div class="concept-block">
-        <h3>The Big Picture</h3>
-        <p>The commonly used experience-based test techniques covered in this syllabus are:</p>
+
+      <!-- ==================== BIG PICTURE ==================== -->
+      <section class="concept-block">
+        <h3>The Big Picture — The Tester's Intuition</h3>
+        <p>You're testing a <strong>social media messaging app</strong> (think WhatsApp / Telegram). You've applied EP, BVA, and decision tables systematically — but a veteran QA engineer sits down with the app for 20 minutes and immediately finds three bugs you missed: emoji rendering in RTL languages, message delivery when switching from Wi-Fi to cellular mid-send, and a crash when pasting a 50,000-character message. That's the power of <strong>experience-based techniques</strong>.</p>
+        <p>Three techniques in this family:</p>
         <ol>
-          <li><strong>Error Guessing</strong></li>
-          <li><strong>Exploratory Testing</strong></li>
-          <li><strong>Checklist-Based Testing</strong></li>
+          <li><strong>Error Guessing</strong> — "I bet THIS will break"</li>
+          <li><strong>Exploratory Testing</strong> — "Let me learn and test at the same time"</li>
+          <li><strong>Checklist-Based Testing</strong> — "Here's our known-issues playbook"</li>
         </ol>
-      </div>
+      </section>
 
-      <div class="concept-block">
+      <!-- ==================== ERROR GUESSING ==================== -->
+      <section class="concept-block">
         <h3>4.4.1 Error Guessing</h3>
-        <p>Error guessing is a technique used to <strong>anticipate the occurrence of errors, defects, and failures</strong> based on the tester's knowledge, including:</p>
-        <ul>
-          <li>How the application has <strong>worked in the past</strong></li>
-          <li>The types of <strong>errors developers tend to make</strong> and the defects that result</li>
-          <li>The types of <strong>failures that have occurred</strong> in other, similar applications</li>
-        </ul>
+        <p>Anticipate errors, defects, and failures based on <strong>what you know</strong> — past bugs, common developer mistakes, and failures in similar apps.</p>
 
         <div class="highlight-box" style="margin: 1rem 0;">
-          <h4>Common Error Categories</h4>
-          <ul>
-            <li><strong>Input:</strong> Correct input not accepted, parameters wrong or missing</li>
-            <li><strong>Output:</strong> Wrong format, wrong result</li>
-            <li><strong>Logic:</strong> Missing cases, wrong operator</li>
-            <li><strong>Computation:</strong> Incorrect operand, wrong computation</li>
-            <li><strong>Interfaces:</strong> Parameter mismatch, incompatible types</li>
-            <li><strong>Data:</strong> Incorrect initialization, wrong type</li>
-          </ul>
+          <h4>Real Example — Messaging App Error Guesses</h4>
+          <table style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.4rem;">Error Category</th>
+                <th style="text-align:left; padding:0.4rem;">Guess (What might break?)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Input</strong></td><td>Empty message send button enabled; 10,000+ emoji in one message</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Output</strong></td><td>Timestamps display in wrong timezone after daylight saving change</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Logic</strong></td><td>"Read receipt" shown before message actually renders on recipient's screen</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Computation</strong></td><td>Unread message count goes negative after bulk-delete</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Interfaces</strong></td><td>Push notification API returns 429 (rate limit) and app silently drops messages</td>
+              </tr>
+              <tr>
+                <td style="padding:0.4rem;"><strong>Data</strong></td><td>Database migration corrupts messages containing special Unicode (ZWJ sequences)</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <div class="highlight-box">
-          <h4>Fault Attacks</h4>
-          <p><strong>Fault attacks</strong> are a way to implement error guessing. The tester creates or acquires a <strong>list of possible errors, defects, and failures</strong>, then designs tests to identify those defects, expose them, or cause the failures. These lists can be built based on:</p>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Fault Attacks — Organized Error Guessing</h4>
+          <p>A <strong>fault attack</strong> = a structured list of likely errors/failures, then design tests to trigger each one. Build lists from:</p>
           <ul>
-            <li>Experience</li>
-            <li>Defect and failure data</li>
-            <li>Common knowledge about why software fails</li>
+            <li><strong>Experience:</strong> "Last app crashed on iOS when backgrounded during file upload"</li>
+            <li><strong>Defect data:</strong> "Our bug tracker shows 40% of defects are in message serialization"</li>
+            <li><strong>Common knowledge:</strong> "Chat apps often break with network interruptions, timezone changes, or special characters"</li>
           </ul>
         </div>
-      </div>
+      </section>
 
-      <div class="concept-block">
+      <!-- ==================== EXPLORATORY TESTING ==================== -->
+      <section class="concept-block">
         <h3>4.4.2 Exploratory Testing</h3>
-        <p>In exploratory testing, tests are simultaneously <strong>designed, executed, and evaluated</strong> while the tester <strong>learns about the test object</strong>. Testing is used to:</p>
-        <ul>
-          <li>Learn more about the test object</li>
-          <li>Explore it more deeply with <strong>focused tests</strong></li>
-          <li>Create tests for <strong>untested areas</strong></li>
-        </ul>
+        <p>Tests are <strong>designed, executed, and evaluated simultaneously</strong> while the tester learns about the system. No upfront test scripts — the tester follows their intuition and findings in real-time.</p>
 
         <div class="highlight-box" style="margin: 1rem 0;">
-          <h4>Session-Based Testing</h4>
-          <p>Exploratory testing is sometimes structured using <strong>session-based testing</strong>:</p>
-          <ul>
-            <li>Performed within a <strong>defined time box</strong>.</li>
-            <li>The tester uses a <strong>test charter</strong> containing test objectives to guide the testing.</li>
-            <li>Followed by a <strong>debriefing</strong> — a discussion between the tester and stakeholders about the test session results.</li>
-            <li>Test objectives may be treated as <strong>high-level test conditions</strong>.</li>
-            <li>Coverage items are identified and exercised <strong>during the test session</strong>.</li>
-            <li>The tester may use <strong>test session sheets</strong> to document steps and discoveries.</li>
-          </ul>
+          <h4>Session-Based Exploratory Testing (SBET)</h4>
+          <p>Adds structure to exploration:</p>
+          <table style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.4rem;">Element</th>
+                <th style="text-align:left; padding:0.4rem;">Messaging App Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Time box</strong></td><td>60-minute session</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Test charter</strong></td><td>"Explore group chat with 100+ members. Focus on notification behavior and message ordering."</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Session sheet</strong></td><td>Notes: "Found messages arriving out of order when 5+ people type simultaneously. Screenshot saved."</td>
+              </tr>
+              <tr>
+                <td style="padding:0.4rem;"><strong>Debriefing</strong></td><td>15-min standup with dev lead — discuss findings, agree on bug reports to file</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <p><strong>When is exploratory testing most useful?</strong></p>
-        <ul>
-          <li>When there are <strong>few or inadequate specifications</strong>.</li>
-          <li>When there is <strong>significant time pressure</strong>.</li>
-          <li>To <strong>complement</strong> other more formal test techniques.</li>
-        </ul>
+        <div class="comparison-grid" style="margin: 1rem 0;">
+          <div class="grid-item">
+            <h4>When to Use Exploratory Testing</h4>
+            <ul>
+              <li>Few or <strong>inadequate specifications</strong></li>
+              <li>Significant <strong>time pressure</strong></li>
+              <li>As a <strong>complement</strong> to formal techniques</li>
+            </ul>
+          </div>
+          <div class="grid-item">
+            <h4>Who Does It Best?</h4>
+            <ul>
+              <li><strong>Experienced</strong> testers with domain knowledge</li>
+              <li>People with <strong>analytical skills, curiosity, creativeness</strong></li>
+              <li>Can incorporate other techniques (EP, BVA) on the fly</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-        <p><em>Exploratory testing is more effective when the tester is <strong>experienced</strong>, has <strong>domain knowledge</strong>, and possesses high-level essential skills like analytical skills, curiosity, and creativeness. It can also incorporate other test techniques (e.g., equivalence partitioning).</em></p>
-      </div>
-
-      <div class="concept-block">
+      <!-- ==================== CHECKLIST-BASED ==================== -->
+      <section class="concept-block">
         <h3>4.4.3 Checklist-Based Testing</h3>
-        <p>In checklist-based testing, a tester designs, implements, and executes tests to cover <strong>test conditions from a checklist</strong>.</p>
+        <p>Test conditions come from a <strong>pre-built checklist</strong> — a curated list of things to verify, often phrased as questions.</p>
 
         <div class="highlight-box" style="margin: 1rem 0;">
-          <h4>Building Checklists</h4>
-          <p>Checklists can be built based on:</p>
+          <h4>Real Example — Messaging Release Checklist</h4>
           <ul>
-            <li><strong>Experience</strong></li>
-            <li>Knowledge about <strong>what is important for the user</strong></li>
-            <li>Understanding of <strong>why and how software fails</strong></li>
-          </ul>
-          <p><strong>Checklists should NOT contain:</strong></p>
-          <ul>
-            <li>Items that can be <strong>checked automatically</strong></li>
-            <li>Items better suited as <strong>entry/exit criteria</strong></li>
-            <li>Items that are <strong>too general</strong></li>
+            <li>Does message send work on airplane mode → queue → deliver on reconnect?</li>
+            <li>Do push notifications appear correctly on iOS 17 AND Android 14?</li>
+            <li>Does the app handle 1,000 unread messages without crashing?</li>
+            <li>Is message encryption end-to-end verified with key exchange?</li>
+            <li>Do voice messages play through both speaker and Bluetooth?</li>
           </ul>
         </div>
 
-        <p><strong>Characteristics of checklist items:</strong></p>
-        <ul>
-          <li>Often phrased as a <strong>question</strong>.</li>
-          <li>Should be possible to check each item <strong>separately and directly</strong>.</li>
-          <li>May refer to requirements, graphical interface properties, quality characteristics, or other test conditions.</li>
-          <li>Can support various test types, including functional and non-functional testing (e.g., 10 heuristics for usability testing).</li>
-        </ul>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Checklist Rules</h4>
+          <table style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.4rem;">DO Include</th>
+                <th style="text-align:left; padding:0.4rem;">DON'T Include</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:0.4rem; vertical-align:top;">
+                  <ul style="margin:0; padding-left:1.2rem;">
+                    <li>Items checkable <strong>separately and directly</strong></li>
+                    <li>Items phrased as <strong>questions</strong></li>
+                    <li>References to requirements, UI, quality attributes</li>
+                  </ul>
+                </td>
+                <td style="padding:0.4rem; vertical-align:top;">
+                  <ul style="margin:0; padding-left:1.2rem;">
+                    <li>Things that can be <strong>checked automatically</strong> (use CI for that)</li>
+                    <li>Items better as <strong>entry/exit criteria</strong></li>
+                    <li>Items that are <strong>too general</strong> ("Test everything works")</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-        <div class="concept-block" style="background: rgba(255,200,50,0.08); padding: 1rem; border-radius: 8px; border-left: 4px solid rgba(255,200,50,0.5); margin-top: 1rem;">
+        <div class="definition-box highlight-box" style="padding: 1rem; margin: 1rem 0; border-radius: 8px;">
           <h4>⚠️ Maintenance Warning</h4>
-          <p>Some checklist entries may gradually become <strong>less effective over time</strong> because developers learn to avoid making the same errors. New entries should be added to reflect newly found high-severity defects. <strong>Checklists should be regularly updated</strong> based on defect analysis — but care should be taken to avoid letting the checklist become too long.</p>
+          <p>Checklist items lose effectiveness over time as developers learn to avoid those mistakes. <strong>Regularly update:</strong> add entries for new high-severity defects, remove stale items. But don't let it grow too long — a 200-item checklist becomes useless.</p>
         </div>
 
-        <div class="highlight-box" style="margin-top: 1rem;">
-          <h4>Trade-Off</h4>
-          <p>In the absence of detailed test cases, checklist-based testing provides <strong>guidelines and some consistency</strong>. However, if checklists are high-level, some variability in actual testing will occur, resulting in:</p>
-          <ul>
-            <li><strong>Potentially greater coverage</strong> (testers explore more freely)</li>
-            <li><strong>Less repeatability</strong> (different testers may test differently)</li>
-          </ul>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>The Trade-Off</h4>
+          <table style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.4rem;">Advantage</th>
+                <th style="text-align:left; padding:0.4rem;">Disadvantage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:0.4rem;"><strong>Greater coverage</strong> — testers explore freely within checklist scope</td>
+                <td style="padding:0.4rem;"><strong>Less repeatability</strong> — different testers may interpret/execute items differently</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
+      </section>
 
       <hr class="section-divider">
 
-      <div class="concept-block practice-questions">
-        <h3>🧠 Knowledge Check Questions</h3>
+      <!-- ==================== PRACTICE QUESTIONS ==================== -->
+      <section class="concept-block practice-questions">
+        <h3>🧠 Practice Questions</h3>
         <ol>
           <li>
             <strong>Question:</strong> What is error guessing based on?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Error guessing is based on the tester's knowledge, including how the application worked in the past, the types of errors developers tend to make in the defects that result, and the types of failures that have occurred in other similar applications.</p>
+                <p><strong>Answer:</strong> The tester's knowledge: how the app worked in the past, common developer mistakes and resulting defects, and failures that occurred in similar applications.</p>
               </details>
             </div>
           </li>
@@ -138,34 +205,34 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Fault attacks are a way to implement error guessing. The tester creates or acquires a list of possible errors, defects, and failures, then designs tests to identify those defects, expose them, or cause the failures. These lists are built based on experience, defect/failure data, or common knowledge about why software fails.</p>
+                <p><strong>Answer:</strong> Fault attacks are a structured way to implement error guessing. The tester creates a list of likely errors/defects/failures and designs tests to trigger each one. Lists are built from experience, defect data, and common knowledge about why software fails.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> What makes exploratory testing different from other test techniques?
+            <strong>Question:</strong> What makes exploratory testing unique compared to other techniques?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> In exploratory testing, tests are simultaneously designed, executed, and evaluated while the tester learns about the test object. There is no separate upfront test design phase — the tester explores the system in real-time, creating focused tests and discovering untested areas as they go.</p>
+                <p><strong>Answer:</strong> Tests are <strong>designed, executed, and evaluated simultaneously</strong> while the tester learns about the system. There's no separate upfront design phase — the tester explores in real-time.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> What is session-based testing and how does it structure exploratory testing?
+            <strong>Question:</strong> What are the four elements of session-based exploratory testing?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Session-based testing structures exploratory testing by performing it within a defined time box. The tester uses a test charter containing test objectives to guide the testing. It is usually followed by a debriefing with stakeholders. The tester may use test session sheets to document steps and discoveries.</p>
+                <p><strong>Answer:</strong> 1) A defined <strong>time box</strong>. 2) A <strong>test charter</strong> with objectives. 3) <strong>Session sheets</strong> to document steps/discoveries. 4) A <strong>debriefing</strong> with stakeholders afterward.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> When is exploratory testing most useful?
+            <strong>Scenario Question:</strong> Your team has 2 days to test a brand-new chat feature with barely any specs written. Which experience-based technique is MOST appropriate and why?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> When there are few or inadequate specifications, when there is significant time pressure on testing, or to complement other more formal test techniques. It is more effective when the tester is experienced, has domain knowledge, and possesses strong analytical skills, curiosity, and creativity.</p>
+                <p><strong>Answer:</strong> <strong>Exploratory testing</strong> — it's best when specs are few/inadequate and time pressure is high. The tester can learn about the feature while simultaneously designing and executing tests, maximizing coverage within the tight timeframe.</p>
               </details>
             </div>
           </li>
@@ -174,7 +241,7 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Checklists should not contain items that can be checked automatically, items better suited as entry or exit criteria, or items that are too general. Checklist items should be checkable separately and directly.</p>
+                <p><strong>Answer:</strong> Items that can be checked automatically (use CI/CD for those), items better suited as entry/exit criteria, and items too general to be actionable.</p>
               </details>
             </div>
           </li>
@@ -183,21 +250,33 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Because some entries may gradually become less effective over time as developers learn to avoid the same errors. New entries should be added to reflect newly found high-severity defects. However, care should be taken to avoid letting the checklist become too long.</p>
+                <p><strong>Answer:</strong> Entries lose effectiveness as developers learn to avoid those errors. Add new entries for recently found high-severity defects, remove stale ones — but don't let the checklist grow too long.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> What is the trade-off of using high-level checklists instead of detailed test cases?
+            <strong>Question:</strong> What is the trade-off of high-level checklists vs detailed test cases?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> High-level checklists provide guidelines and some degree of consistency, but introduce variability in actual testing. This results in potentially greater coverage (testers explore more freely) but less repeatability (different testers may test differently).</p>
+                <p><strong>Answer:</strong> High-level checklists give <strong>potentially greater coverage</strong> (testers explore more freely) but <strong>less repeatability</strong> (different testers may interpret and execute items differently).</p>
+              </details>
+            </div>
+          </li>
+          <li>
+            <strong>Scenario Question:</strong> A tester's error-guessing checklist from 2022 includes "Test for crash when sending GIFs." Since then, the GIF rendering was rewritten from scratch and no GIF bugs have been filed in 18 months. Should this item stay on the checklist?
+            <div class="details-panel">
+              <details>
+                <summary>Show Answer</summary>
+                <p><strong>Answer:</strong> It could be <strong>removed or deprioritized</strong>. The item has become less effective because the underlying code was rewritten and no related defects have been found. The checklist should be updated to reflect current risk areas. However, a lightweight smoke check for GIFs could remain if the risk is still non-trivial.</p>
               </details>
             </div>
           </li>
         </ol>
-      </div>
+      </section>
+    </div>
+  `
+};
     </div>
   `
 };

@@ -2,116 +2,183 @@ export const content = {
   title: "5.2 Risk Management",
   content: `
     <div class="test-content">
-      <div class="concept-block">
-        <h3>The Big Picture</h3>
-        <p>Risk management allows organizations to increase the likelihood of achieving objectives, improve product quality, and increase stakeholders' <strong>confidence and trust</strong>.</p>
-        <p>The main risk management activities are:</p>
-        <ul>
-          <li><strong>Risk analysis</strong> (risk identification + risk assessment)</li>
-          <li><strong>Risk control</strong> (risk mitigation + risk monitoring)</li>
-        </ul>
-        <p>A test approach where test activities are selected, prioritized, and managed based on risk analysis and risk control is called <strong>risk-based testing</strong>.</p>
-      </div>
 
-      <div class="concept-block">
-        <h3>5.2.1 Risk Definition and Risk Attributes</h3>
-        <p><strong>Risk</strong> is a potential event, hazard, threat, or situation whose occurrence causes an adverse effect. A risk is characterized by two factors:</p>
-        <div class="highlight-box">
-          <ul>
-            <li><strong>Risk likelihood:</strong> The probability of the risk occurrence (greater than zero and less than one).</li>
-            <li><strong>Risk impact (harm):</strong> The consequences of this occurrence.</li>
-          </ul>
-          <p>These two factors express the <strong>risk level</strong> — the higher the risk level, the more important its treatment.</p>
-        </div>
-      </div>
+      <!-- ==================== BIG PICTURE ==================== -->
+      <section class="concept-block">
+        <h3>The Big Picture — A Ride-Hailing App Launch</h3>
+        <p>You're the test manager for a <strong>ride-hailing app launching in a new country</strong>. What could go wrong? The payment gateway might not support local banks (product risk). Your QA team might not get test devices on time (project risk). Risk management helps you identify these threats <em>before</em> they become real problems.</p>
 
-      <div class="concept-block">
-        <h3>5.2.2 Project Risks and Product Risks</h3>
-
-        <div class="comparison-grid" style="margin-top: 1rem;">
-          <div class="grid-item">
-            <h4>Project Risks</h4>
-            <p>Related to the <strong>management and control</strong> of the project:</p>
-            <ul>
-              <li><strong>Organizational issues:</strong> Delays in deliveries, inaccurate estimates, cost cutting</li>
-              <li><strong>People issues:</strong> Insufficient skills, conflicts, communication problems, staff shortage</li>
-              <li><strong>Technical issues:</strong> Scope creep, poor tool support</li>
-              <li><strong>Supplier issues:</strong> Third-party delivery failure, bankruptcy</li>
-            </ul>
-            <p><em>When they occur, they may impact project schedule, budget, or scope.</em></p>
-          </div>
-          <div class="grid-item">
-            <h4>Product Risks</h4>
-            <p>Related to <strong>product quality characteristics</strong> (ISO 25010):</p>
-            <ul>
-              <li>Missing or wrong functionality</li>
-              <li>Incorrect calculations, runtime errors</li>
-              <li>Poor architecture, inefficient algorithms</li>
-              <li>Inadequate response time, poor UX</li>
-              <li>Security vulnerabilities</li>
-            </ul>
-            <p><em>Negative consequences may include: user dissatisfaction, loss of revenue/trust/reputation, damage to third parties, high maintenance costs, criminal penalties, or even physical damage/injuries/death.</em></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="concept-block">
-        <h3>5.2.3 Product Risk Analysis</h3>
-        <p>Goal: Provide <strong>awareness of product risk</strong> to focus test effort and minimize the <strong>residual level of product risk</strong>. Ideally begins <strong>early in the SDLC</strong>.</p>
-
-        <p>Product risk analysis consists of:</p>
         <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Risk Management = Two Activities</h4>
           <ul>
-            <li><strong>Risk identification:</strong> Generating a comprehensive list of risks using techniques like brainstorming, workshops, interviews, or cause-effect diagrams.</li>
-            <li><strong>Risk assessment:</strong> Categorizing risks, determining their likelihood, impact, and level, prioritizing them, and proposing ways to handle them.</li>
+            <li><strong>Risk Analysis</strong> = Risk Identification + Risk Assessment ("What could go wrong? How bad is it?")</li>
+            <li><strong>Risk Control</strong> = Risk Mitigation + Risk Monitoring ("How do we reduce it? Is it getting worse?")</li>
           </ul>
-          <p><strong>Assessment approaches:</strong></p>
-          <ul>
-            <li><strong>Quantitative:</strong> Risk level = risk likelihood × risk impact</li>
-            <li><strong>Qualitative:</strong> Risk level determined using a risk matrix</li>
-            <li>Or a <strong>mix</strong> of both</li>
-          </ul>
+          <p>When test activities are selected and prioritized based on these → it's called <strong>risk-based testing</strong>.</p>
+        </div>
+      </section>
+
+      <!-- ==================== RISK DEFINITION ==================== -->
+      <section class="concept-block">
+        <h3>5.2.1 Risk Definition and Risk Attributes</h3>
+        <p><strong>Risk</strong> = a potential event whose occurrence causes an adverse effect. Defined by two factors:</p>
+
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <table style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.4rem;">Factor</th>
+                <th style="text-align:left; padding:0.4rem;">Definition</th>
+                <th style="text-align:left; padding:0.4rem;">Ride-Hailing Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Likelihood</strong></td>
+                <td>Probability of occurrence (0 to 1)</td>
+                <td>"Payment gateway fails during peak hours" — likelihood: 0.3 (30%)</td>
+              </tr>
+              <tr>
+                <td style="padding:0.4rem;"><strong>Impact (harm)</strong></td>
+                <td>Consequences if it occurs</td>
+                <td>"Users can't pay → abandon the app" — impact: HIGH (revenue + reputation loss)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top:0.5rem;"><strong>Risk Level = Likelihood × Impact</strong> → the higher the level, the more important its treatment.</p>
+        </div>
+      </section>
+
+      <!-- ==================== PROJECT VS PRODUCT RISKS ==================== -->
+      <section class="concept-block">
+        <h3>5.2.2 Project Risks vs. Product Risks</h3>
+
+        <div class="comparison-grid" style="margin: 1rem 0;">
+          <div class="grid-item">
+            <h4>Project Risks (affect the PROJECT)</h4>
+            <p>Impact <strong>schedule, budget, or scope</strong>:</p>
+            <table style="width:100%; border-collapse:collapse; font-size:0.9em;">
+              <tbody>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                  <td style="padding:0.3rem;"><strong>Organizational</strong></td><td>Launch delayed because legal approval for the new country takes 3 months</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                  <td style="padding:0.3rem;"><strong>People</strong></td><td>Two senior testers quit mid-project; no replacements available</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                  <td style="padding:0.3rem;"><strong>Technical</strong></td><td>Scope creep — PM adds "food delivery" feature mid-sprint</td>
+                </tr>
+                <tr>
+                  <td style="padding:0.3rem;"><strong>Supplier</strong></td><td>Map provider's API has a 2-week outage; no SLA protection</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="grid-item">
+            <h4>Product Risks (affect the PRODUCT)</h4>
+            <p>Impact <strong>product quality</strong> (ISO 25010):</p>
+            <ul>
+              <li>Missing functionality — no fare splitting for shared rides</li>
+              <li>Incorrect calculation — surge pricing formula wrong</li>
+              <li>Poor performance — app crashes with 10K concurrent users</li>
+              <li>Security vulnerability — driver location data exposed via API</li>
+              <li>Poor UX — confusing pickup location selector</li>
+            </ul>
+            <p><em>Consequences: user dissatisfaction, revenue loss, legal penalties, or in extreme cases (medical/automotive) — injury or death.</em></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== PRODUCT RISK ANALYSIS ==================== -->
+      <section class="concept-block">
+        <h3>5.2.3 Product Risk Analysis</h3>
+        <p>Goal: Focus test effort where it matters most. Should begin <strong>early in the SDLC</strong>.</p>
+
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Two Steps</h4>
+          <table style="width:100%; border-collapse:collapse;">
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem; width:140px;"><strong>1. Identification</strong></td>
+                <td>Generate comprehensive risk list via brainstorming, workshops, interviews, cause-effect diagrams. E.g.: "What if payment fails for international cards?"</td>
+              </tr>
+              <tr>
+                <td style="padding:0.4rem;"><strong>2. Assessment</strong></td>
+                <td>Categorize, determine likelihood/impact/level, prioritize, propose handling. Quantitative (L × I), qualitative (risk matrix), or mixed.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <p><strong>Results of product risk analysis are used to:</strong></p>
-        <ul>
-          <li>Determine the <strong>test scope</strong></li>
-          <li>Determine test levels and propose <strong>test types</strong></li>
-          <li>Determine <strong>test techniques</strong> and coverage to be achieved</li>
-          <li>Estimate the <strong>test effort</strong> required</li>
-          <li><strong>Prioritize testing</strong> to find critical defects as early as possible</li>
-          <li>Determine if <strong>additional activities</strong> beyond testing could reduce risk</li>
-        </ul>
-      </div>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Risk Analysis Results Are Used To:</h4>
+          <ul>
+            <li>Determine <strong>test scope</strong> — only test what matters</li>
+            <li>Determine test <strong>levels and types</strong> — e.g., security testing for payment risks</li>
+            <li>Determine <strong>techniques and coverage</strong> — high-risk = higher coverage</li>
+            <li>Estimate <strong>test effort</strong></li>
+            <li><strong>Prioritize testing</strong> — critical defects found ASAP</li>
+            <li>Decide if <strong>non-testing activities</strong> (training, reviews) can also reduce risk</li>
+          </ul>
+        </div>
+      </section>
 
-      <div class="concept-block highlight-box">
+      <!-- ==================== PRODUCT RISK CONTROL ==================== -->
+      <section class="concept-block">
         <h3>5.2.4 Product Risk Control</h3>
-        <p>Risk control comprises all measures taken in response to identified and assessed risks. It consists of <strong>risk mitigation</strong> and <strong>risk monitoring</strong>.</p>
+        <p>What do you DO about identified risks?</p>
 
-        <p><strong>Response options:</strong> Risk mitigation by testing, risk acceptance, risk transfer, or a contingency plan.</p>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>Response Options</h4>
+          <table style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.4rem;">Option</th>
+                <th style="text-align:left; padding:0.4rem;">Ride-Hailing Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Mitigate (by testing)</strong></td><td>Run 200+ payment test cases with all local bank cards</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Accept</strong></td><td>Accept that 0.1% of users on old Android 8 may have UI glitches</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding:0.4rem;"><strong>Transfer</strong></td><td>Payment processing liability transferred to Stripe (third-party)</td>
+              </tr>
+              <tr>
+                <td style="padding:0.4rem;"><strong>Contingency plan</strong></td><td>If maps API goes down → fallback to cached routes + SMS directions</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-        <h4 style="margin-top: 1rem;">Actions to Mitigate Product Risks by Testing</h4>
-        <ul>
-          <li>Select testers with the <strong>right level of experience and skills</strong> for the risk type</li>
-          <li>Apply an appropriate level of <strong>independence of testing</strong></li>
-          <li>Perform <strong>reviews and static analysis</strong></li>
-          <li>Apply appropriate <strong>test techniques and coverage levels</strong></li>
-          <li>Apply appropriate <strong>test types</strong> addressing affected quality characteristics</li>
-          <li>Perform <strong>dynamic testing</strong>, including regression testing</li>
-        </ul>
-      </div>
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>6 Testing-Specific Mitigation Actions</h4>
+          <ol>
+            <li>Select testers with the <strong>right experience/skills</strong> for the risk area</li>
+            <li>Apply appropriate <strong>independence of testing</strong></li>
+            <li>Perform <strong>reviews and static analysis</strong></li>
+            <li>Apply appropriate <strong>test techniques and coverage levels</strong></li>
+            <li>Apply appropriate <strong>test types</strong> for affected quality characteristics</li>
+            <li>Perform <strong>dynamic testing</strong> including regression testing</li>
+          </ol>
+        </div>
+      </section>
 
       <hr class="section-divider">
 
-      <div class="concept-block practice-questions">
-        <h3>🧠 Knowledge Check Questions</h3>
+      <!-- ==================== PRACTICE QUESTIONS ==================== -->
+      <section class="concept-block practice-questions">
+        <h3>🧠 Practice Questions</h3>
         <ol>
           <li>
-            <strong>Question:</strong> What two factors characterize a risk?
+            <strong>Question:</strong> What two factors characterize a risk, and how do they combine?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Risk likelihood (the probability of occurrence, between 0 and 1) and risk impact/harm (the consequences of occurrence). Together they express the risk level — the higher the level, the more important its treatment.</p>
+                <p><strong>Answer:</strong> Risk likelihood (probability, 0 to 1) and risk impact (consequences). Risk Level = Likelihood × Impact. Higher level → more important treatment.</p>
               </details>
             </div>
           </li>
@@ -120,7 +187,16 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Project risks are related to the management and control of the project (organizational, people, technical, supplier issues) and impact schedule, budget, or scope. Product risks are related to product quality characteristics and when they occur may cause user dissatisfaction, loss of revenue, damage to third parties, or worse.</p>
+                <p><strong>Answer:</strong> Project risks affect schedule/budget/scope (organizational, people, technical, supplier issues). Product risks affect product quality and can cause user dissatisfaction, revenue loss, legal penalties, or worse.</p>
+              </details>
+            </div>
+          </li>
+          <li>
+            <strong>Scenario Question:</strong> Your ride-hailing app's senior QA lead quits 2 weeks before launch. Is this a project risk or product risk?
+            <div class="details-panel">
+              <details>
+                <summary>Show Answer</summary>
+                <p><strong>Answer:</strong> <strong>Project risk</strong> (people issue — staff shortage). It impacts the project's ability to complete testing on schedule. It may indirectly become a product risk if insufficient testing leads to quality issues, but the root cause is project-related.</p>
               </details>
             </div>
           </li>
@@ -129,40 +205,30 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Risk-based testing is a test approach where test activities are selected, prioritized, and managed based on risk analysis (risk identification + risk assessment) and risk control (risk mitigation + risk monitoring).</p>
+                <p><strong>Answer:</strong> A test approach where test activities are selected, prioritized, and managed based on risk analysis (identification + assessment) and risk control (mitigation + monitoring).</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> What is the difference between quantitative and qualitative risk assessment?
+            <strong>Question:</strong> What are the four response options for product risk control?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> In the quantitative approach, risk level is calculated as the multiplication of risk likelihood and risk impact. In the qualitative approach, risk level is determined using a risk matrix. A mix of both approaches can also be used.</p>
+                <p><strong>Answer:</strong> 1) Mitigate by testing. 2) Accept the risk. 3) Transfer the risk (e.g., to a third party). 4) Contingency plan.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> Name at least 4 ways that product risk analysis results are used.
+            <strong>Scenario Question:</strong> The surge pricing feature has a risk level of 0.4 (likelihood) × 9 (impact) = 3.6, while the "driver profile photo" feature has 0.1 × 2 = 0.2. How should you prioritize testing?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Any four of: Determine test scope, determine test levels and test types, determine test techniques and coverage, estimate test effort, prioritize testing to find critical defects early, and determine if additional activities beyond testing could reduce risk.</p>
-              </details>
-            </div>
-          </li>
-          <li>
-            <strong>Question:</strong> What are the response options for product risk control?
-            <div class="details-panel">
-              <details>
-                <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Risk mitigation by testing, risk acceptance, risk transfer, or a contingency plan. Testing-specific mitigation actions include selecting experienced testers, applying appropriate independence, performing reviews/static analysis, applying appropriate test techniques, test types, and dynamic testing including regression testing.</p>
+                <p><strong>Answer:</strong> Surge pricing (risk level 3.6) should be tested with <strong>much higher priority</strong> — more test cases, deeper coverage, appropriate techniques (e.g., decision tables for pricing rules). The driver photo feature (0.2) gets basic functional testing. This is risk-based testing in action.</p>
               </details>
             </div>
           </li>
         </ol>
-      </div>
+      </section>
     </div>
-  `
+  `,
 };
-
