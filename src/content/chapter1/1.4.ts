@@ -8,9 +8,9 @@ export const content = {
 
       <!-- ==================== BIG PICTURE ==================== -->
       <section class="concept-block">
-        <h3>The Big Picture — Think of Testing Like Running a Restaurant</h3>
-        <p>Imagine you're opening a restaurant. You don't just cook food and hope people like it. You <strong>plan the menu</strong>, <strong>check ingredient quality</strong>, <strong>taste-test dishes</strong>, <strong>train the staff</strong>, and <strong>review feedback</strong> after opening night. Each of those steps has a purpose — skip one and you risk disaster.</p>
-        <p>Testing works the same way. There's a <strong>test process</strong> — a set of activities that, together, give testing the best chance of catching problems. You can mix, match, and reorder them depending on your situation, but skipping them entirely? Bad idea.</p>
+        <h3>The Big Picture — A Real Scenario</h3>
+        <p>Your company is building a <strong>mobile banking app</strong>. Millions of people will use it to transfer money. You can't just write the code, click around a few screens, and ship it. You need to <strong>plan what to test</strong>, <strong>review the requirements for gaps</strong>, <strong>design specific test cases</strong> (what happens if a user transfers $0? $999,999?), <strong>set up test environments</strong>, <strong>run the tests</strong>, and <strong>wrap up with a report</strong> before release. Skip any step and a critical bug could let someone transfer money to the wrong account.</p>
+        <p>This structured set of activities is called the <strong>test process</strong>. You can mix, match, and reorder the activities depending on your project, but skipping them? That's how production bugs happen.</p>
 
         <div class="definition-box highlight-box" style="padding: 1rem; margin: 1rem 0; border-radius: 8px;">
           <p style="margin: 0;">🎯 <strong>Exam Key:</strong> The test process is <em>tailored</em> to the situation. Which activities happen, when, and how is decided during <strong>test planning</strong>.</p>
@@ -20,7 +20,7 @@ export const content = {
       <!-- ==================== 1.4.1 TEST ACTIVITIES ==================== -->
       <section class="concept-block">
         <h3>1.4.1 Test Activities and Tasks</h3>
-        <p>There are <strong>7 main activity groups</strong> in a test process. They look sequential, but in practice they're often done <strong>iteratively or in parallel</strong> — just like in a restaurant, you might be prepping tomorrow's menu while today's service is still running.</p>
+        <p>There are <strong>7 main activity groups</strong> in a test process. They look sequential, but in practice they're often done <strong>iteratively or in parallel</strong> — for example, you might be designing tests for the next sprint while still executing tests from the current one.</p>
 
         <div class="definition-box highlight-box" style="padding: 1rem; margin: 1rem 0; border-radius: 8px;">
           <p style="margin: 0;">🧠 <strong>Memory trick — "PMADIEC":</strong> <em><strong>P</strong>lan → <strong>M</strong>onitor → <strong>A</strong>nalyze → <strong>D</strong>esign → <strong>I</strong>mplement → <strong>E</strong>xecute → <strong>C</strong>omplete</em><br>
@@ -30,7 +30,7 @@ export const content = {
         <!-- PLANNING -->
         <div class="highlight-box" style="margin-bottom: 1.5rem;">
           <h4>1. Test Planning 📋</h4>
-          <p><strong>Restaurant analogy:</strong> Deciding the menu strategy — what cuisine, what budget, how many dishes.</p>
+          <p><strong>Real scenario:</strong> Your team has 3 weeks to test the banking app before launch. The test manager decides: <em>"We'll focus on payment flows and security first (highest risk), use automated regression tests, and only do manual testing for the new features."</em></p>
           <p>You define the <strong>test objectives</strong> (what are we trying to achieve?) and pick an approach that fits within the project's constraints (time, budget, risk).</p>
           <p style="color: #888; font-style: italic;">Covered in depth in Section 5.1.</p>
         </div>
@@ -38,7 +38,7 @@ export const content = {
         <!-- MONITORING & CONTROL -->
         <div class="highlight-box" style="margin-bottom: 1.5rem;">
           <h4>2. Test Monitoring and Test Control 📊</h4>
-          <p><strong>Restaurant analogy:</strong> The head chef watching orders during service and adjusting when things go wrong.</p>
+          <p><strong>Real scenario:</strong> It's day 10 of 21. The dashboard shows only 35% of test cases have been executed — you're behind schedule. That's <strong>monitoring</strong>. The test manager decides to reassign 2 developers to help with testing and cut low-priority test cases. That's <strong>control</strong>.</p>
           <div class="comparison-grid">
             <div class="grid-item">
               <h4>Monitoring = Watching 👀</h4>
@@ -57,9 +57,8 @@ export const content = {
         <!-- ANALYSIS -->
         <div class="highlight-box" style="margin-bottom: 1.5rem;">
           <h4>3. Test Analysis 🔍</h4>
-          <p><strong>Restaurant analogy:</strong> Reading the menu brief and deciding — <em>"OK, we need to taste-test the soup, the steak, and the dessert."</em></p>
-          <p>You look at the <strong>test basis</strong> (requirements, specs, user stories) and figure out <strong>what needs to be tested</strong>. You identify <strong>test conditions</strong> and prioritize them based on risk.</p>
-          <p>You also check whether the test basis itself has defects (e.g., contradictory requirements).</p>
+          <p><strong>Real scenario:</strong> You read the user story: <em>"As a user, I want to transfer money to another account."</em> From this, you identify what needs testing: valid transfers, insufficient funds, wrong account number, transfer limits, concurrent transfers, network timeout during transfer. Those are your <strong>test conditions</strong>. You also spot that the requirement doesn't mention what happens if the recipient's account is closed — that's a defect in the test basis itself!</p>
+          <p>You look at the <strong>test basis</strong> (requirements, specs, user stories) and figure out <strong>what needs to be tested</strong>. You identify <strong>test conditions</strong> and prioritize them based on risk. You also check whether the test basis itself has defects — like that missing "closed account" scenario above.</p>
           <div class="definition-box highlight-box" style="padding: 0.8rem; margin-top: 0.5rem; border-radius: 8px;">
             <p style="margin: 0;">🎯 <strong>Key question:</strong> <em>"WHAT to test?"</em> → defined in terms of measurable coverage criteria.</p>
           </div>
@@ -68,7 +67,7 @@ export const content = {
         <!-- DESIGN -->
         <div class="highlight-box" style="margin-bottom: 1.5rem;">
           <h4>4. Test Design ✏️</h4>
-          <p><strong>Restaurant analogy:</strong> Creating the actual recipes — <em>"For the soup test, use these ingredients, this temperature, this timing."</em></p>
+          <p><strong>Real scenario:</strong> From the test condition "insufficient funds," you write a concrete test case: <em>"User has $50 balance, attempts to transfer $100 → expected result: error message 'Insufficient funds' and no money deducted."</em> You figure out you need test accounts with specific balances (test data) and a staging server that mimics production (test environment).</p>
           <p>You turn test conditions into <strong>test cases</strong> and other testware (like test charters for exploratory testing). You identify <strong>coverage items</strong>, figure out what <strong>test data</strong> you need, and design the <strong>test environment</strong>.</p>
           <div class="definition-box highlight-box" style="padding: 0.8rem; margin-top: 0.5rem; border-radius: 8px;">
             <p style="margin: 0;">🎯 <strong>Key question:</strong> <em>"HOW to test?"</em></p>
@@ -78,7 +77,7 @@ export const content = {
         <!-- IMPLEMENTATION -->
         <div class="highlight-box" style="margin-bottom: 1.5rem;">
           <h4>5. Test Implementation 🔧</h4>
-          <p><strong>Restaurant analogy:</strong> Prepping the kitchen — chopping vegetables, heating ovens, laying out plates in order of service.</p>
+          <p><strong>Real scenario:</strong> You take all those test cases and organize them: "Payment Suite" (15 test cases), "Login Suite" (8 test cases), "Profile Suite" (6 test cases). You write Selenium scripts for the automated ones, create the test accounts in the staging database, schedule payments tests first (highest priority), and verify the staging server is actually running and connected to the test database.</p>
           <p>You take the designs and make them <em>ready to run</em>:</p>
           <ul>
             <li>Organize test cases into <strong>test procedures</strong> → group them into <strong>test suites</strong></li>
@@ -94,7 +93,7 @@ export const content = {
         <!-- EXECUTION -->
         <div class="highlight-box" style="margin-bottom: 1.5rem;">
           <h4>6. Test Execution 🚀</h4>
-          <p><strong>Restaurant analogy:</strong> Service time! Plates go out, customers taste the food, and you note their reactions.</p>
+          <p><strong>Real scenario:</strong> You run the Payment Suite. Test case #7 ("transfer $100 with insufficient funds") fails — instead of showing an error, the app crashes. You log this in Jira: <em>"BUG-042: App crashes when transferring amount exceeding balance. Severity: High. Steps to reproduce: ..."</em>. You mark the test as failed and move to the next one.</p>
           <p>You <strong>run the tests</strong> according to the schedule. This is where rubber meets road:</p>
           <ul>
             <li>Compare actual results vs. <strong>expected results</strong> — does it match?</li>
@@ -108,7 +107,7 @@ export const content = {
         <!-- COMPLETION -->
         <div class="highlight-box" style="margin-bottom: 1.5rem;">
           <h4>7. Test Completion 🏁</h4>
-          <p><strong>Restaurant analogy:</strong> After-service cleanup and debrief — <em>"The steak was overcooked twice, let's fix the timer. Archive tonight's menu. The soufflé worked great — keep that recipe."</em></p>
+          <p><strong>Real scenario:</strong> The banking app is released. 3 low-severity bugs are still open — you create backlog items so they get fixed in the next sprint. You archive the Payment Suite tests (you'll reuse them next release). You shut down the staging server. In the retrospective, the team notes: <em>"We should have set up the test environment earlier — we lost 2 days waiting for it."</em> You write the test completion report and share it with stakeholders.</p>
           <p>Happens at <strong>project milestones</strong> (release, end of sprint, test level done). You:</p>
           <ul>
             <li>Create <strong>change requests / backlog items</strong> for bugs that aren't fixed yet</li>
@@ -243,11 +242,11 @@ export const content = {
       <!-- ==================== 1.4.5 ROLES ==================== -->
       <section class="concept-block">
         <h3>1.4.5 Roles in Testing — The Manager vs. The Engineer</h3>
-        <p>There are <strong>two principal roles</strong> in testing. Think of them like a film production:</p>
+        <p>There are <strong>two principal roles</strong> in testing. Think of it like a construction site — someone manages the project timeline and budget, while others do the actual building:</p>
 
         <div class="comparison-grid" style="margin: 1rem 0;">
           <div class="grid-item">
-            <h4>🎬 Test Management Role<br><small style="color: #aaa;">(The Director)</small></h4>
+            <h4>🎬 Test Management Role<br><small style="color: #aaa;">(The Project Lead)</small></h4>
             <p><strong>Responsible for:</strong> The overall test process, test team leadership, and strategic decisions.</p>
             <p><strong>Activities:</strong></p>
             <ul>
@@ -259,7 +258,7 @@ export const content = {
             <p><strong>Who does it?</strong> Test manager, team lead, dev manager, or in Agile it may be shared across the team.</p>
           </div>
           <div class="grid-item">
-            <h4>🔧 Testing Role<br><small style="color: #aaa;">(The Camera Crew)</small></h4>
+            <h4>🔧 Testing Role<br><small style="color: #aaa;">(The Hands-On Tester)</small></h4>
             <p><strong>Responsible for:</strong> The engineering/technical side of testing — the hands-on work.</p>
             <p><strong>Activities:</strong></p>
             <ul>
@@ -308,7 +307,7 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> <strong>Test Implementation.</strong> This is the "prep the kitchen" phase — test cases get organized into procedures and suites, scripts are written, the schedule is built, and the test environment is verified. Everything gets <em>ready to run</em>.</p>
+                <p><strong>Answer:</strong> <strong>Test Implementation.</strong> This is the setup phase — test cases get organized into procedures and suites, scripts are written, the schedule is built, and the test environment is verified. Everything gets <em>ready to run</em>.</p>
               </details>
             </div>
           </li>
@@ -344,7 +343,7 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> <strong>Test Management Role</strong> (the director) handles Planning, Monitoring, Control, and Completion — the strategic/leadership side. <strong>Testing Role</strong> (the engineer) handles Analysis, Design, Implementation, and Execution — the technical/hands-on side. One person can fill both roles simultaneously.</p>
+                <p><strong>Answer:</strong> <strong>Test Management Role</strong> (the project lead) handles Planning, Monitoring, Control, and Completion — the strategic/leadership side. <strong>Testing Role</strong> (the hands-on tester) handles Analysis, Design, Implementation, and Execution — the technical side. One person can fill both roles simultaneously.</p>
               </details>
             </div>
           </li>
