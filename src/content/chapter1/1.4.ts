@@ -1,173 +1,296 @@
-import audio14 from './audio/14audio.m4a';
+import audio14 from "./audio/14audio.m4a";
 
 export const content = {
   title: "1.4 Test Activities, Testware and Test Roles",
   audioSrc: audio14,
   content: `
     <div class="test-content">
-      <div class="concept-block">
-        <h3>The Big Picture</h3>
-        <p>Testing is context dependent, but at a high level, there are <strong>common sets of test activities</strong> without which testing is less likely to achieve its objectives. These activities form a <strong>test process</strong>.</p>
-        <p>The test process can be tailored to a given situation based on various factors. Which test activities are included, how they are implemented, and when they occur is normally decided as part of <strong>test planning</strong> (see Section 5.1).</p>
-      </div>
 
-      <div class="concept-block">
+      <!-- ==================== BIG PICTURE ==================== -->
+      <section class="concept-block">
+        <h3>The Big Picture — Think of Testing Like Running a Restaurant</h3>
+        <p>Imagine you're opening a restaurant. You don't just cook food and hope people like it. You <strong>plan the menu</strong>, <strong>check ingredient quality</strong>, <strong>taste-test dishes</strong>, <strong>train the staff</strong>, and <strong>review feedback</strong> after opening night. Each of those steps has a purpose — skip one and you risk disaster.</p>
+        <p>Testing works the same way. There's a <strong>test process</strong> — a set of activities that, together, give testing the best chance of catching problems. You can mix, match, and reorder them depending on your situation, but skipping them entirely? Bad idea.</p>
+
+        <div class="definition-box highlight-box" style="padding: 1rem; margin: 1rem 0; border-radius: 8px;">
+          <p style="margin: 0;">🎯 <strong>Exam Key:</strong> The test process is <em>tailored</em> to the situation. Which activities happen, when, and how is decided during <strong>test planning</strong>.</p>
+        </div>
+      </section>
+
+      <!-- ==================== 1.4.1 TEST ACTIVITIES ==================== -->
+      <section class="concept-block">
         <h3>1.4.1 Test Activities and Tasks</h3>
-        <p>A test process usually consists of the main groups of activities described below. Although many appear to follow a logical sequence, they are often implemented <strong>iteratively or in parallel</strong>. These activities usually need to be tailored to the system and the project.</p>
+        <p>There are <strong>7 main activity groups</strong> in a test process. They look sequential, but in practice they're often done <strong>iteratively or in parallel</strong> — just like in a restaurant, you might be prepping tomorrow's menu while today's service is still running.</p>
 
-        <div class="highlight-box" style="margin-bottom: 1rem;">
-          <h4>Test Planning</h4>
-          <p>Defining the <strong>test objectives</strong> and then selecting an approach that best achieves those objectives within the constraints imposed by the overall context.</p>
-          <p><em>See Section 5.1 for more details.</em></p>
+        <div class="definition-box highlight-box" style="padding: 1rem; margin: 1rem 0; border-radius: 8px;">
+          <p style="margin: 0;">🧠 <strong>Memory trick — "PMADIEC":</strong> <em><strong>P</strong>lan → <strong>M</strong>onitor → <strong>A</strong>nalyze → <strong>D</strong>esign → <strong>I</strong>mplement → <strong>E</strong>xecute → <strong>C</strong>omplete</em><br>
+          Think: <em>"Please May All Developers Improve Every Codebase"</em></p>
         </div>
 
-        <div class="highlight-box" style="margin-bottom: 1rem;">
-          <h4>Test Monitoring and Test Control</h4>
+        <!-- PLANNING -->
+        <div class="highlight-box" style="margin-bottom: 1.5rem;">
+          <h4>1. Test Planning 📋</h4>
+          <p><strong>Restaurant analogy:</strong> Deciding the menu strategy — what cuisine, what budget, how many dishes.</p>
+          <p>You define the <strong>test objectives</strong> (what are we trying to achieve?) and pick an approach that fits within the project's constraints (time, budget, risk).</p>
+          <p style="color: #888; font-style: italic;">Covered in depth in Section 5.1.</p>
+        </div>
+
+        <!-- MONITORING & CONTROL -->
+        <div class="highlight-box" style="margin-bottom: 1.5rem;">
+          <h4>2. Test Monitoring and Test Control 📊</h4>
+          <p><strong>Restaurant analogy:</strong> The head chef watching orders during service and adjusting when things go wrong.</p>
+          <div class="comparison-grid">
+            <div class="grid-item">
+              <h4>Monitoring = Watching 👀</h4>
+              <p>Ongoing checking of all test activities. <em>"Are we on track vs. the plan?"</em></p>
+            </div>
+            <div class="grid-item">
+              <h4>Control = Acting 🎬</h4>
+              <p>Taking corrective actions to get back on track. <em>"Things are slipping — let's reprioritize."</em></p>
+            </div>
+          </div>
+          <div class="definition-box highlight-box" style="padding: 0.8rem; margin-top: 0.5rem; border-radius: 8px;">
+            <p style="margin: 0;">⚠️ <strong>Exam trap:</strong> Don't confuse these two! <strong>Monitoring = passive observation</strong>. <strong>Control = active intervention</strong>. The exam loves asking this distinction.</p>
+          </div>
+        </div>
+
+        <!-- ANALYSIS -->
+        <div class="highlight-box" style="margin-bottom: 1.5rem;">
+          <h4>3. Test Analysis 🔍</h4>
+          <p><strong>Restaurant analogy:</strong> Reading the menu brief and deciding — <em>"OK, we need to taste-test the soup, the steak, and the dessert."</em></p>
+          <p>You look at the <strong>test basis</strong> (requirements, specs, user stories) and figure out <strong>what needs to be tested</strong>. You identify <strong>test conditions</strong> and prioritize them based on risk.</p>
+          <p>You also check whether the test basis itself has defects (e.g., contradictory requirements).</p>
+          <div class="definition-box highlight-box" style="padding: 0.8rem; margin-top: 0.5rem; border-radius: 8px;">
+            <p style="margin: 0;">🎯 <strong>Key question:</strong> <em>"WHAT to test?"</em> → defined in terms of measurable coverage criteria.</p>
+          </div>
+        </div>
+
+        <!-- DESIGN -->
+        <div class="highlight-box" style="margin-bottom: 1.5rem;">
+          <h4>4. Test Design ✏️</h4>
+          <p><strong>Restaurant analogy:</strong> Creating the actual recipes — <em>"For the soup test, use these ingredients, this temperature, this timing."</em></p>
+          <p>You turn test conditions into <strong>test cases</strong> and other testware (like test charters for exploratory testing). You identify <strong>coverage items</strong>, figure out what <strong>test data</strong> you need, and design the <strong>test environment</strong>.</p>
+          <div class="definition-box highlight-box" style="padding: 0.8rem; margin-top: 0.5rem; border-radius: 8px;">
+            <p style="margin: 0;">🎯 <strong>Key question:</strong> <em>"HOW to test?"</em></p>
+          </div>
+        </div>
+
+        <!-- IMPLEMENTATION -->
+        <div class="highlight-box" style="margin-bottom: 1.5rem;">
+          <h4>5. Test Implementation 🔧</h4>
+          <p><strong>Restaurant analogy:</strong> Prepping the kitchen — chopping vegetables, heating ovens, laying out plates in order of service.</p>
+          <p>You take the designs and make them <em>ready to run</em>:</p>
           <ul>
-            <li><strong>Test Monitoring:</strong> Ongoing checking of all test activities and comparing actual progress against the plan.</li>
-            <li><strong>Test Control:</strong> Taking the actions necessary to meet the test objectives.</li>
+            <li>Organize test cases into <strong>test procedures</strong> → group them into <strong>test suites</strong></li>
+            <li>Write manual/automated <strong>test scripts</strong></li>
+            <li>Prioritize and schedule everything into a <strong>test execution schedule</strong></li>
+            <li>Set up and verify the <strong>test environment</strong> actually works</li>
           </ul>
-          <p><em>See Section 5.3 for more details.</em></p>
+          <div class="definition-box highlight-box" style="padding: 0.8rem; margin-top: 0.5rem; border-radius: 8px;">
+            <p style="margin: 0;">💡 <strong>Think of it this way:</strong> Analysis = "what", Design = "how", Implementation = "get everything ready so we can actually do it".</p>
+          </div>
         </div>
 
-        <div class="highlight-box" style="margin-bottom: 1rem;">
-          <h4>Test Analysis</h4>
-          <p>Analyzing the <strong>test basis</strong> to identify testable features and define/prioritize associated <strong>test conditions</strong>, taking related risks and risk levels into account. The test basis and test object are also evaluated for defects and testability.</p>
-          <p>Test analysis is often supported by <strong>test techniques</strong> (see Chapter 4).</p>
-          <p><strong>Key question answered:</strong> <em>"What to test?"</em> — in terms of measurable coverage criteria.</p>
-        </div>
-
-        <div class="highlight-box" style="margin-bottom: 1rem;">
-          <h4>Test Design</h4>
-          <p>Elaborating test conditions into <strong>test cases</strong> and other testware (e.g., test charters). This often involves identifying <strong>coverage items</strong> to guide test case inputs. It also includes defining test data requirements, designing the test environment, and identifying necessary infrastructure and tools.</p>
-          <p><strong>Key question answered:</strong> <em>"How to test?"</em></p>
-        </div>
-
-        <div class="highlight-box" style="margin-bottom: 1rem;">
-          <h4>Test Implementation</h4>
-          <p>Creating or acquiring the testware necessary for test execution (e.g., test data). Activities include:</p>
+        <!-- EXECUTION -->
+        <div class="highlight-box" style="margin-bottom: 1.5rem;">
+          <h4>6. Test Execution 🚀</h4>
+          <p><strong>Restaurant analogy:</strong> Service time! Plates go out, customers taste the food, and you note their reactions.</p>
+          <p>You <strong>run the tests</strong> according to the schedule. This is where rubber meets road:</p>
           <ul>
-            <li>Organizing test cases into <strong>test procedures</strong>, often assembled into <strong>test suites</strong>.</li>
-            <li>Creating manual and automated <strong>test scripts</strong>.</li>
-            <li>Prioritizing and arranging test procedures within a <strong>test execution schedule</strong>.</li>
-            <li>Building and verifying the <strong>test environment</strong> is set up correctly.</li>
+            <li>Compare actual results vs. <strong>expected results</strong> — does it match?</li>
+            <li><strong>Log</strong> all results (pass, fail, blocked)</li>
+            <li><strong>Analyze</strong> anomalies — <em>why</em> did it fail?</li>
+            <li><strong>Report</strong> defects based on failures found</li>
           </ul>
+          <p>Can be manual, automated, continuous, or pair testing — depends on context.</p>
         </div>
 
-        <div class="highlight-box" style="margin-bottom: 1rem;">
-          <h4>Test Execution</h4>
-          <p>Running the tests in accordance with the test execution schedule (<strong>test runs</strong>). This may be manual or automated, and can take many forms including continuous testing or pair testing sessions.</p>
+        <!-- COMPLETION -->
+        <div class="highlight-box" style="margin-bottom: 1.5rem;">
+          <h4>7. Test Completion 🏁</h4>
+          <p><strong>Restaurant analogy:</strong> After-service cleanup and debrief — <em>"The steak was overcooked twice, let's fix the timer. Archive tonight's menu. The soufflé worked great — keep that recipe."</em></p>
+          <p>Happens at <strong>project milestones</strong> (release, end of sprint, test level done). You:</p>
           <ul>
-            <li>Actual test results are compared with <strong>expected results</strong>.</li>
-            <li>Test results are <strong>logged</strong>.</li>
-            <li>Anomalies are <strong>analyzed</strong> to identify their likely causes.</li>
-            <li>Anomalies are <strong>reported</strong> based on the failures observed (see Section 5.5).</li>
+            <li>Create <strong>change requests / backlog items</strong> for bugs that aren't fixed yet</li>
+            <li><strong>Archive useful testware</strong> for reuse later</li>
+            <li><strong>Shut down</strong> the test environment to a known state</li>
+            <li>Hold a <strong>lessons learned</strong> session — what went well, what didn't?</li>
+            <li>Write and share the <strong>test completion report</strong></li>
           </ul>
         </div>
 
+        <!-- QUICK REFERENCE TABLE -->
         <div class="highlight-box" style="margin-bottom: 1rem;">
-          <h4>Test Completion</h4>
-          <p>Usually occurs at <strong>project milestones</strong> (e.g., release, end of iteration, test level completion). Activities include:</p>
-          <ul>
-            <li>Creating <strong>change requests</strong> or product backlog items for unresolved defects.</li>
-            <li>Identifying and archiving useful testware for future use.</li>
-            <li>Shutting down the test environment to an agreed state.</li>
-            <li>Analyzing test activities to identify <strong>lessons learned</strong> and improvements.</li>
-            <li>Creating and communicating a <strong>test completion report</strong> to stakeholders.</li>
-          </ul>
+          <h4>Quick Reference — All 7 Activities at a Glance</h4>
+          <table style="width:100%; border-collapse:collapse; margin-top:0.5rem;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.5rem;">Activity</th>
+                <th style="text-align:left; padding:0.5rem;">One-Liner</th>
+                <th style="text-align:left; padding:0.5rem;">Key Question</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;">Planning</td><td>Set objectives & approach</td><td><em>What's our strategy?</em></td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;">Monitoring & Control</td><td>Watch progress, fix deviations</td><td><em>Are we on track?</em></td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;">Analysis</td><td>Study test basis, find what to test</td><td><em>What to test?</em></td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;">Design</td><td>Create test cases & conditions</td><td><em>How to test?</em></td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;">Implementation</td><td>Prepare scripts, suites, environments</td><td><em>Is everything ready?</em></td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;">Execution</td><td>Run tests, log results, report bugs</td><td><em>Did it pass or fail?</em></td></tr>
+              <tr><td style="padding:0.4rem;">Completion</td><td>Archive, learn, report</td><td><em>What did we learn?</em></td></tr>
+            </tbody>
+          </table>
         </div>
-      </div>
+      </section>
 
-      <div class="concept-block">
+      <!-- ==================== 1.4.2 CONTEXT ==================== -->
+      <section class="concept-block">
         <h3>1.4.2 Test Process in Context</h3>
-        <p>Testing is <strong>not performed in isolation</strong>. Test activities are an integral part of the development processes and are funded by stakeholders. The way testing is carried out depends on a number of <strong>contextual factors</strong>, including:</p>
-        <ul>
-          <li><strong>Stakeholders:</strong> Needs, expectations, requirements, willingness to cooperate.</li>
-          <li><strong>Team members:</strong> Skills, knowledge, level of experience, availability, training needs.</li>
-          <li><strong>Business domain:</strong> Criticality of the test object, identified risks, market needs, specific legal regulations.</li>
-          <li><strong>Technical factors:</strong> Type of software, product architecture, technology used.</li>
-          <li><strong>Project constraints:</strong> Scope, time, budget, resources.</li>
-          <li><strong>Organizational factors:</strong> Organizational structure, existing policies, practices used.</li>
-          <li><strong>Software development lifecycle:</strong> Engineering practices, development methods.</li>
-          <li><strong>Tools:</strong> Availability, usability, compliance.</li>
-        </ul>
-        <p>These factors impact many test-related issues, including: test strategy, test techniques used, degree of test automation, required level of coverage, level of detail of testware, test reporting, etc.</p>
-      </div>
+        <p>Testing doesn't happen in a vacuum. Imagine testing a pacemaker vs. testing a to-do list app — <strong>completely different</strong> levels of rigor, budget, and regulation. The way you test depends on <strong>8 contextual factors</strong>:</p>
 
-      <div class="concept-block">
+        <div class="definition-box highlight-box" style="padding: 1rem; margin: 1rem 0; border-radius: 8px;">
+          <p style="margin: 0;">🧠 <strong>Memory trick — "STBT POST":</strong><br>
+          <strong>S</strong>takeholders · <strong>T</strong>eam · <strong>B</strong>usiness domain · <strong>T</strong>echnical factors · <strong>P</strong>roject constraints · <strong>O</strong>rganizational factors · <strong>S</strong>DLC · <strong>T</strong>ools</p>
+        </div>
+
+        <table style="width:100%; border-collapse:collapse; margin-top:0.5rem;">
+          <thead>
+            <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+              <th style="text-align:left; padding:0.5rem;">Factor</th>
+              <th style="text-align:left; padding:0.5rem;">What It Means (Plain English)</th>
+              <th style="text-align:left; padding:0.5rem;">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Stakeholders</strong></td><td>Who cares about this? What do they expect?</td><td>A CEO who wants speed vs. a regulator who wants proof</td></tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Team members</strong></td><td>What skills does the team have?</td><td>Junior team → need more guidance and training</td></tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Business domain</strong></td><td>How critical is this software? Any regulations?</td><td>Medical software → strict legal requirements</td></tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Technical factors</strong></td><td>What kind of system is it?</td><td>Microservices vs. monolith → different test approaches</td></tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Project constraints</strong></td><td>Scope, time, budget limitations</td><td>2-week sprint → can't test everything, must prioritize</td></tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Organizational factors</strong></td><td>Company culture, policies, structure</td><td>Startup (flexible) vs. bank (rigid processes)</td></tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>SDLC</strong></td><td>What dev methodology is used?</td><td>Agile → testing in every sprint; Waterfall → testing at the end</td></tr>
+            <tr><td style="padding:0.4rem;"><strong>Tools</strong></td><td>What testing tools are available?</td><td>No automation tools → manual testing only</td></tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top: 1rem;">These factors affect <em>everything</em>: strategy, techniques, automation level, coverage depth, reporting detail, and more.</p>
+      </section>
+
+      <!-- ==================== 1.4.3 TESTWARE ==================== -->
+      <section class="concept-block">
         <h3>1.4.3 Testware</h3>
-        <p><strong>Testware</strong> is created as output work products from the test activities. There is significant variation in how organizations produce, shape, name, organize, and manage these work products. Proper <strong>configuration management</strong> (see Section 5.4) ensures consistency and integrity.</p>
+        <p><strong>Testware = all the stuff you produce while testing.</strong> Just like coding produces source code, testing produces testware. Every test activity creates specific outputs. Think of it as the paper trail of your testing effort.</p>
+        <p>Organizations name and manage these differently, but they should all be under <strong>configuration management</strong> (versioned and controlled — just like code).</p>
 
         <div class="highlight-box" style="margin-top: 1rem;">
-          <h4>Testware by Activity</h4>
-          <ul>
-            <li><strong>Test Planning:</strong> Test plan, test schedule, risk register, entry criteria, and exit criteria.</li>
-            <li><strong>Test Monitoring & Control:</strong> Test progress reports, documentation of control directives, risk information.</li>
-            <li><strong>Test Analysis:</strong> (Prioritized) test conditions (e.g., acceptance criteria), defect reports regarding defects in the test basis.</li>
-            <li><strong>Test Design:</strong> (Prioritized) test cases, test charters, coverage items, test data requirements, and test environment requirements.</li>
-            <li><strong>Test Implementation:</strong> Test procedures, manual and automated test scripts, test suites, test data, test execution schedule, and test environment items (stubs, drivers, simulators, service virtualizations).</li>
-            <li><strong>Test Execution:</strong> Test logs and defect reports.</li>
-            <li><strong>Test Completion:</strong> Test completion report, action items for improvement, documented lessons learned, and change requests.</li>
-          </ul>
+          <h4>What Each Activity Produces</h4>
+          <table style="width:100%; border-collapse:collapse; margin-top:0.5rem;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <th style="text-align:left; padding:0.5rem;">Activity</th>
+                <th style="text-align:left; padding:0.5rem;">Testware Produced</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Planning</strong></td><td>Test plan, test schedule, risk register, entry/exit criteria</td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Monitoring & Control</strong></td><td>Progress reports, control directives, risk info</td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Analysis</strong></td><td>Prioritized test conditions, defect reports on the test basis itself</td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Design</strong></td><td>Test cases, test charters, coverage items, test data & environment requirements</td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Implementation</strong></td><td>Test procedures, scripts (manual + automated), test suites, test data, execution schedule, environment items (stubs, drivers, simulators)</td></tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding:0.4rem;"><strong>Execution</strong></td><td>Test logs, defect reports</td></tr>
+              <tr><td style="padding:0.4rem;"><strong>Completion</strong></td><td>Completion report, action items, lessons learned, change requests</td></tr>
+            </tbody>
+          </table>
         </div>
-      </div>
 
-      <div class="concept-block">
-        <h3>1.4.4 Traceability between the Test Basis and Testware</h3>
-        <p>To implement effective test monitoring and control, it is important to establish and maintain <strong>traceability</strong> throughout the test process between:</p>
-        <ul>
-          <li>Test basis elements</li>
-          <li>Testware associated with those elements (test conditions, risks, test cases)</li>
-          <li>Test results</li>
-          <li>Defects</li>
-        </ul>
-        <p>Accurate traceability supports <strong>coverage evaluation</strong>. Coverage criteria can function as <strong>key performance indicators (KPIs)</strong> that show to what extent test objectives have been achieved. For example:</p>
-        <ul>
-          <li>Traceability of test cases to requirements can verify that requirements are <strong>covered</strong> by test cases.</li>
-          <li>Traceability of test results to risks can evaluate the level of <strong>residual risk</strong> in a test object.</li>
-        </ul>
-        <p>Good traceability also:</p>
-        <ul>
-          <li>Determines the <strong>impact of changes</strong>.</li>
-          <li>Facilitates <strong>audits</strong>.</li>
-          <li>Helps meet <strong>IT governance criteria</strong>.</li>
-          <li>Makes test progress and completion reports more <strong>easily understandable</strong>.</li>
-          <li>Assists in communicating technical aspects of testing to stakeholders.</li>
-          <li>Provides information to assess <strong>product quality, process capability, and project progress</strong> against business goals.</li>
-        </ul>
-      </div>
+        <div class="definition-box highlight-box" style="padding: 0.8rem; margin-top: 1rem; border-radius: 8px;">
+          <p style="margin: 0;">⚠️ <strong>Exam tip:</strong> You might be asked "which testware comes from which activity?" The big ones to remember: <strong>test conditions</strong> come from Analysis, <strong>test cases</strong> come from Design, <strong>test scripts & suites</strong> come from Implementation, <strong>defect reports</strong> come from Execution.</p>
+        </div>
+      </section>
 
-      <div class="concept-block highlight-box">
-        <h3>1.4.5 Roles in Testing</h3>
-        <p>Two principal roles in testing are covered in this syllabus. The activities and tasks assigned depend on the project/product context, the skills of the people, and the organization.</p>
+      <!-- ==================== 1.4.4 TRACEABILITY ==================== -->
+      <section class="concept-block">
+        <h3>1.4.4 Traceability — Connecting the Dots</h3>
+        <p><strong>Real-world analogy:</strong> Imagine a crime investigation with evidence scattered everywhere but no case file linking things together. Traceability is the case file — it connects <em>requirements → test conditions → test cases → results → defects</em> so you can always trace back <strong>why</strong> a test exists and <strong>what</strong> it covers.</p>
 
-        <div class="comparison-grid">
+        <div class="highlight-box" style="margin: 1rem 0;">
+          <h4>The Traceability Chain</h4>
+          <p style="text-align: center; font-size: 1.1em; margin: 0.5rem 0;">
+            <strong>Test Basis</strong> &rarr; <strong>Test Conditions</strong> &rarr; <strong>Test Cases</strong> &rarr; <strong>Test Results</strong> &rarr; <strong>Defects</strong>
+          </p>
+          <p style="text-align: center; color: #aaa; margin: 0;">Each link connects back to the one before it.</p>
+        </div>
+
+        <p>Traceability enables <strong>coverage evaluation</strong> — meaning you can measure how much of the requirements are actually being tested. Coverage criteria serve as <strong>Key Performance Indicators (KPIs)</strong>:</p>
+        <ul>
+          <li>📊 Test cases → requirements = <em>"Have we covered all requirements?"</em></li>
+          <li>📊 Test results → risks = <em>"What's the residual risk?"</em></li>
+        </ul>
+
+        <div class="highlight-box" style="margin-top: 1rem;">
+          <h4>Why Traceability Matters (6 Benefits)</h4>
+          <ol>
+            <li><strong>Impact analysis</strong> — a requirement changed? Instantly see which tests are affected</li>
+            <li><strong>Audits</strong> — prove to auditors that every requirement has been tested</li>
+            <li><strong>IT governance</strong> — meet compliance and governance criteria</li>
+            <li><strong>Better reports</strong> — progress and completion reports become clear and meaningful</li>
+            <li><strong>Communication</strong> — explain technical testing status to non-technical stakeholders</li>
+            <li><strong>Quality assessment</strong> — assess product quality, process capability, and project progress against business goals</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ==================== 1.4.5 ROLES ==================== -->
+      <section class="concept-block">
+        <h3>1.4.5 Roles in Testing — The Manager vs. The Engineer</h3>
+        <p>There are <strong>two principal roles</strong> in testing. Think of them like a film production:</p>
+
+        <div class="comparison-grid" style="margin: 1rem 0;">
           <div class="grid-item">
-            <h4>Test Management Role</h4>
-            <p><strong>Responsibility:</strong> Overall responsibility for the test process, test team, and leadership of testing activities.<br>
-            <strong>Main activities:</strong> Test planning, test monitoring, test control, and test completion.<br>
-            <strong>Who:</strong> Can be a team leader, test manager, development manager, or in Agile — shared among the team. Tasks spanning multiple teams may be performed by test managers outside the development team.</p>
+            <h4>🎬 Test Management Role<br><small style="color: #aaa;">(The Director)</small></h4>
+            <p><strong>Responsible for:</strong> The overall test process, test team leadership, and strategic decisions.</p>
+            <p><strong>Activities:</strong></p>
+            <ul>
+              <li>Test <strong>Planning</strong></li>
+              <li>Test <strong>Monitoring</strong></li>
+              <li>Test <strong>Control</strong></li>
+              <li>Test <strong>Completion</strong></li>
+            </ul>
+            <p><strong>Who does it?</strong> Test manager, team lead, dev manager, or in Agile it may be shared across the team.</p>
           </div>
           <div class="grid-item">
-            <h4>Testing Role</h4>
-            <p><strong>Responsibility:</strong> Overall responsibility for the engineering (technical) aspect of testing.<br>
-            <strong>Main activities:</strong> Test analysis, test design, test implementation, and test execution.<br>
-            <strong>Who:</strong> Different people may take on this role at different times. One person can also take on <em>both</em> the testing and test management roles simultaneously.</p>
+            <h4>🔧 Testing Role<br><small style="color: #aaa;">(The Camera Crew)</small></h4>
+            <p><strong>Responsible for:</strong> The engineering/technical side of testing — the hands-on work.</p>
+            <p><strong>Activities:</strong></p>
+            <ul>
+              <li>Test <strong>Analysis</strong></li>
+              <li>Test <strong>Design</strong></li>
+              <li>Test <strong>Implementation</strong></li>
+              <li>Test <strong>Execution</strong></li>
+            </ul>
+            <p><strong>Who does it?</strong> Different people at different times. One person can wear <em>both</em> hats.</p>
           </div>
         </div>
-      </div>
+
+        <div class="definition-box highlight-box" style="padding: 1rem; margin-top: 0.5rem; border-radius: 8px;">
+          <p style="margin: 0;">🧠 <strong>Easy way to remember:</strong><br>
+          <strong>Management</strong> = the "bookend" activities → <strong>P</strong>lan (start) + <strong>M</strong>onitor/<strong>C</strong>ontrol (middle) + <strong>C</strong>omplete (end)<br>
+          <strong>Testing</strong> = the "core work" activities → <strong>A</strong>nalyze → <strong>D</strong>esign → <strong>I</strong>mplement → <strong>E</strong>xecute</p>
+        </div>
+      </section>
 
       <hr class="section-divider">
 
-      <div class="concept-block practice-questions">
+      <!-- ==================== KNOWLEDGE CHECK ==================== -->
+      <section class="concept-block practice-questions">
         <h3>🧠 Knowledge Check Questions</h3>
         <ol>
           <li>
-            <strong>Question:</strong> Which test activity answers the question "What to test?" and which answers "How to test?"
+            <strong>Question:</strong> Which test activity answers "What to test?" and which answers "How to test?"
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Test Analysis answers "What to test?" — it identifies testable features and defines/prioritizes test conditions in terms of measurable coverage criteria. Test Design answers "How to test?" — it elaborates test conditions into test cases, defines test data requirements, and designs the test environment.</p>
+                <p><strong>Answer:</strong> <strong>Test Analysis</strong> = "What to test?" — it reads the test basis and identifies testable features, defining test conditions with measurable coverage criteria. <strong>Test Design</strong> = "How to test?" — it turns those conditions into actual test cases, test data, and environment designs.</p>
               </details>
             </div>
           </li>
@@ -176,7 +299,7 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Test monitoring involves the ongoing checking of all test activities and comparing actual progress against the plan. Test control involves taking the actions necessary to meet the test objectives. Monitoring is observation; control is action.</p>
+                <p><strong>Answer:</strong> <strong>Monitoring = watching.</strong> You continuously check test activities and compare actual progress against the plan. <strong>Control = doing.</strong> You take corrective actions to get back on track. Think: security camera (monitoring) vs. security guard stepping in (control).</p>
               </details>
             </div>
           </li>
@@ -185,7 +308,7 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Test Implementation. This is where test cases are organized into test procedures (often assembled into test suites), manual and automated test scripts are created, and test procedures are prioritized and arranged within a test execution schedule.</p>
+                <p><strong>Answer:</strong> <strong>Test Implementation.</strong> This is the "prep the kitchen" phase — test cases get organized into procedures and suites, scripts are written, the schedule is built, and the test environment is verified. Everything gets <em>ready to run</em>.</p>
               </details>
             </div>
           </li>
@@ -194,16 +317,16 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Any four of the following: Stakeholders (needs, expectations), Team members (skills, experience), Business domain (criticality, risks, regulations), Technical factors (software type, architecture), Project constraints (scope, time, budget), Organizational factors (policies, structure), Software development lifecycle (methods, practices), and Tools (availability, usability, compliance).</p>
+                <p><strong>Answer (STBT POST):</strong> <strong>S</strong>takeholders, <strong>T</strong>eam members, <strong>B</strong>usiness domain, <strong>T</strong>echnical factors, <strong>P</strong>roject constraints, <strong>O</strong>rganizational factors, <strong>S</strong>DLC, <strong>T</strong>ools. Any 4 of these is correct.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> What is testware, and can you give examples from at least 3 different test activities?
+            <strong>Question:</strong> What is testware? Give examples from at least 3 activities.
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Testware is the output work products created from test activities. Examples: Test Planning produces the test plan, test schedule, and risk register. Test Design produces test cases, test charters, and coverage items. Test Execution produces test logs and defect reports. Test Completion produces the test completion report and documented lessons learned.</p>
+                <p><strong>Answer:</strong> Testware = all output work products from testing activities. Examples: <strong>Planning</strong> → test plan, risk register. <strong>Analysis</strong> → test conditions. <strong>Design</strong> → test cases, test charters. <strong>Implementation</strong> → test scripts, test suites. <strong>Execution</strong> → test logs, defect reports. <strong>Completion</strong> → completion report, lessons learned.</p>
               </details>
             </div>
           </li>
@@ -212,16 +335,16 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> Traceability supports coverage evaluation, determines the impact of changes, facilitates audits, helps meet IT governance criteria, makes reports more understandable, helps communicate technical aspects to stakeholders, and provides information to assess product quality, process capability, and project progress against business goals.</p>
+                <p><strong>Answer:</strong> Traceability lets you: evaluate coverage (are all requirements tested?), analyze the impact of changes, facilitate audits, meet IT governance criteria, make reports understandable, communicate technical testing to stakeholders, and assess overall product quality and project progress.</p>
               </details>
             </div>
           </li>
           <li>
-            <strong>Question:</strong> What are the two principal roles in testing, and what activities does each focus on?
+            <strong>Question:</strong> What are the two principal roles in testing, and what activities belong to each?
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> The Test Management Role focuses on test planning, test monitoring, test control, and test completion — it's about leadership and oversight. The Testing Role focuses on test analysis, test design, test implementation, and test execution — it's about the engineering (technical) side. One person can perform both roles simultaneously.</p>
+                <p><strong>Answer:</strong> <strong>Test Management Role</strong> (the director) handles Planning, Monitoring, Control, and Completion — the strategic/leadership side. <strong>Testing Role</strong> (the engineer) handles Analysis, Design, Implementation, and Execution — the technical/hands-on side. One person can fill both roles simultaneously.</p>
               </details>
             </div>
           </li>
@@ -230,13 +353,30 @@ export const content = {
             <div class="details-panel">
               <details>
                 <summary>Show Answer</summary>
-                <p><strong>Answer:</strong> For any unresolved defects, change requests or product backlog items are created. This ensures they are tracked and addressed in future iterations or releases rather than being lost or forgotten.</p>
+                <p><strong>Answer:</strong> Unresolved defects get turned into <strong>change requests</strong> or <strong>product backlog items</strong> — ensuring they're tracked and addressed in future iterations or releases, not lost and forgotten.</p>
+              </details>
+            </div>
+          </li>
+          <li>
+            <strong>Question:</strong> A tester reads the requirements document and identifies that "login with expired password" needs to be tested. Which test activity is this?
+            <div class="details-panel">
+              <details>
+                <summary>Show Answer</summary>
+                <p><strong>Answer:</strong> <strong>Test Analysis.</strong> The tester is examining the test basis (requirements) to identify testable features and define test conditions. This is the "what to test?" phase.</p>
+              </details>
+            </div>
+          </li>
+          <li>
+            <strong>Question:</strong> A tester notices that 20% of planned test cases haven't been run yet and the deadline is tomorrow. They decide to add two more testers to the team. Is this monitoring or control?
+            <div class="details-panel">
+              <details>
+                <summary>Show Answer</summary>
+                <p><strong>Answer:</strong> <strong>Both!</strong> Noticing the 20% gap = <strong>monitoring</strong> (comparing actual progress against the plan). Adding testers = <strong>control</strong> (taking corrective action to meet objectives).</p>
               </details>
             </div>
           </li>
         </ol>
-      </div>
+      </section>
     </div>
-  `
+  `,
 };
-
