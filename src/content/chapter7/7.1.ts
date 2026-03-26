@@ -59,12 +59,7 @@ export const content = {
     gap: 8px;
     line-height: 1.5;
   }
-  .option-correct {
-    background: #f0fdf4;
-    border-color: #86efac;
-    color: #166534;
-    font-weight: 500;
-  }
+  
   .option-letter {
     font-weight: 700;
     min-width: 22px;
