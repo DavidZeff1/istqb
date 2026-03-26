@@ -108,7 +108,7 @@ export const content = {
   </div>
   <div class="question-text">Which of the following options shows an example of test activities that contribute to success?</div>
   <ul class="options-list">
-        <li class="option-item option-correct"><span class="option-letter">a)</span> Having testers involved during various software development lifecycle (SDLC) activities will help to detect defects in work products <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">a)</span> Having testers involved during various software development lifecycle (SDLC) activities will help to detect defects in work products</li>
         <li class="option-item"><span class="option-letter">b)</span> Testers try not to disturb the developers while coding, so that the developers write better code</li>
         <li class="option-item"><span class="option-letter">c)</span> Testers collaborating with end users help to improve the quality of defect reports during component integration and system testing</li>
         <li class="option-item"><span class="option-letter">d)</span> Certified testers will design much better test cases than non-certified testers</li>
@@ -123,7 +123,7 @@ export const content = {
   </div>
   <div class="question-text">You have been assigned as a tester to a team producing a new system incrementally. You have noticed that no changes have been made to the existing regression test cases for several iterations and no new regression defects were identified. Your manager is happy, but you are not. Which testing principle explains your skepticism?</div>
   <ul class="options-list">
-        <li class="option-item option-correct"><span class="option-letter">a)</span> Tests wear out <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">a)</span> Tests wear out</li>
         <li class="option-item"><span class="option-letter">b)</span> Absence-of-defects fallacy</li>
         <li class="option-item"><span class="option-letter">c)</span> Defects cluster together</li>
         <li class="option-item"><span class="option-letter">d)</span> Exhaustive testing is impossible</li>
