@@ -139,7 +139,7 @@ export const content = {
   <div class="question-text">You work in a team that develops a mobile application for food ordering. In the current iteration the team decided to implement the payment functionality. Which of the following activities is a part of test analysis?</div>
   <ul class="options-list">
         <li class="option-item"><span class="option-letter">a)</span> Estimating that testing the integration with the payment service will take 8 person-days</li>
-        <li class="option-item option-correct"><span class="option-letter">b)</span> Deciding that the team should test if it is possible to properly share payment between many users <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> Deciding that the team should test if it is possible to properly share payment between many users</li>
         <li class="option-item"><span class="option-letter">c)</span> Using boundary value analysis (BVA) to derive the test data for the test cases that check the correct payment processing for the minimum allowed amount to be paid</li>
         <li class="option-item"><span class="option-letter">d)</span> Analyzing the discrepancy between the actual result and expected result after executing a test case that checks the process of payment with a credit card, and reporting a defect</li>
   </ul>
@@ -154,7 +154,7 @@ export const content = {
   <div class="question-text">Which of the following factors have a SIGNIFICANT influence on the test approach? i. ii. iii. iv. v.</div>
   <ul class="options-list">
         <li class="option-item"><span class="option-letter">a)</span> The SDLC</li>
-        <li class="option-item option-correct"><span class="option-letter">b)</span> The number of defects detected in previous projects <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> The number of defects detected in previous projects</li>
         <li class="option-item"><span class="option-letter">c)</span> The identified product risks</li>
         <li class="option-item"><span class="option-letter">d)</span> New regulatory requirements forcing formal white-box testing</li>
   </ul>
@@ -168,11 +168,11 @@ export const content = {
   </div>
   <div class="question-text">Which TWO of the following tasks belong MAINLY to a testing role?</div>
   <ul class="options-list">
-        <li class="option-item option-correct"><span class="option-letter">a)</span> Configure test environments <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">a)</span> Configure test environments</li>
         <li class="option-item"><span class="option-letter">b)</span> Maintain the product backlog</li>
         <li class="option-item"><span class="option-letter">c)</span> Design solutions to new requirements</li>
         <li class="option-item"><span class="option-letter">d)</span> Create the test plan</li>
-        <li class="option-item option-correct"><span class="option-letter">e)</span> Analyze the test basis <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">e)</span> Analyze the test basis</li>
   </ul>
   <div class="answer-reveal">Correct answer: <strong>A, E</strong><br><br><b>Why A is correct:</b> Configuring test environments is a typical testing role task — testers set up and maintain the environments needed to execute tests.<br><b>Why E is correct:</b> Analyzing the test basis (reviewing requirements, user stories, etc.) to identify test conditions is a core testing role activity.<br><b>Why B is wrong:</b> Maintaining the product backlog is a product owner responsibility, not a testing role task.<br><b>Why C is wrong:</b> Designing solutions to new requirements is a development/architecture task, not a testing role.<br><b>Why D is wrong:</b> Creating the test plan is a test management role task, not a testing role task. The syllabus distinguishes between testing roles and test management roles.</div>
 </div>
@@ -185,7 +185,7 @@ export const content = {
   <div class="question-text">Which of the following skills (i-v) are the MOST important skills of a tester? i. ii. iii. iv. v.</div>
   <ul class="options-list">
         <li class="option-item"><span class="option-letter">a)</span> Having domain knowledge</li>
-        <li class="option-item option-correct"><span class="option-letter">b)</span> Creating a product vision <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> Creating a product vision</li>
         <li class="option-item"><span class="option-letter">c)</span> Being a good team player</li>
         <li class="option-item"><span class="option-letter">d)</span> Planning and organizing the work of the team</li>
   </ul>
@@ -202,7 +202,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">a)</span> Business representatives decide on test automation approaches</li>
         <li class="option-item"><span class="option-letter">b)</span> Testers help business representatives to define a test strategy</li>
         <li class="option-item"><span class="option-letter">c)</span> Business representatives are not part of the whole team approach</li>
-        <li class="option-item option-correct"><span class="option-letter">d)</span> Testers help business representatives to create suitable acceptance tests <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> Testers help business representatives to create suitable acceptance tests</li>
   </ul>
   <div class="answer-reveal">Correct answer: <strong>D</strong><br><br><b>Why D is correct:</b> In the whole-team approach, testers help business representatives create suitable acceptance tests. This is the key interaction — testers bring testing expertise to help define testable acceptance criteria.<br><b>Why A is wrong:</b> Business representatives do not decide on test automation approaches — this is a technical testing decision.<br><b>Why B is wrong:</b> Test strategy is typically defined by test managers, not business representatives. Testers don't help business reps define test strategy.<br><b>Why C is wrong:</b> Business representatives ARE part of the whole-team approach. The whole point is that everyone contributes to quality.</div>
 </div>
@@ -214,7 +214,7 @@ export const content = {
   </div>
   <div class="question-text">You were given a task to analyze and fix causes of failures in a new system to be released. Which activity are you performing?</div>
   <ul class="options-list">
-        <li class="option-item option-correct"><span class="option-letter">a)</span> Debugging <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">a)</span> Debugging</li>
         <li class="option-item"><span class="option-letter">b)</span> Software testing</li>
         <li class="option-item"><span class="option-letter">c)</span> Requirement elicitation</li>
         <li class="option-item"><span class="option-letter">d)</span> Defect management</li>
@@ -232,7 +232,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">a)</span> It is correct. Testing and QA mean exactly the same thing</li>
         <li class="option-item"><span class="option-letter">b)</span> It is correct. These names can be used interchangeably because both testing and QA focus their activities on the same quality issues</li>
         <li class="option-item"><span class="option-letter">c)</span> It is not correct. Testing is something more; testing includes all activities with regard to quality. QA focuses on quality-related processes</li>
-        <li class="option-item option-correct"><span class="option-letter">d)</span> It is not correct. QA is focused on quality-related processes while testing concentrates on demonstrating that a component or system is fit for purpose and to detect defects <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> It is not correct. QA is focused on quality-related processes while testing concentrates on demonstrating that a component or system is fit for purpose and to detect defects</li>
   </ul>
   <div class="answer-reveal">Correct answer: <strong>D</strong><br><br><b>Why D is correct:</b> QA focuses on adherence to proper processes (process-oriented), while testing focuses on demonstrating fitness for purpose and detecting defects (product-oriented). They are distinct activities.<br><b>Why A is wrong:</b> Testing and QA are NOT the same. QA is about processes; testing is about the product.<br><b>Why B is wrong:</b> They cannot be used interchangeably because they focus on different aspects — QA on processes, testing on product quality.<br><b>Why C is wrong:</b> This reverses the relationship. Testing does NOT include all quality activities. QA is broader in scope regarding processes, while testing is a form of quality control (QC).</div>
 </div>
@@ -247,7 +247,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">a)</span> The root cause</li>
         <li class="option-item"><span class="option-letter">b)</span> A failure</li>
         <li class="option-item"><span class="option-letter">c)</span> An error</li>
-        <li class="option-item option-correct"><span class="option-letter">d)</span> A defect <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> A defect</li>
   </ul>
   <div class="answer-reveal">Correct answer: <strong>D</strong><br><br><b>Why D is correct:</b> A defect (bug) is a flaw in a work product — the incorrectly coded upper bound is a flaw in the source code. It exists in the code whether or not it has been executed.<br><b>Why A is wrong:</b> The root cause is the distraction (phone ringing) that caused the programmer to make the mistake. The coded error itself is the defect, not the root cause.<br><b>Why B is wrong:</b> A failure is what the user observes when the system accepts invalid input. The incorrectly coded bound is the defect that causes the failure, not the failure itself.<br><b>Why C is wrong:</b> An error (mistake) is the human action — the programmer being distracted and making a mistake is the error. The resulting code flaw is the defect.</div>
 </div>
@@ -262,7 +262,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">a)</span> Test planning</li>
         <li class="option-item"><span class="option-letter">b)</span> Test monitoring and test control</li>
         <li class="option-item"><span class="option-letter">c)</span> Test analysis</li>
-        <li class="option-item option-correct"><span class="option-letter">d)</span> Test design <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> Test design</li>
   </ul>
   <div class="answer-reveal">Correct answer: <strong>D</strong><br><br><b>Why D is correct:</b> A test charter is a testware output of test design. Test charters specify the scope and goals for exploratory testing sessions and are created during the test design activity.<br><b>Why A is wrong:</b> Test planning produces the test plan, schedule, and estimates — not test charters.<br><b>Why B is wrong:</b> Test monitoring and control produces test progress reports and control directives, not test charters.<br><b>Why C is wrong:</b> Test analysis produces prioritized test conditions, not test charters. Test analysis identifies "what to test," while test design (including charters) determines "how to test."</div>
 </div>
@@ -276,7 +276,7 @@ export const content = {
   <ul class="options-list">
         <li class="option-item"><span class="option-letter">a)</span> Performing the impact analysis of a change will give information about the completion of the tests</li>
         <li class="option-item"><span class="option-letter">b)</span> Analyzing the traceability between test cases and test results will give information about the estimated level of residual risk</li>
-        <li class="option-item option-correct"><span class="option-letter">c)</span> Performing the impact analysis of a change will help selecting the right test cases for regression testing <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">c)</span> Performing the impact analysis of a change will help selecting the right test cases for regression testing</li>
         <li class="option-item"><span class="option-letter">d)</span> Analyzing the traceability between the test basis, the test objects and the test cases will help in selecting test data to achieve the assumed coverage of the test object</li>
   </ul>
   <div class="answer-reveal">Correct answer: <strong>C</strong><br><br><b>Why C is correct:</b> Impact analysis using traceability helps select the right regression test cases when a change is made. If you know which requirements changed, traceability lets you identify which test cases cover those requirements.<br><b>Why A is wrong:</b> Impact analysis of a change gives information about which tests to run, not about test completion status.<br><b>Why B is wrong:</b> Traceability between test cases and test results shows test execution status, not residual risk estimation.<br><b>Why D is wrong:</b> Traceability helps determine coverage, not select specific test data. Test data selection is part of test design/implementation.</div>
@@ -292,7 +292,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">a)</span> The use of an independent test team allows project management to assign responsibility for the quality of the final deliverable to the test team</li>
         <li class="option-item"><span class="option-letter">b)</span> If a test team external to the organization can be afforded, then there are distinct benefits in terms of this external team not being so easily swayed by the delivery concerns of project management and the need to meet strict delivery deadlines</li>
         <li class="option-item"><span class="option-letter">c)</span> An independent test team can work separately from the developers, need not be distracted with project requirement changes, and can restrict communication with the developers to defect reporting through the defect management system</li>
-        <li class="option-item option-correct"><span class="option-letter">d)</span> When specifications contain ambiguities and inconsistencies, assumptions are made on their interpretation, and an independent tester can be useful in questioning those assumptions and the interpretation made by the developer <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> When specifications contain ambiguities and inconsistencies, assumptions are made on their interpretation, and an independent tester can be useful in questioning those assumptions and the interpretation made by the developer</li>
   </ul>
   <div class="answer-reveal">Correct answer: <strong>D</strong><br><br><b>Why D is correct:</b> Independent testers can question assumptions made by developers when interpreting ambiguous specifications. Different cognitive biases lead independent testers to find defects that developers miss.<br><b>Why A is wrong:</b> Quality responsibility should NOT be assigned solely to the test team — quality is everyone's responsibility (whole-team approach).<br><b>Why B is wrong:</b> While external teams have some independence benefits, this answer focuses on avoiding delivery deadlines, which is not the primary benefit of independence.<br><b>Why C is wrong:</b> Restricting communication to defect reports is a drawback, not a benefit. Good communication between testers and developers is essential.</div>
 </div>
@@ -307,7 +307,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">a)</span> Dynamic testing increases quality by causing test objects to fail in ways that could never be achieved by the users</li>
         <li class="option-item"><span class="option-letter">b)</span> Static testing is used by developers to identify failures in their code earlier than can be achieved through dynamic testing</li>
         <li class="option-item"><span class="option-letter">c)</span> Static analysis provides evidence to customers that the elements of the system that provide no outputs are fit for release</li>
-        <li class="option-item option-correct"><span class="option-letter">d)</span> Reviews increase the quality of requirements specifications and lead to fewer changes being needed in derived work products <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> Reviews increase the quality of requirements specifications and lead to fewer changes being needed in derived work products</li>
   </ul>
   <div class="answer-reveal">Correct answer: <strong>D</strong><br><br><b>Why D is correct:</b> Reviews (a form of static testing) improve requirements quality and reduce downstream changes. This is a concrete example of why testing is necessary — catching issues early in requirements saves rework.<br><b>Why A is wrong:</b> Dynamic testing does not aim to cause failures "that could never be achieved by users" — testing simulates realistic scenarios to find real-world defects.<br><b>Why B is wrong:</b> Static testing finds defects, not failures. Failures occur only during execution (dynamic testing). The terminology is incorrect.<br><b>Why C is wrong:</b> Static analysis does not provide evidence about "elements that provide no outputs." This statement is technically meaningless.</div>
 </div>
@@ -320,7 +320,7 @@ export const content = {
   <div class="question-text">Which of the following statements about quality assurance (QA) and/or quality control (QC) is correct?</div>
   <ul class="options-list">
         <li class="option-item"><span class="option-letter">a)</span> QA is performed as part of testing</li>
-        <li class="option-item option-correct"><span class="option-letter">b)</span> Testing is performed as part of QC <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> Testing is performed as part of QC</li>
         <li class="option-item"><span class="option-letter">c)</span> Testing is another term for QC</li>
         <li class="option-item"><span class="option-letter">d)</span> Testing is performed as part of QA</li>
   </ul>
@@ -337,7 +337,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">a)</span> Creating test cases that cover every possible specified output</li>
         <li class="option-item"><span class="option-letter">b)</span> Documenting all possible test input variations and prioritizing these based on importance</li>
         <li class="option-item"><span class="option-letter">c)</span> Starting testing as early as possible with reviews and other static testing approaches</li>
-        <li class="option-item option-correct"><span class="option-letter">d)</span> Using equivalence partitioning and boundary value analysis to generate test cases <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> Using equivalence partitioning and boundary value analysis to generate test cases</li>
   </ul>
   <div class="answer-reveal">Correct answer: <strong>D</strong><br><br><b>Why D is correct:</b> EP and BVA are techniques that reduce the number of test cases needed while maintaining meaningful coverage. They directly address the impossibility of exhaustive testing by using smart sampling strategies.<br><b>Why A is wrong:</b> Covering every possible output is still attempting exhaustive coverage, not addressing the principle pragmatically.<br><b>Why B is wrong:</b> Documenting all possible input variations still implies exhaustive enumeration, which contradicts the principle.<br><b>Why C is wrong:</b> Early testing relates to a different principle ("early testing saves time and money"), not to exhaustive testing being impossible.</div>
 </div>
@@ -349,7 +349,7 @@ export const content = {
   </div>
   <div class="question-text">Which test activity involves working with test data requirements, test conditions, test environment requirements and test cases?</div>
   <ul class="options-list">
-        <li class="option-item option-correct"><span class="option-letter">a)</span> Test design <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">a)</span> Test design</li>
         <li class="option-item"><span class="option-letter">b)</span> Test execution</li>
         <li class="option-item"><span class="option-letter">c)</span> Test analysis</li>
         <li class="option-item"><span class="option-letter">d)</span> Test implementation</li>
@@ -366,7 +366,7 @@ export const content = {
   <ul class="options-list">
         <li class="option-item"><span class="option-letter">a)</span> The average level of experience of the organization’s marketing team</li>
         <li class="option-item"><span class="option-letter">b)</span> The knowledge of users that a new system is being developed for them</li>
-        <li class="option-item option-correct"><span class="option-letter">c)</span> The number of years’ experience of the members of the test team <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">c)</span> The number of years’ experience of the members of the test team</li>
         <li class="option-item"><span class="option-letter">d)</span> The end user’s organizational structure for a commercial music streaming application</li>
   </ul>
   <div class="answer-reveal">Correct answer: <strong>C</strong><br><br><b>Why C is correct:</b> The experience level of the test team directly impacts how testing is performed — experienced testers can apply more sophisticated techniques and find more subtle defects.<br><b>Why A is wrong:</b> The marketing team's experience has no direct impact on how testing of a test object is performed.<br><b>Why B is wrong:</b> Users' awareness that a system is being developed doesn't directly influence the technical testing approach.<br><b>Why D is wrong:</b> The end user's organizational structure for a commercial application doesn't significantly impact the test approach for that application.</div>
@@ -380,7 +380,7 @@ export const content = {
   <div class="question-text">Which of the following statements is a CORRECT example of the value of traceability?</div>
   <ul class="options-list">
         <li class="option-item"><span class="option-letter">a)</span> Traceability between the mitigated risks and test cases that passed provides a means of determining the level of residual risk</li>
-        <li class="option-item option-correct"><span class="option-letter">b)</span> Traceability between user requirements and test results provides a means of measuring project progress against business goals <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> Traceability between user requirements and test results provides a means of measuring project progress against business goals</li>
         <li class="option-item"><span class="option-letter">c)</span> Traceability between testers and test cases that failed provides a means of determining the skill level of the testers</li>
         <li class="option-item"><span class="option-letter">d)</span> Traceability between the identified risks and written test conditions provides a means of determining which risks are worth testing</li>
   </ul>
@@ -395,7 +395,7 @@ export const content = {
   <div class="question-text">Which of the following is MOST likely to be an example of a tester using a generic skill when testing?</div>
   <ul class="options-list">
         <li class="option-item"><span class="option-letter">a)</span> The tester’s deep knowledge of a variety of computer games meant that they got on well with one of the developers who was also into gaming</li>
-        <li class="option-item option-correct"><span class="option-letter">b)</span> The tester was a former pilot and was better able to understand the acceptance criteria for the helicopter control system <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> The tester was a former pilot and was better able to understand the acceptance criteria for the helicopter control system</li>
         <li class="option-item"><span class="option-letter">c)</span> The tester previously worked as a programmer and used their skills in this area to better communicate with the business analysts</li>
         <li class="option-item"><span class="option-letter">d)</span> The tester was very careful not to make mistakes when they methodically generated test cases prior to starting their exploratory testing session</li>
   </ul>
@@ -412,7 +412,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">a)</span> It allows team members to take on any role at any time</li>
         <li class="option-item"><span class="option-letter">b)</span> It only needs a single team to support the complete development project</li>
         <li class="option-item"><span class="option-letter">c)</span> It embeds business representatives alongside developers in the same team</li>
-        <li class="option-item option-correct"><span class="option-letter">d)</span> It generates a team synergy that benefits the entire project <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> It generates a team synergy that benefits the entire project</li>
   </ul>
   <div class="answer-reveal">Correct answer: <strong>D</strong><br><br><b>Why D is correct:</b> The whole-team approach generates team synergy that benefits the entire project. When everyone contributes to quality, the combined effort exceeds what individuals could achieve separately.<br><b>Why A is wrong:</b> The whole-team approach does NOT mean anyone can take any role at any time — team members still have primary expertise areas.<br><b>Why B is wrong:</b> The whole-team approach doesn't guarantee only a single team is needed — complex projects may still require multiple teams.<br><b>Why C is wrong:</b> While the whole-team approach includes business representatives, merely embedding them alongside developers is a description of team composition, not a stated advantage.</div>
 </div>
@@ -425,7 +425,7 @@ export const content = {
   <div class="question-text">Which of the following is a typical test objective?</div>
   <ul class="options-list">
         <li class="option-item"><span class="option-letter">a)</span> Validating that documented requirements are met</li>
-        <li class="option-item option-correct"><span class="option-letter">b)</span> Causing failures and identifying defects <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> Causing failures and identifying defects</li>
         <li class="option-item"><span class="option-letter">c)</span> Initiating errors and identifying root causes</li>
         <li class="option-item"><span class="option-letter">d)</span> Verifying the test object meets user expectations</li>
   </ul>
@@ -441,7 +441,7 @@ export const content = {
   <ul class="options-list">
         <li class="option-item"><span class="option-letter">a)</span> Testing causes failures while debugging fixes failures</li>
         <li class="option-item"><span class="option-letter">b)</span> Testing is a negative activity while debugging is a positive activity</li>
-        <li class="option-item option-correct"><span class="option-letter">c)</span> Testing determines that defects exist while debugging removes defects <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">c)</span> Testing determines that defects exist while debugging removes defects</li>
         <li class="option-item"><span class="option-letter">d)</span> Testing finds the cause of defects while debugging fixes the cause of defects</li>
   </ul>
   <div class="answer-reveal">Correct answer: <strong>C</strong><br><br><b>Why C is correct:</b> Testing determines that defects exist (by triggering failures), while debugging removes the defects (by finding and fixing the code). This is the correct distinction per the ISTQB syllabus.<br><b>Why A is wrong:</b> Testing triggers failures (not "causes" them — the defects cause failures), and debugging fixes defects (not failures). The terminology is imprecise.<br><b>Why B is wrong:</b> Neither testing nor debugging is inherently "negative" or "positive." This is a misconception — testing is a constructive activity that improves quality.<br><b>Why D is wrong:</b> Testing does NOT find the cause of defects — it reveals that defects exist through failures. Finding the cause is part of debugging (root cause analysis).</div>
@@ -455,7 +455,7 @@ export const content = {
   <div class="question-text">The ‘absence-of-defects fallacy’ is one of the principles of testing. Which of the following is an example of addressing this principle in practice?</div>
   <ul class="options-list">
         <li class="option-item"><span class="option-letter">a)</span> Explaining that it is not possible for testing to show the absence of defects</li>
-        <li class="option-item option-correct"><span class="option-letter">b)</span> Supporting the end users to perform acceptance testing <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> Supporting the end users to perform acceptance testing</li>
         <li class="option-item"><span class="option-letter">c)</span> Ensuring that no implementation defects remain in the delivered system</li>
         <li class="option-item"><span class="option-letter">d)</span> Modifying tests that cause no failures to ensure few defects remain</li>
   </ul>
@@ -470,10 +470,10 @@ export const content = {
   <div class="question-text">Which of the following test activities are MOST likely to involve the application of boundary value analysis and equivalence partitioning?</div>
   <ul class="options-list">
         <li class="option-item"><span class="option-letter">a)</span> Test implementation</li>
-        <li class="option-item option-correct"><span class="option-letter">b)</span> Test design <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> Test design</li>
         <li class="option-item"><span class="option-letter">c)</span> Test execution</li>
         <li class="option-item"><span class="option-letter">d)</span> Test monitoring</li>
-        <li class="option-item option-correct"><span class="option-letter">e)</span> Test analysis <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">e)</span> Test analysis</li>
   </ul>
   <div class="answer-reveal">Correct answer: <strong>B, E</strong><br><br><b>Why B is correct:</b> BVA and EP are test design techniques used to derive test cases from test conditions. Test design is where these techniques are applied to determine "how to test."<br><b>Why E is correct:</b> EP can also be applied during test analysis to identify and partition test conditions from the test basis. Identifying equivalence classes helps define what to test.<br><b>Why A is wrong:</b> Test implementation organizes test cases into procedures and prepares test data — it doesn't apply BVA/EP techniques.<br><b>Why C is wrong:</b> Test execution runs the already-designed test cases. BVA and EP are applied before execution.<br><b>Why D is wrong:</b> Test monitoring tracks progress and compares against metrics. It doesn't involve applying test design techniques.</div>
 </div>
@@ -485,7 +485,7 @@ export const content = {
   </div>
   <div class="question-text">Given the following testware: 1. Coverage items 2. Change requests 3. Test execution schedule 4. Prioritized test conditions And the following test activities A. Test analysis B. Test design C. Test implementation D. Test completion Which of the following BEST shows the testware produced by the activities?</div>
   <ul class="options-list">
-        <li class="option-item option-correct"><span class="option-letter">a)</span> 1B, 2D, 3C, 4A <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">a)</span> 1B, 2D, 3C, 4A</li>
         <li class="option-item"><span class="option-letter">b)</span> 1B, 2D, 3A, 4C</li>
         <li class="option-item"><span class="option-letter">c)</span> 1D, 2C, 3A, 4B</li>
         <li class="option-item"><span class="option-letter">d)</span> 1D, 2C, 3B, 4A</li>
@@ -502,7 +502,7 @@ export const content = {
   <ul class="options-list">
         <li class="option-item"><span class="option-letter">a)</span> In Agile software development, the test management role is the primary responsibility of the team, while the testing role is primarily the responsibility of a single individual from outside the team</li>
         <li class="option-item"><span class="option-letter">b)</span> The testing role is primarily responsible for test monitoring and test control, while the test management role is primarily responsible for test planning and test completion</li>
-        <li class="option-item option-correct"><span class="option-letter">c)</span> In Agile software development, test management activities that span multiple teams are handled by a test manager outside the team, while some test management tasks are handled by the team itself <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">c)</span> In Agile software development, test management activities that span multiple teams are handled by a test manager outside the team, while some test management tasks are handled by the team itself</li>
         <li class="option-item"><span class="option-letter">d)</span> The test management role is primarily responsible for test analysis and test design, while the testing role is primarily responsible for test implementation and test execution</li>
   </ul>
   <div class="answer-reveal">Correct answer: <strong>C</strong><br><br><b>Why C is correct:</b> In Agile software development, test management activities that span multiple teams are handled by a test manager outside the team, while some test management tasks are handled by the team itself. This correctly describes the split responsibility.<br><b>Why A is wrong:</b> It reverses the roles — the testing role is NOT primarily from outside the team. In Agile, testers are typically embedded within the team.<br><b>Why B is wrong:</b> It reverses the responsibilities — test monitoring/control and test planning are test management tasks, not testing role tasks. The testing role handles analysis, design, implementation, and execution.<br><b>Why D is wrong:</b> Test analysis and test design are testing role responsibilities, not test management responsibilities. Test management focuses on planning, monitoring, and control.</div>
@@ -516,7 +516,7 @@ export const content = {
   <div class="question-text">Which of the following is an advantage of the whole-team approach?</div>
   <ul class="options-list">
         <li class="option-item"><span class="option-letter">a)</span> Teams with no testers</li>
-        <li class="option-item option-correct"><span class="option-letter">b)</span> Improved team dynamics <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> Improved team dynamics</li>
         <li class="option-item"><span class="option-letter">c)</span> Specialist team members</li>
         <li class="option-item"><span class="option-letter">d)</span> Larger team sizes</li>
   </ul>
@@ -530,7 +530,7 @@ export const content = {
   </div>
   <div class="question-text">Which of the following statements about the independence of testing is CORRECT?</div>
   <ul class="options-list">
-        <li class="option-item option-correct"><span class="option-letter">a)</span> Independent testers will find defects due to their different technical perspective from developers, but their independence may lead to an adversarial relationship with the developers <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">a)</span> Independent testers will find defects due to their different technical perspective from developers, but their independence may lead to an adversarial relationship with the developers</li>
         <li class="option-item"><span class="option-letter">b)</span> Developers’ familiarity with their own code means they only find a few defects in it, however their shared software background with testers means these defects would also be found by the testers</li>
         <li class="option-item"><span class="option-letter">c)</span> Independent testing requires testers who are outside the developer’s team and ideally from outside the organization, however these testers find it difficult to understand the application domain</li>
         <li class="option-item"><span class="option-letter">d)</span> Testers from outside the developer’s team are more independent than testers from within the team, but the testers from within the team are more likely to be blamed for delays in product release</li>
@@ -548,7 +548,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">a)</span> Finding and fixing defects in the test object</li>
         <li class="option-item"><span class="option-letter">b)</span> Maintaining effective communications with developers</li>
         <li class="option-item"><span class="option-letter">c)</span> Validating that legal requirements have been met</li>
-        <li class="option-item option-correct"><span class="option-letter">d)</span> Building confidence in the quality of the test object <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> Building confidence in the quality of the test object</li>
   </ul>
   <div class="answer-reveal">Correct answer: <strong>D</strong><br><br><b>Why D is correct:</b> Building confidence in the quality of the test object is a valid and explicitly stated test objective in the ISTQB syllabus (Section 1.1.1). Testing provides evidence about the quality level.<br><b>Why A is wrong:</b> Testing finds defects but does NOT fix them. Fixing defects is the responsibility of developers through debugging.<br><b>Why B is wrong:</b> Maintaining effective communications with developers is a good practice but is NOT a test objective — it's a soft skill or team collaboration goal.<br><b>Why C is wrong:</b> While verifying legal/regulatory compliance can be a test objective, "validating" legal requirements uses imprecise terminology. Option D is a more directly stated syllabus objective.</div>
 </div>
@@ -562,7 +562,7 @@ export const content = {
   <ul class="options-list">
         <li class="option-item"><span class="option-letter">a)</span> The miscalculation of bonuses is a defect that occasionally occurs</li>
         <li class="option-item"><span class="option-letter">b)</span> The fine received for failing to address some disabled users is a failure</li>
-        <li class="option-item option-correct"><span class="option-letter">c)</span> The programmer working under severe time pressure is a root cause <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">c)</span> The programmer working under severe time pressure is a root cause</li>
         <li class="option-item"><span class="option-letter">d)</span> The design of the user interface includes a designer error</li>
   </ul>
   <div class="answer-reveal">Correct answer: <strong>C</strong><br><br><b>Why C is correct:</b> The programmer working under severe time pressure is a root cause — it's the underlying reason (condition) that led to the error, which in turn caused the defect in exception handling code.<br><b>Why A is wrong:</b> The miscalculation of bonuses is a defect in the code, not a defect that "occasionally occurs." Defects exist permanently in code until fixed; the resulting failures may occur intermittently.<br><b>Why B is wrong:</b> The fine received is a consequence/impact, not a failure. A failure is the observable incorrect behavior of the system (e.g., disabled users can't use the interface).<br><b>Why D is wrong:</b> The design issue contains a defect (flaw in the design document), not a "designer error." The designer being tired is the error (human mistake); the resulting design flaw is the defect.</div>
@@ -575,7 +575,7 @@ export const content = {
   </div>
   <div class="question-text">Test conditions are being used by testers to generate test cases and execute tests. Even though the test conditions remain the same, the test cases are varied each time. Which of the following ‘principles of testing’ is being addressed through the variation of test cases?</div>
   <ul class="options-list">
-        <li class="option-item option-correct"><span class="option-letter">a)</span> Tests wear out <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">a)</span> Tests wear out</li>
         <li class="option-item"><span class="option-letter">b)</span> Absence-of-defects fallacy</li>
         <li class="option-item"><span class="option-letter">c)</span> Early testing saves time and money</li>
         <li class="option-item"><span class="option-letter">d)</span> Defects cluster together</li>
@@ -591,7 +591,7 @@ export const content = {
   <div class="question-text">Given the following test tasks: 1. Derive test cases from test conditions 2. Identify reusable testware 3. Organize test cases into test procedures 4. Evaluate the test basis and the test object And the following test activities: A. Test analysis B. Test design C. Test implementation D. Test completion Which of the following BEST matches the tasks with the activities?</div>
   <ul class="options-list">
         <li class="option-item"><span class="option-letter">a)</span> 1B, 2A, 3D, 4C</li>
-        <li class="option-item option-correct"><span class="option-letter">b)</span> 1B, 2D, 3C, 4A <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> 1B, 2D, 3C, 4A</li>
         <li class="option-item"><span class="option-letter">c)</span> 1C, 2A, 3B, 4D</li>
         <li class="option-item"><span class="option-letter">d)</span> 1C, 2D, 3A, 4B</li>
   </ul>
@@ -605,7 +605,7 @@ export const content = {
   </div>
   <div class="question-text">Given the following testware: i. Test completion report ii. Data held in a database used for test inputs and expected results iii. The list of elements needed to build the test environment iv. Documented sequences of test cases in execution order v. Test cases Which of the following BEST shows the testware produced as a result of performing test implementation?</div>
   <ul class="options-list">
-        <li class="option-item option-correct"><span class="option-letter">a)</span> ii, iv <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">a)</span> ii, iv</li>
         <li class="option-item"><span class="option-letter">b)</span> iii, v</li>
         <li class="option-item"><span class="option-letter">c)</span> i, ii, v</li>
         <li class="option-item"><span class="option-letter">d)</span> i, iii, iv</li>
@@ -623,7 +623,7 @@ export const content = {
         <li class="option-item"><span class="option-letter">a)</span> Evaluate the test basis and the test object</li>
         <li class="option-item"><span class="option-letter">b)</span> Define test environment requirements</li>
         <li class="option-item"><span class="option-letter">c)</span> Assess testability of the test object</li>
-        <li class="option-item option-correct"><span class="option-letter">d)</span> Create the test completion report <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">d)</span> Create the test completion report</li>
   </ul>
   <div class="answer-reveal">Correct answer: <strong>D</strong><br><br><b>Why D is correct:</b> Creating the test completion report is a test management task. Test managers are responsible for test planning, monitoring, control, and completion reporting.<br><b>Why A is wrong:</b> Evaluating the test basis and test object is a testing role task performed during test analysis.<br><b>Why B is wrong:</b> Defining test environment requirements is a testing role task performed during test design.<br><b>Why C is wrong:</b> Assessing testability of the test object is a testing role task performed during test analysis.</div>
 </div>
@@ -635,7 +635,7 @@ export const content = {
   </div>
   <div class="question-text">Which of the following is an advantage of the whole team approach?</div>
   <ul class="options-list">
-        <li class="option-item option-correct"><span class="option-letter">a)</span> Improved communication between team members <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">a)</span> Improved communication between team members</li>
         <li class="option-item"><span class="option-letter">b)</span> Decreased individual accountability for quality</li>
         <li class="option-item"><span class="option-letter">c)</span> Faster deployment of deliverables to the end users</li>
         <li class="option-item"><span class="option-letter">d)</span> Reduced collaboration with external business users</li>
@@ -651,7 +651,7 @@ export const content = {
   <div class="question-text">Given the following benefits and drawbacks of the independence of testing: i. The testers work in a different location from the developers ii. Testers question the assumptions programmers make while writing code iii. A confrontational dynamic has been established between testers and developers iv. Developers have convinced themselves that testers are mostly accountable for quality v. Testers have different biases than those held by the developers Which are MOST likely to be considered benefits?</div>
   <ul class="options-list">
         <li class="option-item"><span class="option-letter">a)</span> i, iv</li>
-        <li class="option-item option-correct"><span class="option-letter">b)</span> ii, v <span class="correct-mark">&#10003;</span></li>
+        <li class="option-item"><span class="option-letter">b)</span> ii, v</li>
         <li class="option-item"><span class="option-letter">c)</span> i, iii, iv</li>
         <li class="option-item"><span class="option-letter">d)</span> ii, iii, v</li>
   </ul>
